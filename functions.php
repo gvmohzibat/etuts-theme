@@ -169,6 +169,17 @@ function featuredtoRSS($content) {
 	return $content;
 }
 
+// show featured image in rss 
+add_filter('the_excerpt_rss', 'featuredtoRSS');
+add_filter('the_content_feed', 'featuredtoRSS');
+function featuredtoRSS($content) {
+	global $post;
+	if ( has_post_thumbnail( $post->ID ) ){
+		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
+	}
+	return $content;
+}
+
 // delete attached images and files from the posts, when you delete it
 add_action('before_delete_post', 'delete_post_media');
 function delete_post_media( $post_id ) {
@@ -288,7 +299,7 @@ function archive_pages_fix_pagination_function() {
 	$wp_rewrite->flush_rules(false);
 }
 
-// Change default fields, add placeholder and change type attributes.
+// Change default comment fields, add placeholder and change type attributes.
 add_filter( 'comment_form_default_fields', 'wpse_62742_comment_placeholders' );
 function wpse_62742_comment_placeholders( $fields )
 {
@@ -319,7 +330,6 @@ function wpse_62742_comment_placeholders( $fields )
 
 // ajax popup login form
 function ajax_login_init(){
-
     wp_register_script('ajax-login-script', get_template_directory_uri() . '/js/ajax-login-script.js', array('jquery') ); 
     wp_enqueue_script('ajax-login-script');
 
@@ -332,9 +342,7 @@ function ajax_login_init(){
     // Enable the user with no privileges to run ajax_login() in AJAX
     add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
 }
-
-// Execute the action only if the user isn't logged in
-if (!is_user_logged_in()) {
+if (!is_user_logged_in()) { // Execute the action only if the user isn't logged in
     add_action('init', 'ajax_login_init');
 }
 function ajax_login(){

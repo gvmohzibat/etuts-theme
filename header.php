@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="description" content="دنیای آموزش های تکنولوژی - آموزش های رایگان - مجموعه های فیلم آموزش فارسی - فروم پرسش و پاسخ - طراحی و گرافیک, وب, ویندوز, مک, لینوکس, اندروید, iOS, گیم و بازی, برنامه نویسی, برق و الکترونیک" />
     <!-- MAKE IT RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">

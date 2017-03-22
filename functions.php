@@ -169,17 +169,6 @@ function featuredtoRSS($content) {
 	return $content;
 }
 
-// show featured image in rss 
-add_filter('the_excerpt_rss', 'featuredtoRSS');
-add_filter('the_content_feed', 'featuredtoRSS');
-function featuredtoRSS($content) {
-	global $post;
-	if ( has_post_thumbnail( $post->ID ) ){
-		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
-	}
-	return $content;
-}
-
 // delete attached images and files from the posts, when you delete it
 add_action('before_delete_post', 'delete_post_media');
 function delete_post_media( $post_id ) {

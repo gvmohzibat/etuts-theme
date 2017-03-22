@@ -1,0 +1,6 @@
+.has-dfw div.mce-toolbar-grp .mce-toolbar.mce-first {
+    padding-right: 0;
+}
+.mce-toolbar .mce-btn-group .mce-btn.mce-wp-dfw, .qt-dfw {
+    right: initial;
+}

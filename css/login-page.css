@@ -1,0 +1,155 @@
+body.login {
+    font-family: Sahel, GanjNamehSans, myriad-pro, sans-serif, arial, tahoma;
+    background: url(/wp-content/themes/etuts/images/background-low.jpg) fixed;
+    background-size: cover;
+}
+body.login h1, body.login h2, body.login h3, body.login h4, body.login h5, body.login h6{
+    font-family: Sahel, GanjNamehSans, myriad-pro, sans-serif, arial, tahoma;
+}
+body.login div#login form#loginform, body.login div#login form#registerform, body.login div#login form#lostpasswordform {
+    background: transparent;
+    background: none;
+    box-shadow: none;
+    padding: 10px 20px;
+}
+body.login div#login h1 a {
+    background-image: url(/wp-content/themes/etuts/images/header-logo.png);
+    width: 100%;
+    background-size: contain;
+}
+body.login div#login form#loginform p, body.login div#login form#registerform p, body.login div#login form#lostpasswordform p {
+    margin-bottom: 20px;
+}
+body.login div#login form#loginform input[type="text"], body.login div#login form#loginform input[type="password"], body.login div#login form#registerform input[type="text"], body.login div#login form#registerform input[type="password"], body.login div#login form#registerform input[type="email"], body.login div#login form#lostpasswordform input[type="text"], body.login div#login form#lostpasswordform input[type="password"] {
+    background: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.14);
+    margin: 0;
+    direction: ltr;
+    color: #555;
+    transition: all .4s;
+}
+body.login div#login form#loginform input[type="text"]:focus, body.login div#login form#loginform input[type="password"]:focus, body.login div#login form#registerform input[type="text"]:focus, body.login div#login form#registerform input[type="password"]:focus, body.login div#login form#lostpasswordform input[type="text"]:focus, body.login div#login form#lostpasswordform input[type="password"]:focus, body.login div#login form#registerform input[type="email"]:focus {
+    color: #2f8811;
+    border-color: #2f8811;
+}
+body.login div#login {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 70px 20px 40px;
+    margin: 5% auto;
+    box-shadow: 0 3px 6px -4px #002308, 0 8px 0 -4px #fff, 0 11px 6px -8px #002308, 0 16px 0 -8px #fff, 0 19px 6px -12px #002308, 0 24px 0 -12px #fff, 0 27px 6px -16px #002308, 0 16px 50px 0px #002308;
+    animation-name: start;
+    animation-duration: 2.6s;
+    animation-delay: 0s;
+    animation-timing-function: cubic-bezier(0.3, 0, 0.48, 1.28);
+}
+@-webkit-keyframes start {
+    0%, 40% {
+        transform: perspective(500px) rotateX(90deg);
+        transform-origin: top;
+        width: 50px;
+        max-height: 50px;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0.4;
+    }
+    68%, 72% {
+        transform: perspective(160px) rotateX(0deg);
+        opacity: 1;
+        width: 320px;
+        max-height: 110px;
+        padding: 70px 20px 40px;
+        margin-top: 300px;
+        overflow: hidden;
+    }
+    100% {
+        max-height: 1000px;
+        overflow: hidden;
+    }
+}
+.login #backtoblog a, .login #nav a, .login h1 a {
+    transition: all .3s;
+}
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+    color: #48AD26;
+    text-shadow: 0 0 0.01px;
+}
+.login #backtoblog, .login #nav {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+.login #backtoblog {
+    font-size: 14px;
+    font-weight: lighter;
+}
+body.login div#login form#loginform p.submit, body.login div#login form#registerform p.submit, body.login div#login form#lostpasswordform p.submit {
+    margin-top: 35px;
+}
+body.login div#login form#loginform p.submit input#wp-submit, body.login div#login form#registerform p.submit input#wp-submit, body.login div#login form#lostpasswordform p.submit input#wp-submit {
+    background: #48AD26;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    float: none;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: initial;
+    height: initial;
+    padding: 2px 10px 10px;
+    transition: color .4s;
+}
+body.login div#login form#loginform p.submit input#wp-submit.submitted {
+    background: #eee;
+    transition: all 1.7s, color .4s, background .4s;
+    box-shadow: inset 280px 0 #48AD26;
+    color: transparent;
+}
+body.login div#login form#loginform p.forgetmenot {
+    float: none;
+}
+body.login div#login form#loginform p.forgetmenot input#rememberme {
+    width: 20px;
+    height: 20px;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    border-radius: 2px;
+    transition: all .3s;
+}
+body.login div#login form#loginform p.forgetmenot input#rememberme:checked {
+    border-color: #48AD26;
+    background: #48AD26;
+}
+body.login div#login form#loginform p.forgetmenot input#rememberme:before {
+    color: #fff;
+    font-size: 25px;
+    padding: 1px;
+}
+body.login div#login form#loginform p.forgetmenot label {
+    font-size: 16px;
+}
+
+/* google apps login plugin */
+
+form#loginform p.galogin {
+    background: #F44336 !important;
+    color: #fff !important;
+    padding: 9px 20px;
+    margin: 25px 0;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #C62828;
+    text-shadow: 0 2px #C62828 !important;
+    font-weight: bold;
+}
+form#loginform p.galogin a {
+    text-decoration: none;
+    color: #fff !important;
+}

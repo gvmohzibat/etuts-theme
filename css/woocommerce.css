@@ -1,0 +1,121 @@
+.woocommerce-account .woocommerce-MyAccount-navigation {
+	float: right;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+	margin: 0;
+}
+.woocommerce-error .button, .woocommerce-info .button, .woocommerce-message .button {
+	float: left;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+	padding: 1em 3.5em 1em 2em !important;
+}
+.woocommerce-error:before, .woocommerce-info:before, .woocommerce-message:before {
+	left: initial;
+	right: 1.5em;
+}
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img {
+	margin-left: 15px;
+	width: 50px;
+}
+.woocommerce .woocommerce-result-count, .woocommerce-page .woocommerce-result-count {
+	float: right;
+}
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+	float: left;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	float: right;
+	margin: 0 0 2.992em 1.8%;
+	text-align: center;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product:last-child {}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+	background: #48ad26;
+	color: #fff;
+	transition: all .3s;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+	background: #48ad26;
+	color: #fff;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	background-color: #48ad26;
+	line-height: 30px;
+	border-radius: 0;
+	box-shadow: inset 0 0 rgba(0, 0, 0, 0.2);
+	transition: all .1s;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+	background-color: #48ad26;
+	box-shadow: inset 0 -4px rgba(0, 0, 0, 0.2);
+}
+.woocommerce #respond input#submit.alt:active, .woocommerce a.button.alt:active, .woocommerce button.button.alt:active, .woocommerce input.button.alt:active {
+	box-shadow: inset 0 3px rgba(0, 0, 0, 0.2);
+}
+.woocommerce-info {
+	border-top-color: #48ad26;
+}
+.woocommerce-info:before {
+	color: #48ad26;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+	direction: ltr;
+}
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+	float: right;
+	left: initial;
+	right: 20px;
+	border: none;
+	box-shadow: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	top: 10px;
+	border-radius: 100px;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+	margin: 0 6px 0 0;
+	border-radius: 0 0 20px 10px;
+	border: none;
+	background: #eee;
+}
+.woocommerce #reviews #comments ol.commentlist ul.children {
+	margin: 5px 50px 0 0
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
+	margin-right: 40px;
+}
+.woocommerce #reviews #comments ol.commentlist li.bypostauthor .comment-text {
+	background: #ddd;
+	border-top: 2px solid #48ad26;
+}
+#home-page-shop .woocommerce ul.products li.product a.added_to_cart.wc-forward {
+	color: #a46497;
+}
+span.woocommerce-Price-currencySymbol {
+	margin-right: 4px;
+}
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+	border: none;
+	padding: 20px;
+	margin: 2em 0;
+	background: #f5f5f5;
+	border-right: 5px solid #aaa;
+	text-align: right;
+}
+@media only screen and (max-width: 1200px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
+		width: 23.2%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
+		width: 48.2% !important;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
+		width: 100% !important;
+	}
+}

@@ -1,0 +1,333 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: etuts Theme\n"
+"POT-Creation-Date: 2017-02-13 23:31+0330\n"
+"PO-Revision-Date: 2017-02-18 18:35+0330\n"
+"Last-Translator: \n"
+"Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: woocommerce\n"
+"X-Poedit-SearchPathExcluded-1: bbpress\n"
+
+#: author.php:10
+msgid "User's latest posts"
+msgstr "آخرین مطالب کاربر"
+
+#: author.php:31 home.php:88
+msgid "User Experiences"
+msgstr "تجربه های کاربر"
+
+#: content-comments.php:5
+msgid "Notify of latest comments in this post"
+msgstr "جواب های این تاپیک را به ایمیلم ارسال کن"
+
+#: content-comments.php:5
+msgid "Comments"
+msgstr "کامنت ها"
+
+#: content-page.php:24 sidebar-single.php:27
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">\"%s\"</span>"
+msgstr "ویرایش <span class=\"screen-reader-text\">\"%s\"</span>"
+
+#: content-single.php:19 content-story.php:18
+msgid "Edit"
+msgstr "ویرایش"
+
+#: content-single.php:28 sidebar-single.php:8
+msgid "View Comments"
+msgstr "مشاهده ی کامنت ها"
+
+#: functions.php:6
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:8
+msgid "The primary sidebar widget area"
+msgstr ""
+
+#: functions.php:16
+msgid "single Sidebar"
+msgstr ""
+
+#: functions.php:18
+msgid "The single sidebar widget area"
+msgstr ""
+
+#: functions.php:26
+msgid "page Sidebar"
+msgstr ""
+
+#: functions.php:28
+msgid "The page sidebar widget area"
+msgstr ""
+
+#: functions.php:36
+msgid "shop Sidebar"
+msgstr ""
+
+#: functions.php:38
+msgid "The shop sidebar widget area"
+msgstr ""
+
+#: functions.php:46
+msgid "user Sidebar"
+msgstr ""
+
+#: functions.php:48
+msgid "The user sidebar widget area"
+msgstr ""
+
+#: functions.php:56
+msgid "bbpress Sidebar"
+msgstr ""
+
+#: functions.php:58
+msgid "The bbpress sidebar widget area"
+msgstr ""
+
+#: functions.php:66
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions.php:68
+msgid "The footer widget area"
+msgstr ""
+
+#: functions.php:81
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:82
+msgid "Right Menu"
+msgstr "منوی راست"
+
+#: functions.php:83
+msgid "Curruser Menu"
+msgstr ""
+
+#: functions.php:115
+msgid "Stories"
+msgstr "استوری ها"
+
+#: functions.php:116
+msgid "Story"
+msgstr "استوری"
+
+#: functions.php:329
+msgid "Sending user info, please wait..."
+msgstr "لطفا صبر کنید..."
+
+#: functions.php:353
+msgid "Wrong username or password."
+msgstr "نام کاربری یا رمزعبور شما غلط است."
+
+#: functions.php:355
+msgid "Login successful, reloading..."
+msgstr "وارد شدید! لود صفحه..."
+
+#: header.php:78 sidebar-single.php:19
+#, php-format
+msgid "View all posts in %s"
+msgstr "نمایش تمام مطالب در %s"
+
+#: home.php:7 index.php:7
+msgid "Latest Posts"
+msgstr "آخرین مطالب"
+
+#: home.php:36
+msgid "Ask your questions in our forums"
+msgstr "سوالات خود را در انجمن های ما بپرسید"
+
+#: home.php:38
+#, php-format
+msgid "<span>%d</span> Solved topics until now!"
+msgstr "تاکنون به <span>%d</span> سوال پاسخ داده شده!"
+
+#: home.php:53
+msgid "Latest topics"
+msgstr "آخرین تاپیکها"
+
+#: home.php:75
+msgid "Latest products of our shop"
+msgstr "آخرین محصولات آموزشی فروشگاه"
+
+#: home.php:77
+#, php-format
+msgid "We have <span>%d</span> products in our shop!"
+msgstr "تاکنون <span>%d</span> محصول در فروشگاه منتشر شده!"
+
+#: insert-post.php:17
+msgid "Please complete the fields."
+msgstr "لطفا فیلدها را کامل کنید"
+
+#: insert-post.php:62
+msgid "Draft posts"
+msgstr "پیشنویس های ذخیره شده"
+
+#: insert-post.php:64
+msgid "New post"
+msgstr "مطلب جدید"
+
+#: insert-post.php:66
+msgid "pending"
+msgstr "در انتظار بررسی"
+
+#: insert-post.php:66
+msgid "draft"
+msgstr "پیشنویس"
+
+#: insert-post.php:84
+msgid "Post title"
+msgstr "عنوان مطلب"
+
+#: insert-post.php:97
+msgid "Save as draft"
+msgstr "ذخیره پیشنویس"
+
+#: insert-post.php:98
+msgid "Submit"
+msgstr "ارسال"
+
+#: search.php:12
+msgid " Search results for "
+msgstr " نتیجه برای "
+
+#: searchform.php:7
+msgid "Search ..."
+msgstr "جستجو..."
+
+#: sidebar-single.php:38
+msgid "Other posts"
+msgstr "سایر مطالب"
+
+#: sidebar-single.php:43
+msgid "Share this post"
+msgstr "به اشتراک بذارید"
+
+#: sidebar-single.php:43
+msgid "More"
+msgstr "بیشتر"
+
+#: sidebar-single.php:45
+msgid "Download PDF"
+msgstr "دانلود PDF"
+
+#: sidebar-single.php:46
+msgid "WhatsApp"
+msgstr "واتس اپ"
+
+#: sidebar-single.php:47
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: sidebar-single.php:48
+msgid "Short link"
+msgstr "لینک کوتاه"
+
+#: sidebar-single.php:51
+msgid "Ask questions"
+msgstr "سوال دارید؟"
+
+#: sidebar-single.php:52
+msgid "Email"
+msgstr "ایمیل"
+
+#: sidebar-single.php:53
+msgid "Facebook"
+msgstr "فیسبوک"
+
+#: sidebar-single.php:54
+msgid "Google +"
+msgstr "گوگل پلاس"
+
+#: sidebar-single.php:55
+msgid "Twitter"
+msgstr "توییتر"
+
+#: sidebar-single.php:56
+msgid "Comments RSS"
+msgstr "فید کامنت ها"
+
+#: sidebar-single.php:62
+msgid "contents"
+msgstr "محتوای مطلب"
+
+#: sidebar-single.php:90
+msgid "Related posts"
+msgstr "مطالب مرتبط"
+
+#: sidebar-user.php:7
+msgid "topics"
+msgstr "تاپیک ها"
+
+#: sidebar-user.php:8
+msgid "replies"
+msgstr "پاسخ سوالات"
+
+#: sidebar-user.php:9
+msgid "Website"
+msgstr "وبسایت"
+
+#: sidebar-user.php:11 user-menu.php:14
+msgid "Edit profile"
+msgstr "ویرایش پروفایل"
+
+#: user-menu.php:4
+msgid "View profile"
+msgstr "مشاهده ی پروفایل"
+
+#: user-menu.php:22
+msgid "logout"
+msgstr "خروج"
+
+#: user-menu.php:28 user-menu.php:45
+msgid "login"
+msgstr "ورود"
+
+#: user-menu.php:29 user-menu.php:44
+msgid "register"
+msgstr "عضویت"
+
+#: user-menu.php:37
+msgid "Login"
+msgstr "ورود"
+
+#: user-menu.php:39
+msgid "Username"
+msgstr "نام کاربری"
+
+#: user-menu.php:41
+msgid "Password"
+msgstr "رمز عبور"
+
+#: user-menu.php:43
+msgid "Lost your password?"
+msgstr "رمز عبورتان را فراموش کردید؟"
+
+#~ msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+#~ msgstr "ویرایش<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#~ msgid "You must be logged in to edit your profile."
+#~ msgstr "شما باید وارد شوید تا پروفایل تان را ویرایش کنید."
+
+#~ msgid "in reply to: "
+#~ msgstr "در پاسخ به:"
+
+#~ msgid "You're here now!"
+#~ msgstr "شما اینجا هستید!"
+
+#~ msgid "Latest"
+#~ msgstr "آخرین"
+
+#~ msgid "Posts"
+#~ msgstr "مطالب"

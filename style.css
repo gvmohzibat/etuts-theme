@@ -2085,6 +2085,33 @@ h1.home-page-title, .home-page-title h1 {
 	text-align: center;
 	clear: both;
 }
+.home-latest-posts i.post-format-icon.fa {
+	position: absolute;
+	top: 25px;
+	right: -20px;
+	font-size: 25px;
+	border-radius: 100px;
+	background: #f9f9f9;
+	color: #aaa;
+	height: 30px;
+	width: 30px;
+	padding: 10px;
+	box-sizing: content-box;
+	text-align: center;
+	line-height: 30px;
+}
+.home-latest-posts {
+	position: relative;
+}
+.home-latest-posts:hover i.post-format-icon.fa.standard {
+	background: #48ad26;
+	color: #fff;
+	box-shadow: 0 0px 18px rgba(0, 0, 0, 0.15);
+}
+a.post-tumb-link:hover {
+	opacity: 1;
+	opacity: initial;
+}
 
 /* Last Topics */
 

@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php } else {
 				wp_mail('email@etuts.ir',
-						sprintf( '[%s] ' . get_bloginfo('name') ),
+						get_bloginfo('name'),
 						esc_html($_POST['cform_message']),'From: "'. esc_html($_POST['cform_name']) .'" <' . esc_html($_POST['cform_email']) . '>');
 
 				unset($_POST);

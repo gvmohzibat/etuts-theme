@@ -67,6 +67,8 @@ pre, code {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
+	background: #eee;
+	padding: 5px 10px;
 }
 input:disabled, textarea:disabled {
 	color: #aaa;

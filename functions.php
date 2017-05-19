@@ -234,10 +234,10 @@ function execute_php($html){
 }
 // all upload files for contributors
 if ( current_user_can('contributor') && !current_user_can('upload_files') )
-    add_action('admin_init', 'allow_contributor_uploads');
+	add_action('admin_init', 'allow_contributor_uploads');
 function allow_contributor_uploads() {
-    $contributor = get_role('contributor');
-    $contributor->add_cap('upload_files');
+	$contributor = get_role('contributor');
+	$contributor->add_cap('upload_files');
 }
 // Etuts function to get the icon of the category by term_id
 function get_category_icon($term_id) {
@@ -326,66 +326,51 @@ function wpse_62742_comment_placeholders( $fields )
 
 // ajax popup login form
 function ajax_login_init(){
-    wp_register_script('ajax-login-script', get_template_directory_uri() . '/js/ajax-login-script.js', array('jquery') ); 
-    wp_enqueue_script('ajax-login-script');
+	wp_register_script('ajax-login-script', get_template_directory_uri() . '/js/ajax-login-script.js', array('jquery') ); 
+	wp_enqueue_script('ajax-login-script');
 
-    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'redirecturl' => home_url(),
-        'loadingmessage' => __('Sending user info, please wait...','etuts')
-    ));
+	wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'redirecturl' => home_url(),
+		'loadingmessage' => __('Sending user info, please wait...','etuts')
+	));
 
-    // Enable the user with no privileges to run ajax_login() in AJAX
-    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+	// Enable the user with no privileges to run ajax_login() in AJAX
+	add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
 }
 if (!is_user_logged_in()) { // Execute the action only if the user isn't logged in
-    add_action('init', 'ajax_login_init');
+	add_action('init', 'ajax_login_init');
 }
 function ajax_login(){
 
-    // First check the nonce, if it fails the function will break
-    check_ajax_referer( 'ajax-login-nonce', 'security' );
+	// First check the nonce, if it fails the function will break
+	check_ajax_referer( 'ajax-login-nonce', 'security' );
 
-    // Nonce is checked, get the POST data and sign user on
-    $info = array();
-    $info['user_login'] = $_POST['user_login'];
-    $info['user_password'] = $_POST['user_pass'];
-    $info['remember'] = true;
+	// Nonce is checked, get the POST data and sign user on
+	$info = array();
+	$info['user_login'] = $_POST['user_login'];
+	$info['user_password'] = $_POST['user_pass'];
+	$info['remember'] = true;
 
-    $user_signon = wp_signon( $info, false );
-    if ( is_wp_error($user_signon) ){
-        echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.','etuts')));
-    } else {
-        echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, reloading...','etuts')));
-    }
+	$user_signon = wp_signon( $info, false );
+	if ( is_wp_error($user_signon) ){
+		echo json_encode(array('loggedin'=>false, 'message'=>__('Wrong username or password.','etuts')));
+	} else {
+		echo json_encode(array('loggedin'=>true, 'message'=>__('Login successful, reloading...','etuts')));
+	}
 
-    die();
+	die();
 }
 
 // Rename Aside post format to Quick Tip
-function rename_post_formats( $safe_text ) {
-    if ( $safe_text == 'Aside' )
-        return 'Quick Tip';
-
-    return $safe_text;
+function rename_post_formats($translation, $text, $context, $domain) {
+	$names = array(
+		'Aside'  => 'Quick Tip',
+		'Status' => 'Tweet'
+	);
+	if ($context == 'Post format') {
+		$translation = str_replace(array_keys($names), array_values($names), $text);
+	}
+	return $translation;
 }
-add_filter( 'esc_html', 'rename_post_formats' );
-
-//rename Aside in posts list table
-function live_rename_formats() { 
-    global $current_screen;
-
-    if ( $current_screen->id == 'edit-post' ) { ?>
-        <script type="text/javascript">
-        jQuery('document').ready(function() {
-
-            jQuery("span.post-state-format").each(function() { 
-                if ( jQuery(this).text() == "Aside" )
-                    jQuery(this).text("Quick Tip");             
-            });
-
-        });      
-        </script>
-<?php }
-}
-add_action('admin_head', 'live_rename_formats');
+add_filter('gettext_with_context', 'rename_post_formats', 10, 4);

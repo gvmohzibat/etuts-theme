@@ -362,11 +362,11 @@ function ajax_login(){
 	die();
 }
 
-// Rename Aside post format to Quick Tip
+// Rename post formats
 function rename_post_formats($translation, $text, $context, $domain) {
 	$names = array(
 		'Aside'  => 'Quick Tip',
-		'Status' => 'Tweet'
+		// 'Status' => 'Tweet'
 	);
 	if ($context == 'Post format') {
 		$translation = str_replace(array_keys($names), array_values($names), $text);

@@ -87,7 +87,7 @@ function after_theme_setup_registers() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'bbpress' );
-	add_theme_support( 'post-formats' );
+	add_theme_support( 'post-formats', array( 'aside' , 'status' ));
 	add_theme_support( 'custom-header', array(
 		'flex-width'    => true,
 		'width'         => 980,

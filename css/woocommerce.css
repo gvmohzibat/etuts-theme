@@ -104,6 +104,15 @@ span.woocommerce-Price-currencySymbol {
 	border-right: 5px solid #aaa;
 	text-align: right;
 }
+.woocommerce form .form-row textarea {
+	height: 14em;
+}
+.rtl .woocommerce .col2-set .col-1, .rtl .woocommerce-page .col2-set .col-1 {
+    float: right;
+}
+.rtl .woocommerce .col2-set .col-2, .rtl .woocommerce-page .col2-set .col-2 {
+    float: left;
+}
 @media only screen and (max-width: 1200px) {
 	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
 		width: 23.2%;

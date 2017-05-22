@@ -10,7 +10,7 @@
 $draft_post_id = isset($_GET['id']) ? $_GET['id'] : 0;
 
 $error_text = '';
- 
+
 // if form is submitted or saved as draft
 if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	$title = $_POST['title'];
@@ -20,37 +20,45 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
     if ( trim( $title ) === '' || trim($content) === '' ) {
         $error_text = __('Please complete the fields.','etuts');
         $hasError = true;
-    }
+    } else {
 
-    // if it's saved as draft, get draft id
-    $draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
+	    // if it's saved as draft, get draft id
+	    $draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
 
-    // setting post status
-    if (isset($_POST['submit']))
-    	$post_status = 'pending';
-    else if (isset($_POST['save-draft']))
-    	$post_status = 'draft';
+	    // setting post status
+	    if (isset($_POST['submit']))
+	    	$post_status = 'pending';
+	    else if (isset($_POST['save-draft']))
+	    	$post_status = 'draft';
 
-    // setting post type
-    if (isset($_POST['post_type']))
-    	$post_type = $_POST['post_type'];
-    echo $post_type;
+	    // setting post type
+	    if (isset($_POST['wp_post_type']))
+	    	$post_type = $_POST['wp_post_type'];
 
-    // insert the post
-	wp_insert_post(array(
-		'post_title' => wp_strip_all_tags( $title ),
-	    'post_content' => $content,
-	    'post_type' => $post_type,
-	    'post_status' => $post_status,
-	    'ID' => $draft_id,
-	));
+	    // insert the post
+		wp_insert_post(array(
+			'post_title' => wp_strip_all_tags( $title ),
+		    'post_content' => $content,
+		    'post_type' => $post_type,
+		    'post_status' => $post_status,
+		    'ID' => $draft_id,
+		));
+
+	}
 }
+
 ?>
+
+
+
+
+
 <?php get_header(); ?>
 
 <section id="main" class="clearfix">
-
 <div id="rightPad">
+
+
 	<?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', 'page' ); ?>
 	<?php endwhile; ?>
@@ -58,12 +66,15 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 <?php if (is_user_logged_in()) : ?>
 
-<div id="post-type-tabs" class="post-list-item">
-	<input for="new-post-form" type="radio" name="post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-	<input for="new-post-form" type="radio" name="post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
-</div>
 
-	<?php 
+	<?php //tabs: posts or articles ?>
+	<div id="post-type-tabs" class="post-list-item">
+		<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+		<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+	</div>
+
+
+	<?php // get users posts and stories (draft and pending)
 		$current_user = wp_get_current_user();
 		$user_posts = new WP_Query(array(
 			// 'post_type' => 'post',
@@ -79,11 +90,13 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		));
 	?>
 
+
 	<?php if ($hasError)
 		echo '<div class="has-background-icon display-error post-list-item"><p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> '.$error_text.'</p></div>';
 	?>
 
-	<?php
+
+	<?php // disply list of posts
 	if ($user_posts->have_posts()) : ?>
 		<div id="user-posts-list" class="draft-posts-list post-list-item">
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
@@ -96,7 +109,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		</div>
 	<?php endif; ?>
 
-	<?php
+
+	<?php // disply list of stories
 	if ($user_stories->have_posts()) : ?>
 		<div id="user-stories-list" class="draft-posts-list post-list-item">
 			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
@@ -109,16 +123,17 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		</div>
 	<?php endif; ?>
 
-	<?php 
+
+	<?php // get current post
 		$current_post;
-		// echo $draft_post_id;
+
 		if (is_null($draft_post_id) || $draft_post_id == 0)
 			$current_post = NULL;
 		else
 			$current_post = get_post($draft_post_id);
-		// else
-		// echo $current_post;
 	?>
+
+	<?php // wp editor form ?>
 	<div class="send-post-container">
 		<form action="" id="new-post-form" method="POST">
 			<div class="entry-header story-header post-list-item chain-connect">
@@ -141,13 +156,13 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			</div>
 		</form>
 	</div>
+
+
 <?php endif; ?>
 
 
 </div>
-
 <?php get_template_part('page','leftPad'); ?>
-
 </section>
 
 <?php get_footer(); ?>

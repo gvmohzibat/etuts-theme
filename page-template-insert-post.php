@@ -40,8 +40,16 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	    	$post_status = 'draft';
 
 	    // setting post type
-	    if (isset($_POST['wp_post_type']))
+	    echo 'ok ' . $draft_id . ' ' . $_POST['wp_post_type'];
+	    if ($draft_id == 0) {
 	    	$post_type = $_POST['wp_post_type'];
+	    } else {
+	    	$post_type = get_post($draft_id)->post_type;
+	    }
+
+	    // author
+	    if (isset($_POST['author']))
+	    	$author_id = $_POST['author'];
 
 	    // insert the post
 		wp_insert_post(array(
@@ -50,6 +58,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		    'post_type' => $post_type,
 		    'post_status' => $post_status,
 		    'ID' => $draft_id,
+		    'post_author' => $author_id,
 		));
 
 	}
@@ -78,8 +87,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">
 		<div class="clearfix">
-			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post" <?php echo ($tab_post_type == 'post') ? 'checked' : '' ?> > <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories" <?php echo($tab_post_type == 'post') ? 'checked' : '' ?> > <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-post" type="radio" name="wp_post_type" value="post" <?php echo ($tab_post_type == 'post') ? 'checked' : '' ?> > <label id="post_type-post" class="section-title <?php echo ($tab_post_type == 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-story" type="radio" name="wp_post_type" value="vmoh_user_stories" <?php echo($tab_post_type != 'post') ? 'checked' : '' ?> > <label id="post_type-story" class="section-title <?php echo($tab_post_type != 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
 		</div>
 	</div>
 
@@ -101,6 +110,9 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	?>
 
 
+<!-- <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href="?" title="<?php _e('New post','etuts'); ?>"><?php _e('New post','etuts'); ?></a></li> -->
+
+
 	<?php if ($hasError)
 		echo '<div class="has-background-icon display-error post-list-item"><p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> '.$error_text.'</p></div>';
 	?>
@@ -111,7 +123,6 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		<div id="user-posts-list" class="draft-posts-list post-list-item">
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
 			<ul class="fa-ul">
-				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href="?" title="<?php _e('New post','etuts'); ?>"><?php _e('New post','etuts'); ?></a></li>
 				<?php while ($user_posts->have_posts()) : $user_posts->the_post(); ?>
 			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
 				<?php endwhile; ?>
@@ -125,7 +136,6 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		<div id="user-stories-list" class="draft-posts-list post-list-item">
 			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
 			<ul class="fa-ul">
-				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href="?" title="<?php _e('New post','etuts'); ?>"><?php _e('New post','etuts'); ?></a></li>
 				<?php while ($user_stories->have_posts()) : $user_stories->the_post(); ?>
 			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
 				<?php endwhile; ?>

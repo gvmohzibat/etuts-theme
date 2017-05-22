@@ -195,6 +195,20 @@ $(document).ready(function() {
 			return false;
 		});
 	})();
+
+	// post-type tabs selecting
+	$('#post-type-tabs label').click(function() {
+		$('#post-type-tabs label.post-type-tab-active').toggleClass('post-type-tab-active');
+		$(this).toggleClass('post-type-tab-active');
+		console.log($(this).attr('id'));
+		if ($(this).attr('id') == 'post_type-post') {
+			$('#user-stories-list').hide();
+			$('#user-posts-list').show();
+		} else if ($(this).attr('id') == 'post_type-story') {
+			$('#user-stories-list').show();
+			$('#user-posts-list').hide();
+		}
+	});
 });
 var addComment = {
 	moveForm: function(commId, parentId, respondId, postId) {

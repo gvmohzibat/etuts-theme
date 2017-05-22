@@ -7,7 +7,15 @@
  */
 
 // if user has chosen a draft post
-$draft_post_id = isset($_GET['id']) ? $_GET['id'] : 0;
+if (isset($_GET['id'])) {
+	$draft_post_id = $_GET['id'];
+	$current_post = get_post($draft_post_id);
+	$tab_post_type = $current_post->post_type;
+} else {
+	$draft_post_id = 0;
+	$current_post = NULL;
+	$tab_post_type = 'post';
+}
 
 $error_text = '';
 
@@ -70,8 +78,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">
 		<div class="clearfix">
-			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post" <?php echo ($tab_post_type == 'post') ? 'checked' : '' ?> > <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories" <?php echo($tab_post_type == 'post') ? 'checked' : '' ?> > <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
 		</div>
 	</div>
 
@@ -125,15 +133,6 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		</div>
 	<?php endif; ?>
 
-
-	<?php // get current post
-		$current_post;
-
-		if (is_null($draft_post_id) || $draft_post_id == 0)
-			$current_post = NULL;
-		else
-			$current_post = get_post($draft_post_id);
-	?>
 
 	<?php // wp editor form ?>
 	<div class="send-post-container">

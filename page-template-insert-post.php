@@ -6,33 +6,42 @@
  *
  */
 
+// if user has chosen a draft post
 $draft_post_id = isset($_GET['id']) ? $_GET['id'] : 0;
 
 $error_text = '';
  
+// if form is submitted or saved as draft
 if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	$title = $_POST['title'];
 	$content = $_POST['content'];
+
+	// is title or content empty?
     if ( trim( $title ) === '' || trim($content) === '' ) {
         $error_text = __('Please complete the fields.','etuts');
         $hasError = true;
     }
 
+    // if it's saved as draft, get draft id
     $draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
 
+    // setting post status
     if (isset($_POST['submit']))
     	$post_status = 'pending';
-    else if (isset($_POST['save-draft'])) {
+    else if (isset($_POST['save-draft']))
     	$post_status = 'draft';
-    	echo "ok";
-    }
 
+    // setting post type
+    if (isset($_POST['post_type']))
+    	$post_type = $_POST['post_type'];
+
+    // insert the post
 	wp_insert_post(array(
 		'post_title' => wp_strip_all_tags( $title ),
 	    'post_content' => $content,
-	    'post_type' => 'vmoh_user_stories',
+	    'post_type' => $post_type,
 	    'post_status' => $post_status,
-	    'ID' => $draft_id
+	    'ID' => $draft_id,
 	));
 }
 ?>
@@ -49,8 +58,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 <?php if (is_user_logged_in()) : ?>
 
 <div id="post-type-tabs" class="post-list-item">
-	<input for="new-post-form" type="checkbox" name="post_type" id="post_type" value="post"> <label for="post_type"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-	<input for="new-post-form" type="checkbox" name="post_type" id="post_type" value="vmoh_user_stories"> <label for="post_type"><?php _e( 'Story', 'etuts' ); ?></label>
+	<input for="new-post-form" type="radio" name="post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+	<input for="new-post-form" type="radio" name="post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
 </div>
 
 	<?php 

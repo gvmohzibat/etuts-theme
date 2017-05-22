@@ -69,8 +69,10 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">
-		<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-		<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+		<div class="clearfix">
+			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-post" value="post"> <label for="post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+			<input form="new-post-form" type="radio" name="wp_post_type" id="post_type-story" value="vmoh_user_stories"> <label for="post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+		</div>
 	</div>
 
 

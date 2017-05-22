@@ -48,10 +48,21 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 <?php if (is_user_logged_in()) : ?>
 
+<div id="post-type-tabs" class="post-list-item">
+	<input for="new-post-form" type="checkbox" name="post_type" id="post_type" value="post"> <label for="post_type"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+	<input for="new-post-form" type="checkbox" name="post_type" id="post_type" value="vmoh_user_stories"> <label for="post_type"><?php _e( 'Story', 'etuts' ); ?></label>
+</div>
+
 	<?php 
 		$current_user = wp_get_current_user();
-		$my_query = new WP_Query(array(
-			// 'post_type' => 'vmoh_user_stories',
+		$user_posts = new WP_Query(array(
+			// 'post_type' => 'post',
+			'post_status' => array( 'pending', 'draft' ),
+			'showposts' => '10',
+			'author' => $current_user->ID
+		));
+		$user_stories = new WP_Query(array(
+			'post_type' => 'vmoh_user_stories',
 			'post_status' => array( 'pending', 'draft' ),
 			'showposts' => '10',
 			'author' => $current_user->ID
@@ -63,12 +74,25 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	?>
 
 	<?php
-	if ($my_query->have_posts()) : ?>
-		<div class="draft-posts-list post-list-item">
+	if ($user_posts->have_posts()) : ?>
+		<div id="user-posts-list" class="draft-posts-list post-list-item">
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href="?" title="<?php _e('New post','etuts'); ?>"><?php _e('New post','etuts'); ?></a></li>
-				<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				<?php while ($user_posts->have_posts()) : $user_posts->the_post(); ?>
+			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
+				<?php endwhile; ?>
+			</ul>
+		</div>
+	<?php endif; ?>
+
+	<?php
+	if ($user_stories->have_posts()) : ?>
+		<div id="user-stories-list" class="draft-posts-list post-list-item">
+			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
+			<ul class="fa-ul">
+				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href="?" title="<?php _e('New post','etuts'); ?>"><?php _e('New post','etuts'); ?></a></li>
+				<?php while ($user_stories->have_posts()) : $user_stories->the_post(); ?>
 			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
 				<?php endwhile; ?>
 			</ul>

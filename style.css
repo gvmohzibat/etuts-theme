@@ -1527,19 +1527,26 @@ form#commentform input, form#commentform textarea {
 	background: #888;
 	border-color: #888;
 }
+#post-type-tabs {
+	padding: 0;
+	text-align: center;
+}
 #post-type-tabs input {
 	display: none;
 	opacity: 0;
 	visibility: hidden;
 }
 #post-type-tabs label {
-	padding: 20px;
-	display: inline-block;
-	/* float: right; */
+    padding: 20px;
+    display: inline-block;
+    float: right;
+    width: 50%;
+    border-bottom: 3px solid #bbb;
+    cursor: pointer;
 }
-#post-type-tabs {
-	padding: 0;
-	text-align: center;
+#post-type-tabs label:hover {
+    background: #f9f9f9;
+    border-bottom-color: #aaa;
 }
 
 /* editor */

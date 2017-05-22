@@ -34,6 +34,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
     // setting post type
     if (isset($_POST['post_type']))
     	$post_type = $_POST['post_type'];
+    echo $post_type;
 
     // insert the post
 	wp_insert_post(array(

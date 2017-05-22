@@ -1543,10 +1543,17 @@ form#commentform input, form#commentform textarea {
     width: 50%;
     border-bottom: 3px solid #bbb;
     cursor: pointer;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold; 
 }
-#post-type-tabs label:hover {
+#post-type-tabs label:not(.post-type-tab-active):hover {
     background: #f9f9f9;
     border-bottom-color: #aaa;
+}
+#post-type-tabs .post-type-tab-active {
+    background: #d0ecc7;
+    border-bottom-color: #48ad26;
 }
 
 /* editor */

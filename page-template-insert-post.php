@@ -105,7 +105,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 
 	<?php //radio buttons: post format ?>
-	<div id="post-format-radio" class="post-list-item" style="display: none">
+	<div id="post-format-radio" class="post-list-item" <?php echo ($tab_post_type == 'post') ? '' : 'style="display: none"' ?> >
 		<div class="clearfix">
 			<div class="post-format-option">
 				<input form="new-post-form" id="input_post_format-standard" type="radio" name="wp_post_format" value="standard" <?php echo ($radio_post_format == 'standard') ? 'checked' : '' ?> >
@@ -162,7 +162,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php // disply list of posts
 	if ($user_posts->have_posts()) : ?>
-		<div id="user-posts-list" class="draft-posts-list post-list-item" style="display: none">
+		<div id="user-posts-list" class="draft-posts-list post-list-item" <?php echo ($tab_post_type == 'post') ? '' : 'style="display: none"' ?> >
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_posts->have_posts()) : $user_posts->the_post(); ?>
@@ -175,7 +175,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php // disply list of stories
 	if ($user_stories->have_posts()) : ?>
-		<div id="user-stories-list" class="draft-posts-list post-list-item" style="display: none">
+		<div id="user-stories-list" class="draft-posts-list post-list-item" <?php echo ($tab_post_type == 'vmoh_user_stories') ? '' : 'style="display: none"' ?> >
 			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_stories->have_posts()) : $user_stories->the_post(); ?>
@@ -187,7 +187,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 
 	<?php // wp editor form ?>
-	<div id="send-post-container" style="display: none">
+	<div id="send-post-container" <?php echo ($tab_post_type == '') ? 'style="display: none"' : '' ?> >
 		<form action="" id="new-post-form" method="POST">
 			<div class="entry-header story-header post-list-item chain-connect">
 				<?php echo get_avatar( $current_user->user_email, '90' ); ?>

@@ -1537,24 +1537,52 @@ form#commentform input, form#commentform textarea {
 	visibility: hidden;
 }
 #post-type-tabs label {
-    padding: 20px;
-    display: inline-block;
-    float: right;
-    width: 50%;
-    border-bottom: 3px solid #bbb;
-    cursor: pointer;
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold; 
+	padding: 20px;
+	display: inline-block;
+	float: right;
+	width: 50%;
+	border-bottom: 3px solid #bbb;
+	cursor: pointer;
+	margin: 0;
+	font-size: 20px;
+	font-weight: bold;
 }
 #post-type-tabs label:not(.post-type-tab-active):hover {
-    background: #f9f9f9;
-    border-bottom-color: #aaa;
+	background: #f9f9f9;
+	border-bottom-color: #aaa;
 }
 #post-type-tabs .post-type-tab-active {
-    background: #d0ecc7;
-    border-bottom-color: #48ad26;
-    color: #2b7310;
+	background: #d0ecc7;
+	border-bottom-color: #48ad26;
+	color: #2b7310;
+}
+#post-format-radio .post-format-option {
+	width: 33%;
+	float: right;
+	padding: 15px 20px;
+	border-left: 1px dashed #ccc;
+}
+#post-format-radio .post-format-option label h4 {
+	margin: 0 21px 0 0;
+	padding: 0 10px 0 0;
+	text-align: right;
+}
+#post-format-radio .post-format-option label p {
+	color: #444;
+	margin: 0 30px;
+}
+#post-format-radio .post-format-option:nth-child(3n+3) {
+	border-left: none;
+}
+#post-format-radio .post-format-option:hover {
+	background: #f9f9f9;
+}
+#post-format-radio .post-format-option input {
+	float: right;
+	margin-top: 10px;
+}
+#post-format-radio .post-format-option label {
+	cursor: pointer;
 }
 
 /* editor */

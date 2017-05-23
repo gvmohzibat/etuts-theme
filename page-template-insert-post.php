@@ -120,7 +120,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php // disply list of posts
 	if ($user_posts->have_posts()) : ?>
-		<div id="user-posts-list" class="draft-posts-list post-list-item">
+		<div id="user-posts-list" class="draft-posts-list post-list-item" style="display: none">
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_posts->have_posts()) : $user_posts->the_post(); ?>
@@ -133,7 +133,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php // disply list of stories
 	if ($user_stories->have_posts()) : ?>
-		<div id="user-stories-list" class="draft-posts-list post-list-item">
+		<div id="user-stories-list" class="draft-posts-list post-list-item" style="display: none">
 			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_stories->have_posts()) : $user_stories->the_post(); ?>
@@ -145,7 +145,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 
 	<?php // wp editor form ?>
-	<div class="send-post-container">
+	<div id="send-post-container" style="display: none">
 		<form action="" id="new-post-form" method="POST">
 			<div class="entry-header story-header post-list-item chain-connect">
 				<?php echo get_avatar( $current_user->user_email, '90' ); ?>

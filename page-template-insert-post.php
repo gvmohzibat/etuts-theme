@@ -52,7 +52,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	    	$author_id = $_POST['author'];
 
 	    // insert the post
-		wp_insert_post(array(
+		$inserted_post_id = wp_insert_post(array(
 			'post_title' => wp_strip_all_tags( $title ),
 		    'post_content' => $content,
 		    'post_type' => $post_type,
@@ -60,6 +60,13 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		    'ID' => $draft_id,
 		    'post_author' => $author_id,
 		));
+
+		// set post format
+		if (isset($_POST['format'])) {
+			$post_format = $_POST['format'];
+			if ($post_format != 'standard')
+				set_post_format( $inserted_post_id, $post_format );
+		}
 
 	}
 }
@@ -83,13 +90,40 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 <?php if (is_user_logged_in()) : ?>
 
-<h1 class="entry-title section-title background-border-title"><span><?php _e( 'Choose type of the post you want to write', 'etuts' ); ?></span></h1>
+<h1 class="entry-title section-title background-border-title" style="margin-top: 30px;margin-bottom: 25px;"><span><?php _e( 'What do you want to write?', 'etuts' ); ?></span></h1>
 
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">
 		<div class="clearfix">
-			<input form="new-post-form" id="input_post_type-post" type="radio" name="wp_post_type" value="post"> <label id="post_type-post" class="section-title <?php echo ($tab_post_type == 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-			<input form="new-post-form" id="input_post_type-story" type="radio" name="wp_post_type" value="vmoh_user_stories"> <label id="post_type-story" class="section-title <?php echo($tab_post_type == 'vmoh_user_stories') ? 'post-type-tab-active' : '' ?>" for="input_post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-post" type="radio" name="wp_post_type" value="post">
+			<label id="post_type-post" class="section-title <?php echo ($tab_post_type == 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-story" type="radio" name="wp_post_type" value="vmoh_user_stories">
+			<label id="post_type-story" class="section-title <?php echo($tab_post_type == 'vmoh_user_stories') ? 'post-type-tab-active' : '' ?>" for="input_post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+		</div>
+	</div>
+
+
+	<?php //tabs: post format ?>
+	<div id="post-format-tabs" class="post-list-item">
+		<div class="clearfix">
+			<input form="new-post-form" id="input_post_format-standard" type="radio" name="wp_post_format" value="standard">
+			<label id="post_format-standard" class="<?php echo ($tab_post_format == 'standard') ? 'post-format-tab-active' : '' ?>" for="input_post_format-standard">
+				<h4 class="section-title"><?php _e( 'Standard tutorial', 'etuts' ); ?></h4>
+				<p><?php _e( 'Standard', 'etuts' ); ?></p>
+			</label>
+
+			<input form="new-post-form" id="input_post_format-aside" type="radio" name="wp_post_format" value="aside">
+			<label id="post_format-aside" class="<?php echo ($tab_post_format == 'aside') ? 'post-format-tab-active' : '' ?>" for="input_post_format-aside">
+				<h4 class="section-title"><?php _e( 'trick', 'etuts' ); ?></h4>
+				<p><?php _e( 'trick', 'etuts' ); ?></p>
+			</label>
+
+			<input form="new-post-form" id="input_post_format-status" type="radio" name="wp_post_format" value="status">
+			<label id="post_format-status" class="<?php echo ($tab_post_format == 'status') ? 'post-format-tab-active' : '' ?>" for="input_post_format-status">
+				<h4 class="section-title"><?php _e( 'introduction', 'etuts' ); ?></h4>
+				<p><?php _e( 'introduction', 'etuts' ); ?></p>
+			</label>
+
 		</div>
 	</div>
 

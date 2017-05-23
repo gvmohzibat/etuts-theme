@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
 } else {
 	$draft_post_id = 0;
 	$current_post = NULL;
-	$tab_post_type = 'post';
+	$tab_post_type = '';
 }
 
 $error_text = '';

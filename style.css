@@ -1554,6 +1554,7 @@ form#commentform input, form#commentform textarea {
 #post-type-tabs .post-type-tab-active {
     background: #d0ecc7;
     border-bottom-color: #48ad26;
+    color: #2b7310;
 }
 
 /* editor */

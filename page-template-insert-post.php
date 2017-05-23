@@ -106,7 +106,9 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 	<?php //radio buttons: post format ?>
 	<div id="post-format-radio" class="post-list-item" <?php echo ($tab_post_type == 'post') ? '' : 'style="display: none"' ?> >
-		<h1 class="entry-title section-title background-border-title" style="margin-top: 30px;margin-bottom: 25px;"><span><?php _e( 'Choose the type of the post you want to write:', 'etuts' ); ?></span></h1>
+		<h1 class="section-title page-widget-title" style="margin-top: 20px;margin-bottom: 25px;">
+			<span><?php _e( 'Choose the type of the post you want to write', 'etuts' ); ?></span>
+		</h1>
 		<div class="clearfix">
 			<div class="post-format-option">
 				<input form="new-post-form" id="input_post_format-standard" type="radio" name="wp_post_format" value="standard" <?php echo ($radio_post_format == 'standard') ? 'checked' : '' ?> >

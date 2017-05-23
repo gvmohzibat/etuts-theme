@@ -83,6 +83,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 <?php if (is_user_logged_in()) : ?>
 
+<h1 class="entry-title section-title background-border-title"><span><?php _e( 'Choose type of the post you want to write', 'etuts' ); ?></span></h1>
 
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">

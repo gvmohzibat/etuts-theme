@@ -87,8 +87,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	<?php //tabs: posts or articles ?>
 	<div id="post-type-tabs" class="post-list-item">
 		<div class="clearfix">
-			<input form="new-post-form" id="input_post_type-post" type="radio" name="wp_post_type" value="post" <?php echo ($tab_post_type == 'post') ? 'checked' : '' ?> > <label id="post_type-post" class="section-title <?php echo ($tab_post_type == 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
-			<input form="new-post-form" id="input_post_type-story" type="radio" name="wp_post_type" value="vmoh_user_stories" <?php echo($tab_post_type != 'post') ? 'checked' : '' ?> > <label id="post_type-story" class="section-title <?php echo($tab_post_type != 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-post" type="radio" name="wp_post_type" value="post"> <label id="post_type-post" class="section-title <?php echo ($tab_post_type == 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-post"><?php _e( 'Tutorial article', 'etuts' ); ?></label>
+			<input form="new-post-form" id="input_post_type-story" type="radio" name="wp_post_type" value="vmoh_user_stories"> <label id="post_type-story" class="section-title <?php echo($tab_post_type != 'post') ? 'post-type-tab-active' : '' ?>" for="input_post_type-story"><?php _e( 'Story', 'etuts' ); ?></label>
 		</div>
 	</div>
 

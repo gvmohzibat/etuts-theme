@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 	$draft_post_id = $_GET['id'];
 	$current_post = get_post($draft_post_id);
 	$tab_post_type = $current_post->post_type;
-	$radio_post_format = $current_post->post_format;
+	$radio_post_format = get_post_format($current_post) ? : 'standard';;
 } else {
 	$draft_post_id = 0;
 	$current_post = NULL;

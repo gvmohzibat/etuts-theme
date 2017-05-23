@@ -41,7 +41,6 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	    	$post_status = 'draft';
 
 	    // setting post type
-	    echo 'ok ' . $draft_id . ' ' . $_POST['wp_post_type'];
 	    if ($draft_id == 0) {
 	    	$post_type = $_POST['wp_post_type'];
 	    } else {
@@ -63,8 +62,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		));
 
 		// set post format
-		if (isset($_POST['format'])) {
-			$post_format = $_POST['format'];
+		if (isset($_POST['wp_post_format'])) {
+			$post_format = $_POST['wp_post_format'];
 			if ($post_format != 'standard')
 				set_post_format( $inserted_post_id, $post_format );
 		}

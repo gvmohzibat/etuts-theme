@@ -204,9 +204,11 @@ $(document).ready(function() {
 		if ($(this).attr('id') == 'post_type-post') {
 			$('#user-stories-list').hide();
 			$('#user-posts-list').show();
+			$('#post-format-radio').show();
 		} else if ($(this).attr('id') == 'post_type-story') {
 			$('#user-stories-list').show();
 			$('#user-posts-list').hide();
+			$('#post-format-radio').hide();
 		}
 	});
 });

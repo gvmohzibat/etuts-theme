@@ -105,25 +105,31 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 
 	<?php //radio buttons: post format ?>
-	<div id="post-format-radio" class="post-list-item">
+	<div id="post-format-radio" class="post-list-item" style="display: none">
 		<div class="clearfix">
-			<input form="new-post-form" id="input_post_format-standard" type="radio" name="wp_post_format" value="standard" <?php echo ($radio_post_format == 'standard') ? 'checked' : '' ?> >
-			<label id="post_format-standard" for="input_post_format-standard">
-				<h4 class="section-title"><?php _e( 'Standard tutorial', 'etuts' ); ?></h4>
-				<p><?php _e( 'Standard', 'etuts' ); ?></p>
-			</label>
+			<div class="post-format-option">
+				<input form="new-post-form" id="input_post_format-standard" type="radio" name="wp_post_format" value="standard" <?php echo ($radio_post_format == 'standard') ? 'checked' : '' ?> >
+				<label id="post_format-standard" for="input_post_format-standard">
+					<h4 class="section-title"><?php _e( 'Standard tutorial', 'etuts' ); ?></h4>
+					<p><?php _e( 'Standard', 'etuts' ); ?></p>
+				</label>
+			</div>
 
-			<input form="new-post-form" id="input_post_format-aside" type="radio" name="wp_post_format" value="aside" <?php echo ($radio_post_format == 'aside') ? 'checked' : '' ?> >
-			<label id="post_format-aside" for="input_post_format-aside">
-				<h4 class="section-title"><?php _e( 'trick', 'etuts' ); ?></h4>
-				<p><?php _e( 'trick', 'etuts' ); ?></p>
-			</label>
+			<div class="post-format-option">
+				<input form="new-post-form" id="input_post_format-aside" type="radio" name="wp_post_format" value="aside" <?php echo ($radio_post_format == 'aside') ? 'checked' : '' ?> >
+				<label id="post_format-aside" for="input_post_format-aside">
+					<h4 class="section-title"><?php _e( 'trick', 'etuts' ); ?></h4>
+					<p><?php _e( 'trick', 'etuts' ); ?></p>
+				</label>
+			</div>
 
-			<input form="new-post-form" id="input_post_format-status" type="radio" name="wp_post_format" value="status" <?php echo ($radio_post_format == 'status') ? 'checked' : '' ?> >
-			<label id="post_format-status" for="input_post_format-status">
-				<h4 class="section-title"><?php _e( 'introduction', 'etuts' ); ?></h4>
-				<p><?php _e( 'introduction', 'etuts' ); ?></p>
-			</label>
+			<div class="post-format-option">
+				<input form="new-post-form" id="input_post_format-status" type="radio" name="wp_post_format" value="status" <?php echo ($radio_post_format == 'status') ? 'checked' : '' ?> >
+				<label id="post_format-status" for="input_post_format-status">
+					<h4 class="section-title"><?php _e( 'introduction', 'etuts' ); ?></h4>
+					<p><?php _e( 'introduction', 'etuts' ); ?></p>
+				</label>
+			</div>
 
 		</div>
 	</div>

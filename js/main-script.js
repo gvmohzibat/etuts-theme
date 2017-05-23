@@ -200,7 +200,7 @@ $(document).ready(function() {
 	$('#post-type-tabs label').click(function() {
 		$('#post-type-tabs label.post-type-tab-active').toggleClass('post-type-tab-active');
 		$(this).toggleClass('post-type-tab-active');
-		console.log($(this).attr('id'));
+		$('#send-post-container').show();
 		if ($(this).attr('id') == 'post_type-post') {
 			$('#user-stories-list').hide();
 			$('#user-posts-list').show();

@@ -26,39 +26,42 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 	$content = $_POST['content'];
 
 	// is title or content empty?
-    if ( trim( $title ) === '' || trim($content) === '' ) {
-        $error_text = __('Please complete the fields.','etuts');
-        $hasError = true;
-    } else {
+	if ( trim( $title ) === '' || trim($content) === '' ) {
+		$error_text = __('Please complete the fields.','etuts');
+		$hasError = true;
+	} else {
 
-	    // if it's saved as draft, get draft id
-	    $draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
+		// if it's saved as draft, get draft id
+		$draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
 
-	    // setting post status
-	    if (isset($_POST['submit']))
-	    	$post_status = 'pending';
-	    else if (isset($_POST['save-draft']))
-	    	$post_status = 'draft';
+		// setting post status
+		if (isset($_POST['submit']))
+			$post_status = 'pending';
+		else if (isset($_POST['save-draft']))
+			$post_status = 'draft';
 
-	    // setting post type
-	    if ($draft_id == 0) {
-	    	$post_type = $_POST['wp_post_type'];
-	    } else {
-	    	$post_type = get_post($draft_id)->post_type;
-	    }
+		// setting post type
+		if ($draft_id == 0) {
+			if (isset($_POST['wp_post_type']))
+				$post_type = $_POST['wp_post_type'];
+			else
+				$post_type = 'post';
+		} else {
+			$post_type = get_post($draft_id)->post_type;
+		}
 
-	    // author
-	    if (isset($_POST['author']))
-	    	$author_id = $_POST['author'];
+		// author
+		if (isset($_POST['author']))
+			$author_id = $_POST['author'];
 
-	    // insert the post
+		// insert the post
 		$inserted_post_id = wp_insert_post(array(
 			'post_title' => wp_strip_all_tags( $title ),
-		    'post_content' => $content,
-		    'post_type' => $post_type,
-		    'post_status' => $post_status,
-		    'ID' => $draft_id,
-		    'post_author' => $author_id,
+			'post_content' => $content,
+			'post_type' => $post_type,
+			'post_status' => $post_status,
+			'ID' => $draft_id,
+			'post_author' => $author_id,
 		));
 
 		// set post format
@@ -68,7 +71,36 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 				set_post_format( $inserted_post_id, $post_format );
 		}
 
+
+		if (isset($_POST['wp_post_featured_image'])) {
+			$post_featured_image_link = $_POST['wp_post_featured_image'];
+			Generate_Featured_Image( $post_featured_image_link, $inserted_post_id );
+		}
+
 	}
+}
+
+
+function Generate_Featured_Image( $image_url, $post_id  ){
+	$upload_dir = wp_upload_dir();
+	$image_data = file_get_contents($image_url);
+	$filename = basename($image_url);
+	if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
+	else                                    $file = $upload_dir['basedir'] . '/' . $filename;
+	file_put_contents($file, $image_data);
+
+	$wp_filetype = wp_check_filetype($filename, null );
+	$attachment = array(
+		'post_mime_type' => $wp_filetype['type'],
+		'post_title' => sanitize_file_name($filename),
+		'post_content' => '',
+		'post_status' => 'inherit'
+	);
+	$attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+	require_once(ABSPATH . 'wp-admin/includes/image.php');
+	$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+	$res1= wp_update_attachment_metadata( $attach_id, $attach_data );
+	$res2= set_post_thumbnail( $post_id, $attach_id );
 }
 
 ?>
@@ -84,7 +116,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 
 	<?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', 'page' ); ?>
+		<?php get_template_part( 'content', 'page' ); ?>
 	<?php endwhile; ?>
 
 
@@ -168,7 +200,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			<h1 class="section-title"><?php _e('Draft posts','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_posts->have_posts()) : $user_posts->the_post(); ?>
-			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
+				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
 				<?php endwhile; ?>
 			</ul>
 		</div>
@@ -181,7 +213,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			<h1 class="section-title"><?php _e('Draft stories','etuts'); ?></h1>
 			<ul class="fa-ul">
 				<?php while ($user_stories->have_posts()) : $user_stories->the_post(); ?>
-			    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
+				<li><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <a href=".?id=<?php the_ID(); ?>"><?php the_title(); ?> <?php echo (get_post_status(get_the_ID()) == 'pending') ? '<span class="pending">('.__('pending','etuts').')</span>' : '<span class="draft">('.__('draft','etuts').')</span>'; ?></a></li>
 				<?php endwhile; ?>
 			</ul>
 		</div>
@@ -198,7 +230,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 				<div class="primary-meta-side-right">
 					<span class="meta_author"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $current_user->display_name; ?></span>
 					</div>
-		    	</div>
+				</div>
 			</div>
 			<input type="hidden" name="author" value="<?php echo $current_user->ID; ?>">
 			<input type="hidden" name="draft-id" value="<?php echo $draft_post_id; ?>">

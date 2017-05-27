@@ -74,8 +74,10 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 		if (isset($_POST['wp_post_featured_image'])) {
 			$post_featured_image_link = $_POST['wp_post_featured_image'];
-			Generate_Featured_Image( $post_featured_image_link, $inserted_post_id );
+			$featured_image_link = Generate_Featured_Image( $post_featured_image_link, $inserted_post_id );
 		}
+
+		header('featured_image_link: '.$featured_image_link);
 
 	}
 }
@@ -101,6 +103,7 @@ function Generate_Featured_Image( $image_url, $post_id  ){
 	$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
 	$res1= wp_update_attachment_metadata( $attach_id, $attach_data );
 	$res2= set_post_thumbnail( $post_id, $attach_id );
+	return str_replace('public_html/', '' ,str_replace('/var/www/', '', $file));
 }
 
 ?>

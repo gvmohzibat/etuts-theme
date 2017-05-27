@@ -35,8 +35,9 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		$draft_id = isset($_POST['draft-id']) ? $_POST['draft-id'] : 0;
 
 		// setting post status
-		if (isset($_POST['submit']))
-			$post_status = 'pending';
+		if (isset($_POST['submit'])) {
+			$post_status = ($_POST['status'] == 'publish') ? 'publish' : 'pending';
+		}
 		else if (isset($_POST['save-draft']))
 			$post_status = 'draft';
 

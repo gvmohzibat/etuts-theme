@@ -85,6 +85,10 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			wp_set_post_categories( $inserted_post_id, $_POST['category'] );
 		}
 
+		if (isset($_POST['other_params']['bot_id'])) {
+			update_post_meta( $inserted_post_id, 'bot_id', $_POST['other_params']['bot_id'] );
+		}
+
 	}
 }
 

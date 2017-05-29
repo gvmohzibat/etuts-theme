@@ -78,7 +78,12 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			$featured_image_link = Generate_Featured_Image( $post_featured_image_link, $inserted_post_id );
 		}
 
-		header('featured_image_link: '.$featured_image_link);
+		if ($_POST['client'] == 'tbot')
+			header('featured_image_link: '.$featured_image_link);
+
+		if (isset($_POST['category'])) {
+			wp_set_post_categories( $inserted_post_id, $_POST['category'] );
+		}
 
 	}
 }

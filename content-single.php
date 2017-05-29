@@ -55,6 +55,6 @@ $bot_id = get_post_meta( get_the_ID(), 'bot_id', true );
 if ( ! empty( $bot_id ) ) { ?>
     <div id="bot-id-link-section" class="post-list-item clearfix">
     	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
-    	<a class="tbot-link-button" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
+    	<a class="tbot-link-button" target="_blank" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
     </div>
 <?php } ?>

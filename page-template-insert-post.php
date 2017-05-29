@@ -89,6 +89,8 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			update_post_meta( $inserted_post_id, 'bot_id', $_POST['other_params']['bot_id'] );
 		}
 
+		on_new_post_published('publish', 'new', get_post($inserted_post_id));
+
 	}
 }
 

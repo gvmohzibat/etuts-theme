@@ -968,6 +968,35 @@ nav.pagination-bar div a.page-numbers:hover, .bbp-pagination-links a.page-number
 	text-shadow: 3px 3px rgba(68, 58, 17, 0.1);
 }
 
+/* bot id section */
+
+#bot-id-link-section h4 {
+	margin: 0;
+	float: right;
+}
+#bot-id-link-section a.tbot-link-button {
+	text-align: left;
+	display: inline-block;
+	background: #47adf0;
+	float: left;
+	color: #fff;
+	padding: 5px 20px;
+	border-bottom: 3px solid #2e8ac7;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(46, 138, 199, 0.3);
+	text-shadow: 0 2px #2e8ac7;
+}
+#bot-id-link-section a.tbot-link-button:active {
+	box-shadow: none;
+	border-bottom: none;
+	margin-top: 3px;
+}
+#bot-id-link-section {
+	border-right: 5px solid #47adf0;
+	border-left: 5px solid #47adf0;
+	background: #f4faff;
+}
+
 /* entry content */
 
 .entry-content a:hover {

@@ -36,7 +36,7 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 
 		// setting post status
 		if (isset($_POST['submit'])) {
-			$post_status = ($_POST['status'] == 'publish') ? 'publish' : 'pending';
+			$post_status = 'pending';
 		}
 		else if (isset($_POST['save-draft']))
 			$post_status = 'draft';
@@ -88,6 +88,9 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 		if (isset($_POST['other_params']['bot_id'])) {
 			update_post_meta( $inserted_post_id, 'bot_id', $_POST['other_params']['bot_id'] );
 		}
+
+		if ($_POST['status'] == 'publish')
+			wp_publish_post( $inserted_post_id );
 	}
 }
 

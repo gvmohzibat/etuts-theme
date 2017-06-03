@@ -6,6 +6,8 @@
  *
  */
 
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 // if user has chosen a draft post
 if (isset($_GET['id'])) {
 	$draft_post_id = $_GET['id'];
@@ -89,8 +91,11 @@ if ( isset( $_POST['submit'] ) || isset( $_POST['save-draft'] ) ) {
 			update_post_meta( $inserted_post_id, 'bot_id', $_POST['other_params']['bot_id'] );
 		}
 
-		if ($_POST['status'] == 'publish')
-			wp_publish_post( $inserted_post_id );
+		if ($_POST['status'] == 'publish') {
+			if (is_plugin_active( 'publish-to-schedule/publish-to-schedule.php' )) {
+				pts_do_publish_schedule(get_post($inserted_post_id));
+			}
+		}
 	}
 }
 

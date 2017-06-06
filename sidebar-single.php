@@ -3,7 +3,15 @@
         <?php if (has_post_thumbnail()) the_post_thumbnail('medium'); ?>
         <?php the_title( '<h3 class="entry-title section-title background-border-title"><span>', '</span></h3>' ); ?>
         <ul class="fa-ul">
-            <li class="meta_date"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> <?php echo get_the_date(); ?></li>
+            <li class="meta_date"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i> <?php
+                $modified_date = get_the_modified_date();
+                $published_date = get_the_date();
+                if ($modified_date == $published_date)
+                    echo $published_date;
+                else
+                    echo $published_date . ' ' . __('edited on', 'etuts') . ' ' . $modified_date;
+                ?></li>
+            <li class="meta_postviews"><i class="fa fa-eye fa-fw" aria-hidden="true"></i> <?php echo getPostViews(get_the_ID()); ?></li>
             <li class="meta_author"><i class="fa fa-user fa-fw" aria-hidden="true"></i><?php the_author_posts_link(); ?></li>
             <li class="meta_comments"><i class="fa fa-comments fa-fw" aria-hidden="true"></i> <a href="#comments" title="<?php _e('View Comments','etuts'); ?>"><?php echo comments_number(); ?></a></li>
             <li class="meta_categories"><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i><?php 

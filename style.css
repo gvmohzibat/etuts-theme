@@ -1030,6 +1030,7 @@ nav.pagination-bar div a.page-numbers:hover, .bbp-pagination-links a.page-number
 
 .entry-header {
 	margin-bottom: 40px;
+    margin-top: 20px;
 }
 .primary-postmetas {
 	position: relative;
@@ -1276,7 +1277,7 @@ div.mce-panel.fee-main-toolbar.fee-hide, div.mce-panel.fee-main-toolbar:hover {
 	position: absolute;
 	width: 100%;
 	background: #ddd;
-	top: 50%;
+	top: 40%;
 	box-shadow: inset -60px 0 #aaa;
 	border-radius: 3px;
 	margin-top: 2px;
@@ -1292,9 +1293,11 @@ div.mce-panel.fee-main-toolbar.fee-hide, div.mce-panel.fee-main-toolbar:hover {
 	position: relative;
 	padding: 0 15px;
 	transition: all .5s;
+	box-shadow: 10px 0 #f3f3ec, -10px 0 #f3f3ec;
 }
 #post-meta-info .post-featured-image .background-border-title span {
 	background: #fff;
+	box-shadow: 10px 0 #fff, -10px 0 #fff;
 }
 #post-meta-info .post-featured-image:hover .background-border-title:before {
 	box-shadow: inset -60px 0 #48ad26, inset -600px 0 #ccc;

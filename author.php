@@ -1,9 +1,13 @@
 <?php get_header(); ?>
+<?php
+$id = $author; // $author is set by wordpress
+$author = get_user_by( 'id', $id );
+?>
 
 <section id="main" class="clearfix">
 
-    <div id="rightPad">
-    			<!-- authors posts -->
+    <div id="rightPad">			
+<!-- authors posts -->
     <?php if (have_posts()) : ?>
     	<div id="lastPosts" class="user-page-section">
     		<div id="last-posts-container" class="clearfix">
@@ -18,13 +22,13 @@
         get_template_part('content', 'noresults');
     endif; ?>
 
-    <?php 
-    $author = get_user_by( 'slug', get_query_var( 'author_name' ) );
-        query_posts(array(
+<!-- authors stories -->
+    <?php // get user stories
+    query_posts([
         'post_type'=>array('vmoh_user_stories'),
-        'author' => $author->ID
-        )); ?>
-
+        'author' => $id,
+    ]);
+    ?>
     <?php if (have_posts()) : ?>
         <div id="lastStories" class="user-page-section">
             <div id="last-stories-container" class="clearfix">
@@ -41,6 +45,7 @@
 
     </div>
         
+
     <div id="leftPad">
         <div>
             <?php get_sidebar('user'); ?>

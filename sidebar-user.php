@@ -7,9 +7,9 @@ $description = $author->description;
 // var_dump($author);
  ?>
 <div id="post-meta-info">
-    <div class="post-featured-image">
-        <?php echo get_avatar( $email, '320' ); ?>
-        <h3 class="entry-title section-title background-border-title post-author-name-info"><span><?php echo $display_name; ?></span></h3>
+	<div class="post-featured-image">
+		<?php echo get_avatar( $email, '320' ); ?>
+		<h3 class="entry-title section-title background-border-title post-author-name-info"><span><?php echo $display_name; ?></span></h3>
 		<p class="post-author-description"><?php echo nl2br($description); ?></p>
 		<ul class="fa-ul">
 			<li><i class="fa fa-list-alt" aria-hidden="true"></i><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/topics'; ?>"><?php _e('topics','etuts'); ?></a></li>
@@ -19,14 +19,14 @@ $description = $author->description;
 				<li><i class="fa fa-pencil" aria-hidden="true"></i><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/edit'; ?>" title="<?php _e('Edit profile','etuts'); ?>"><?php _e('Edit profile','etuts'); ?></a></li>
 			<?php } ?>
 		</ul>
-    </div>
+	</div>
 </div>
 
 
 <?php if ( is_active_sidebar( 'sidebar_user' ) ) : ?>
-    <div id="user-sidebar">
-    	<ul id="sidebar">
-    	    <?php dynamic_sidebar( 'sidebar_user' ); ?>
-    	</ul>
-    </div>
+	<div id="user-sidebar">
+		<ul id="sidebar">
+			<?php dynamic_sidebar( 'sidebar_user' ); ?>
+		</ul>
+	</div>
 <?php endif; ?>

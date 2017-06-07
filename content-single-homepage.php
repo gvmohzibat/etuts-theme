@@ -1,22 +1,21 @@
 <a class="post-tumb-link" href="<?php echo get_the_permalink(); ?>">
 	<div <?php post_class('home-latest-posts post-list-item clearfix'); ?> id="post-<?php echo get_the_ID(); ?>">
 
-<?php if( current_user_can('administrator')) {
-	$post_format = get_post_format() ? : 'standard';
-	switch ($post_format) {
-		case 'standard':
-			$icon = 'fa-pencil';
-			break;
-		case 'aside':
-			$icon = 'fa-sticky-note';
-			break;
-		default:
-			$icon = $post_format;
-			break;
-	}
-	?>
-	<i class="post-format-icon <?php echo $post_format; ?> fa <?php echo $icon; ?> fa-fw" aria-hidden="true"></i>
-<?php } ?>
+<?php
+$post_format = get_post_format() ? : 'standard';
+switch ($post_format) {
+	case 'standard':
+		$icon = 'fa-pencil';
+		break;
+	case 'aside':
+		$icon = 'fa-sticky-note';
+		break;
+	default:
+		$icon = $post_format;
+		break;
+}
+?>
+<i class="post-format-icon <?php echo $post_format; ?> fa <?php echo $icon; ?> fa-fw" aria-hidden="true"></i>
 		
 			<h2 class="title"><?php echo get_the_title(); ?></h2>
 		<?php

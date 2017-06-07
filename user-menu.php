@@ -11,7 +11,7 @@
 		<div class="curruser-custom-links">
 			<ul id="menu-curruser-custom-links-before" class="menu">
 				<li class="menu-item"><a href="<?php echo get_author_posts_url( $curruser->ID ); ?>" title="<?php _e('View profile','etuts'); ?>"><?php _e('View profile','etuts'); ?></a></li>
-				<li class="menu-item"><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/edit'; ?>" title="<?php _e('Edit profile','etuts'); ?>"><?php _e('Edit profile','etuts'); ?></a></li>
+				<li class="menu-item"><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename', $curruser->ID) . '/edit'; ?>" title="<?php _e('Edit profile','etuts'); ?>"><?php _e('Edit profile','etuts'); ?></a></li>
 			</ul>
 		</div>
 		<?php wp_nav_menu( array( 'menu' => 'curruser-menu' ) ); ?>

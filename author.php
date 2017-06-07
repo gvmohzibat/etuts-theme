@@ -6,21 +6,24 @@ $author = get_user_by( 'id', $id );
 
 <section id="main" class="clearfix">
 
-	<div id="rightPad">			
+<div id="rightPad">			
 <!-- authors posts -->
-	<?php if (have_posts()) : ?>
-		<div id="lastPosts" class="user-page-section">
-			<div id="last-posts-container" class="clearfix">
-				<h1 class="section-title entry-title home-page-title"><?php _e('User\'s latest posts','etuts'); ?></h1>
-				<?php while (have_posts()) : the_post();
-					get_template_part('content', 'single-homepage');
-				endwhile; ?>
-			</div>
-			<?php get_template_part('page','navigation'); ?>
+	<div id="lastPosts" class="user-page-section">
+		<div id="last-posts-container" class="clearfix">
+			<h1 class="section-title entry-title home-page-title"><?php _e('User\'s latest posts','etuts'); ?></h1>
+			<?php if (have_posts()) : ?>
+	
+			<?php while (have_posts()) : the_post();
+				get_template_part('content', 'single-homepage');
+			endwhile; ?>
+			
+			<?php else :
+				get_template_part('content', 'noresults');
+			endif; ?>
 		</div>
-	<?php else :
-		get_template_part('content', 'noresults');
-	endif; ?>
+		<?php get_template_part('page','navigation'); ?>
+	</div>
+		
 
 <!-- authors stories -->
 	<?php // get user stories
@@ -29,20 +32,21 @@ $author = get_user_by( 'id', $id );
 		'author' => $id,
 	]);
 	?>
-	<?php if (have_posts()) : ?>
-		<div id="lastStories" class="user-page-section">
-			<div id="last-stories-container" class="clearfix">
-				<h1 class="section-title entry-title home-page-title"><?php _e('User Experiences','etuts'); ?></h1>
-				<?php while (have_posts()) : the_post();
-					get_template_part('content', 'story-homepage');
-				endwhile; ?>
-			</div>
+	<div id="lastStories" class="user-page-section">
+		<div id="last-stories-container" class="clearfix">
+			<h1 class="section-title entry-title home-page-title"><?php _e('User Experiences','etuts'); ?></h1>
+			<?php if (have_posts()) : ?>
+		
+			<?php while (have_posts()) : the_post();
+				get_template_part('content', 'story-homepage');
+			endwhile; ?>
+
+			<?php else :
+				get_template_part('content', 'noresults');
+			endif; ?>
+		</div>
 			<?php get_template_part('page','navigation'); ?>
 		</div>
-	<?php else :
-		get_template_part('content', 'noresults');
-	endif; ?>
-
 	</div>
 		
 

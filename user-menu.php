@@ -35,10 +35,8 @@
 <form id="popup-login-form" action="login" method="post">
     <h1><?php _e('Login','etuts'); ?><a class="close-login-form" href=""><i class="fa fa-times" aria-hidden="true"></i></a></h1>
     <p class="status"></p>
-    <label for="user_login"><?php _e('Username','etuts'); ?></label>
-    <input id="user_login" type="text" name="user_login">
-    <label for="user_pass"><?php _e('Password','etuts'); ?></label>
-    <input id="user_pass" type="password" name="user_pass">
+    <input id="user_login" type="text" name="user_login" placeholder="<?php _e('Username','etuts'); ?>">
+    <input id="user_pass" type="password" name="user_pass" placeholder="<?php _e('Password','etuts'); ?>">
     <a class="lost-password" href="<?php echo wp_lostpassword_url(); ?>"><?php _e('Lost your password?','etuts'); ?></a>
     <?php do_action( 'login_form' ); ?>
     <a href="<?php echo wp_registration_url() ?>" title="<?php _e('register','etuts'); ?>" class="wp-submit" style="background: #aaa; color: #fff;"><?php _e('register','etuts'); ?></a> 

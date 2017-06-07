@@ -363,7 +363,7 @@ form#popup-login-form input#user_login:focus, form#popup-login-form input#user_p
 	border-color: #2f8811;
 }
 form#popup-login-form a {
-    color: #aaa;
+	color: #aaa;
 }
 form#popup-login-form a:hover {
 	color: #555;
@@ -382,20 +382,7 @@ form#popup-login-form .wp-submit {
 	margin: 10px 1%;
 }
 form#popup-login-form p {
-    margin-bottom: 0;
-}
-.galogin a {
-	/* google apps login plugin */
-	background: #F44336 !important;
-	color: #fff !important;
-	padding: 9px 20px;
-	margin: 25px 0 5px;
-	display: block;
-	border-radius: 4px;
-	box-shadow: 0 5px 5px -4px rgba(0, 0, 0, 0.4);
-	border-bottom: 2px solid #C62828;
-	text-shadow: 0 2px #C62828 !important;
-	font-weight: bold;
+	margin-bottom: 0;
 }
 
 /* user menu */
@@ -1036,7 +1023,7 @@ nav.pagination-bar div a.page-numbers:hover, .bbp-pagination-links a.page-number
 
 .entry-header {
 	margin-bottom: 40px;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 .primary-postmetas {
 	position: relative;

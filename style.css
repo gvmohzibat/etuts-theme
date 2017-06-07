@@ -2164,7 +2164,7 @@ h1.home-page-title, .home-page-title h1 {
 	border-left: 0;
 	margin-left: 0;
 }
-.home-latest-posts.post-list-item img {
+.home-latest-posts.post-list-item > img.size-homepage-thumb {
 	margin: 5px 0 15px 24px;
 	float: right;
 }

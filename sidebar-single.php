@@ -16,15 +16,19 @@
             <li class="meta_comments"><i class="fa fa-comments fa-fw" aria-hidden="true"></i> <a href="#comments" title="<?php _e('View Comments','etuts'); ?>"><?php echo comments_number(); ?></a></li>
             <li class="meta_categories"><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i><?php 
                 $cats=get_the_category();
-                $cid=array();
-                foreach($cats as $cat)  { $cid[]=$cat->cat_ID; }
-                $cid=implode(',', $cid);
+                $top_cat = $cats[0];
+                foreach($cats as $i => $cat)
+                    if ($cat->parent == 0) {
+                        $top_cat = $cat;
+                        unset($cats[$i]);
+                        break;
+                    }
+                array_unshift($cats, $top_cat);
+                
                 $separator = ' - ';
-                $output = '';
-                $categories = get_categories('orderby=id&include='.$cid);
-                if (! empty($categories)) {
-                    foreach( $categories as $category ) {
-                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'etuts' ), $category->name ) ) . '">' . get_category_icon( $category->slug ) . ' ' .esc_html( $category->name ) . '</a>' . $separator;
+                if (! empty($cats)) {
+                    foreach( $cats as $cat ) {
+                        $output .= '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'etuts' ), $cat->name ) ) . '">' . get_category_icon( $cat->slug ) . ' ' .esc_html( $cat->name ) . '</a>' . $separator;
                     }
                 }
                 echo trim( $output, $separator );

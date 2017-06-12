@@ -135,21 +135,10 @@ body.login div#login form#loginform p.forgetmenot label {
     font-size: 16px;
 }
 
-/* google apps login plugin */
+/* Social login plugin */
 
-form#loginform p.galogin {
-    background: #F44336 !important;
-    color: #fff !important;
-    padding: 9px 20px;
-    margin: 25px 0;
-    display: block;
-    border-radius: 4px;
-    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, 0.4);
-    border-bottom: 2px solid #C62828;
-    text-shadow: 0 2px #C62828 !important;
-    font-weight: bold;
-}
-form#loginform p.galogin a {
-    text-decoration: none;
-    color: #fff !important;
+body.login div#login form#loginform a.wp-social-login-provider-google:before {
+    content: "\f462";
+    font-family: dashicons;
+    font-size: 29px;
 }

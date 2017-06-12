@@ -11,9 +11,7 @@
             </div>
             <?php get_template_part('page','navigation'); ?>
         </div>
-    <?php else :
-        get_template_part('content', 'noresults');
-    endif; ?>
+    <?php endif; ?>
 
     <div class="home-page-intro home-page-section clearfix" id="home-page-forums">
         <i class="fa fa-question home-page-intro-icon" aria-hidden="true"></i>
@@ -92,9 +90,7 @@
             </div>
             <?php get_template_part('page','navigation'); ?>
         </div>
-    <?php else :
-        get_template_part('content', 'noresults');
-    endif; ?>
+    <?php endif; ?>
 
 </section>
 <?php get_footer(); ?>

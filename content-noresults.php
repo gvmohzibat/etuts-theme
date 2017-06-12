@@ -6,5 +6,5 @@
 
 <div class="post-list-item">
 	<?php _e( 'No results', 'etuts' ); ?>
-</div
+</div>
 

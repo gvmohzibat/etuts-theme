@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
-"POT-Creation-Date: 2017-06-12 20:34+0430\n"
-"PO-Revision-Date: 2017-06-12 20:34+0430\n"
+"POT-Creation-Date: 2017-06-13 02:42+0430\n"
+"PO-Revision-Date: 2017-06-13 02:42+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -219,11 +219,11 @@ msgstr "آموزشی"
 
 #: page-template-insert-post.php:175 page-template-insert-post.php:176
 msgid "trick"
-msgstr ""
+msgstr "ترفند"
 
 #: page-template-insert-post.php:183 page-template-insert-post.php:184
 msgid "introduction"
-msgstr ""
+msgstr "معرفی ابزار"
 
 #: page-template-insert-post.php:209
 msgid "New post"

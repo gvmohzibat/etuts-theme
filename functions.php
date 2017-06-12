@@ -99,7 +99,6 @@ function after_theme_setup_registers() {
 // enqueue styles and scripts
 function theme_enqueue_styles() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	// wp_enqueue_style( 'font-awesome.min', get_template_directory_uri() . '/fonts/fontawesome/css/font-awesome.min.css', false, array(), false, true );
 	wp_enqueue_style( 'font-awesome.min', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main-script.js', array( 'jquery' ), false, true );
 	// wp_enqueue_script( 'progressbar', get_template_directory_uri() . '/js/progressbar.js', array( 'jquery' ), false, true );

@@ -73,21 +73,21 @@ $(document).ready(function() {
 	}
 
 	function leftPadCmtPrep() {
-		if (!window.matchMedia("(max-width: 992px)").matches && $("#respond").length) {
+		if (!window.matchMedia("(max-width: 992px)").matches && $("#respond-topic-tabs").length) {
 			var x, flag = false;
-			if (($(window).scrollTop() + $(window).height()) > $("#respond").offset().top + $("#respond").outerHeight(true) + 10) {
-				x = ($(window).scrollTop() + $(window).height()) - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond").outerHeight(true) + 10);
+			if (($(window).scrollTop() + $(window).height()) > $("#respond-topic-tabs").offset().top + $("#respond-topic-tabs").outerHeight(true) + 10) {
+				x = ($(window).scrollTop() + $(window).height()) - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight(true) + 10);
 				flag = true;
 			}
-			if ($(window).scrollTop() + $("#topMenu").outerHeight() + 40 < $("#respond").offset().top) {
+			if ($(window).scrollTop() + $("#topMenu").outerHeight() + 40 < $("#respond-topic-tabs").offset().top) {
 				x = $(window).scrollTop() + $("#topMenu").outerHeight() + 40 - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true));
 				flag = true;
 			}
-			if ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + x + $("#respond").outerHeight() > $("#comments-section").outerHeight(false))
-				x = $("#comments-section").outerHeight(false) - ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond").outerHeight());
+			if ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + x + $("#respond-topic-tabs").outerHeight() > $("#comments-section").outerHeight(false))
+				x = $("#comments-section").outerHeight(false) - ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight());
 			x = x > 0 ? x : 0;
 			if (flag)
-				$("#respond").css("top", x);
+				$("#respond-topic-tabs").css("top", x);
 		}
 	}
 	leftPadPrep();

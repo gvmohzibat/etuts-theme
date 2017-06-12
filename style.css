@@ -785,7 +785,7 @@ div#background-image img {
 	color: #000;
 	background: #c7c7c7;
 }
-.post-list-item, ol.commentlist li.comment article, #comments-section #respond {
+.post-list-item, ol.commentlist li.comment article {
 	background: #fff;
 	padding: 25px;
 	margin: 10px 10px;
@@ -1341,17 +1341,10 @@ div.mce-panel.fee-main-toolbar.fee-hide, div.mce-panel.fee-main-toolbar:hover {
 
 /* comments section */
 
-#comments-section #respond, #comments-section .commentlist {
+#comments-section #respond-topic-tabs, #comments-section .commentlist {
 	float: right;
 	position: relative;
 	/* box-sizing: content-box; */
-}
-#comments-section #respond {
-	width: 30%;
-	transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
-}
-#comments-section #respond form#commentform p label {
-	display: none;
 }
 h3#comments {
 	font-size: 20px;
@@ -1475,14 +1468,17 @@ ol.commentlist ul.children li.comment.parent > article {
 
 /* comment respond section */
 
-#comments-section #respond {
+#comments-section #respond-topic-tabs {
+	width: 30%;
+	transition: all 0.4s cubic-bezier(0.4, 0, 1, 1);
 	text-align: center;
 	margin: 0 auto;
-	border-top: 3px solid #48ad26;
-	width: 30%;
 	float: none;
 }
-#comments-section.has-comments #respond, h3#comments ~ div#respond {
+#comments-section #respond form#commentform p label {
+	display: none;
+}
+#comments-section.has-comments #respond-topic-tabs, h3#comments ~ #respond-topic-tabs {
 	float: left;
 }
 form#commentform input, form#commentform textarea {
@@ -2448,12 +2444,12 @@ a.vmoh-banners:nth-child(even):hover:before {
 		line-height: initial;
 		height: initial;
 	}
-	#comments-section #respond, #comments-section .commentlist {
+	#comments-section #respond-topic-tabs, #comments-section .commentlist {
 		width: initial;
 		float: none;
 		margin: 40px 0;
 	}
-	#respond {
+	#respond-topic-tabs {
 		width: initial;
 		float: none;
 	}
@@ -2465,7 +2461,7 @@ a.vmoh-banners:nth-child(even):hover:before {
 	#leftMenu.active div.left-sidebar-container {
 		width: 100%;
 	}
-	#rightPad, #leftPad, #comments-section #respond {
+	#rightPad, #leftPad, #comments-section #respond-topic-tabs {
 		width: 100%;
 		float: none;
 		margin-right: 0 !important;
@@ -2555,7 +2551,7 @@ a.vmoh-banners:nth-child(even):hover:before {
 	#main {
 		padding: 20px 5px 40px;
 	}
-	.post-list-item, ol.commentlist li.comment article, #comments-section #respond {
+	.post-list-item, ol.commentlist li.comment article, #comments-section #respond-topic-tabs {
 		padding-right: 20px;
 		padding-left: 20px;
 		margin-right: 7px;
@@ -2606,7 +2602,7 @@ a.vmoh-banners:nth-child(even):hover:before {
 	}
 }
 @media print {
-	#topMenu, #leftMenu, #respond, #leftPad {
+	#topMenu, #leftMenu, #respond-topic-tabs, #leftPad {
 		display: none !important;
 		visibility: hidden;
 		opacity: 0;

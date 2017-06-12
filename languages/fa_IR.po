@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
-"POT-Creation-Date: 2017-06-07 23:43+0430\n"
-"PO-Revision-Date: 2017-06-07 23:44+0430\n"
+"POT-Creation-Date: 2017-06-12 20:31+0430\n"
+"PO-Revision-Date: 2017-06-12 20:31+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: woocommerce\n"
 "X-Poedit-SearchPathExcluded-1: bbpress\n"
 
-#: author.php:14
+#: author.php:13
 msgid "User's latest posts"
 msgstr "آخرین مطالب کاربر"
 
-#: author.php:35 home.php:88
+#: author.php:37 home.php:86
 msgid "User Experiences"
 msgstr "تجربه های کاربر"
 
@@ -114,23 +114,23 @@ msgstr "منوی راست"
 msgid "Curruser Menu"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:115
 msgid "Stories"
 msgstr "استوری ها"
 
-#: functions.php:117 page-template-insert-post.php:153
+#: functions.php:116 page-template-insert-post.php:153
 msgid "Story"
 msgstr "استوری"
 
-#: functions.php:335
+#: functions.php:334
 msgid "Sending user info, please wait..."
 msgstr "لطفا صبر کنید..."
 
-#: functions.php:357
+#: functions.php:356
 msgid "Wrong username or password."
 msgstr "نام کاربری یا رمزعبور شما غلط است."
 
-#: functions.php:359
+#: functions.php:358
 msgid "Login successful, reloading..."
 msgstr "وارد شدید! لود صفحه..."
 
@@ -143,24 +143,24 @@ msgstr "نمایش تمام مطالب در %s"
 msgid "Latest Posts"
 msgstr "آخرین مطالب"
 
-#: home.php:36
+#: home.php:34
 msgid "Ask your questions in our forums"
 msgstr "سوالات خود را در انجمن های ما بپرسید"
 
-#: home.php:38
+#: home.php:36
 #, php-format
 msgid "<span>%d</span> Solved topics until now!"
 msgstr "تاکنون به <span>%d</span> سوال پاسخ داده شده!"
 
-#: home.php:53
+#: home.php:51
 msgid "Latest topics"
 msgstr "آخرین تاپیکها"
 
-#: home.php:75
+#: home.php:73
 msgid "Latest products of our shop"
 msgstr "آخرین محصولات آموزشی فروشگاه"
 
-#: home.php:77
+#: home.php:75
 #, php-format
 msgid "We have <span>%d</span> products in our shop!"
 msgstr "تاکنون <span>%d</span> محصول در فروشگاه منتشر شده!"
@@ -350,9 +350,9 @@ msgstr "مشاهده ی پروفایل"
 msgid "logout"
 msgstr "خروج"
 
-#: user-menu.php:27 user-menu.php:43
-msgid "login"
-msgstr "ورود"
+#: user-menu.php:27
+msgid "login/register"
+msgstr "ورود/عضویت"
 
 #: user-menu.php:28 user-menu.php:42
 msgid "register"
@@ -373,6 +373,10 @@ msgstr "رمز عبور"
 #: user-menu.php:40
 msgid "Lost your password?"
 msgstr "رمز عبورتان را فراموش کردید؟"
+
+#: user-menu.php:43
+msgid "login"
+msgstr "ورود"
 
 #~ msgid "Comments RSS"
 #~ msgstr "فید کامنت ها"

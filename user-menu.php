@@ -24,7 +24,7 @@
 		</div>
 	</div>
 <?php else: ?>
-	<a id="show_login_form" href="" title="<?php _e('login/register','etuts'); ?>"><?php _e('login/register','etuts'); ?></a>
+	<a id="show_login_form" href="" title="<?php _e('login / register','etuts'); ?>"><?php _e('login / register','etuts'); ?></a>
 	<!--<a href="<?php echo wp_registration_url() ?>" title="<?php _e('register','etuts'); ?>"><?php _e('register','etuts'); ?></a> -->
 	<?php 
 		// ajax popup login form

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
-"POT-Creation-Date: 2017-06-12 20:31+0430\n"
-"PO-Revision-Date: 2017-06-12 20:31+0430\n"
+"POT-Creation-Date: 2017-06-12 20:34+0430\n"
+"PO-Revision-Date: 2017-06-12 20:34+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -351,8 +351,8 @@ msgid "logout"
 msgstr "خروج"
 
 #: user-menu.php:27
-msgid "login/register"
-msgstr "ورود/عضویت"
+msgid "login / register"
+msgstr "ورود / عضویت"
 
 #: user-menu.php:28 user-menu.php:42
 msgid "register"
@@ -377,6 +377,9 @@ msgstr "رمز عبورتان را فراموش کردید؟"
 #: user-menu.php:43
 msgid "login"
 msgstr "ورود"
+
+#~ msgid "login/register"
+#~ msgstr "ورود/عضویت"
 
 #~ msgid "Comments RSS"
 #~ msgstr "فید کامنت ها"

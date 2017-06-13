@@ -79,7 +79,7 @@
 
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 
-					<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
+					<?php bbp_the_content( array( 'context' => 'topic' , 'tinymce' => true, 'quicktags' => false ) ); ?>
 
 					<?php do_action( 'bbp_theme_after_topic_form_content' ); ?>
 

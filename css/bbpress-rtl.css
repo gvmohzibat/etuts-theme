@@ -227,6 +227,12 @@ fieldset div.avatar {
 }
 #bbpress-forums #bbp-user-body {}
 
+/* vahid styles */
+
+.wp-editor-tabs {
+	float: right;
+}
+
 /*--------------------------------------------------------------
  Media Queries
 --------------------------------------------------------------*/

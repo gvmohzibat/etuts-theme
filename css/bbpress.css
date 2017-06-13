@@ -616,7 +616,7 @@ td.bbp-topic-admin-links, td.bbp-topic-counts {
 #bbpress-forums fieldset.bbp-form, #bbpress-forums fieldset.submit {
 	border: 1px solid #eee;
 	padding: 10px 20px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	box-shadow: 0 0 30px -16px #000;
 }
 #bbpress-forums fieldset.bbp-form legend, #bbpress-forums fieldset.submit legend {

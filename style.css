@@ -159,6 +159,20 @@ ul.menu {
 .menu-item-has-children:hover ul.sub-menu {
 	display: block;
 }
+li.menu-item.pay-attention {
+	animation: blink-opacity 2.4s infinite alternate-reverse;
+}
+li.menu-item.pay-attention:hover {
+	animation: none;
+}
+@keyframes blink-opacity {
+	5% {
+		opacity: 1
+	}
+	40% {
+		opacity: 0;
+	}
+}
 
 /* top menu */
 
@@ -2257,7 +2271,9 @@ ul#footer-widgets {
 	padding: 26px;
 	float: right;
 }
+
 /* extra footer */
+
 #extra-footer {
 	background: #444342;
 	padding: 25px 35px 20px;
@@ -2285,7 +2301,7 @@ ul#footer-widgets {
 	color: #bbb;
 }
 #footer-links li i.fa {
-    margin-left: 5px;
+	margin-left: 5px;
 }
 #extra-footer a:hover {
 	color: #fff;

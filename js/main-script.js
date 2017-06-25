@@ -96,23 +96,26 @@ $(document).ready(function() {
 		leftPadPrep();
 		leftPadCmtPrep();
 	});
+	// table of contents
 	(function makeTable() {
-		$(".entry-content h1").each(function() {
+		// add level of headings to the headings
+		$(".entry-content h1").not('.symple-toggle-trigger').each(function() {
 			$(this).data("h_level", 1);
 		});
-		$(".entry-content h2").each(function() {
+		$(".entry-content h2").not('.symple-toggle-trigger').each(function() {
 			$(this).data("h_level", 2);
 		});
-		$(".entry-content h3").each(function() {
+		$(".entry-content h3").not('.symple-toggle-trigger').each(function() {
 			$(this).data("h_level", 3);
 		});
-		$(".entry-content h4").each(function() {
+		$(".entry-content h4").not('.symple-toggle-trigger').each(function() {
 			$(this).data("h_level", 4);
 		});
 		i = 0;
 		cnt_tbl = "";
 		last_level = 0;
-		$heading_elems = $(".entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4");
+		// get all headings
+		$heading_elems = $(".entry-content h1:not(.symple-toggle-trigger), .entry-content h2:not(.symple-toggle-trigger), .entry-content h3:not(.symple-toggle-trigger), .entry-content h4:not(.symple-toggle-trigger)");
 		if ($heading_elems.length === 0)
 			$('#table-of-contents').remove()
 		else {

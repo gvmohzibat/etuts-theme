@@ -96,6 +96,8 @@ $(document).ready(function() {
 		leftPadPrep();
 		leftPadCmtPrep();
 	});
+
+
 	// table of contents
 	(function makeTable() {
 		// add level of headings to the headings
@@ -165,6 +167,9 @@ $(document).ready(function() {
 			$(this).fadeOut();
 		})
 	})();
+
+	
+	// ajaxify comments submit button
 	(function ajaxify_comments() {
 		// Get the comment form
 		var commentform = $('#commentform');

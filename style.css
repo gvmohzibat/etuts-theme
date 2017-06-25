@@ -318,12 +318,20 @@ form#popup-login-form a.close-login-form {
 form#popup-login-form a.close-login-form:hover {
 	color: #888;
 }
-form#popup-login-form p.status, div#comment-status {
-	display: none;
+form#popup-login-form p.status, #comment-status {
 	background: #eee;
 	box-shadow: inset 0 2px #ddd, inset 0 1px 10px -2px #ddd;
 	padding: 10px;
 	border-radius: 4px;
+}
+form#popup-login-form p.status {
+	display: none;
+}
+#comment-status {
+	margin-bottom: 15px;
+}
+#comment-status p {
+	margin: 0;
 }
 form#popup-login-form.show-login-form {
 	display: block;

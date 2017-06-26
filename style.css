@@ -1417,8 +1417,11 @@ ol.commentlist ul.children footer.comment-meta, ol.commentlist ul.children .comm
 	margin-bottom: 0;
 }
 ol.commentlist ul.children .reply {
-	float: left;
-	clear: none;
+    float: left;
+    clear: none;
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
 }
 ol.commentlist ul.children li.comment article:after {
 	visibility: hidden;
@@ -1446,6 +1449,7 @@ ol.commentlist ul.children li.comment article {
 	border-radius: 0 0 20px 10px;
 	background: rgba(0, 0, 0, 0.08);
 	margin-bottom: 4px;
+	position: relative;
 }
 ol.commentlist ul.children li.comment.bypostauthor > article {
 	border-top: 2px solid #48ad26;

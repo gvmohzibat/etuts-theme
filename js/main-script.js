@@ -174,7 +174,7 @@ $(document).ready(function() {
 		// Get the comment form
 		var commentform = $('#commentform');
 		// Add a Comment Status message
-		commentform.prepend('<div id="comment-status" ></div>');
+		commentform.prepend('<div id="comment-status" class="post-list-item inside-block"></div>');
 		// Defining the Status message element 
 		var statusdiv = $('#comment-status');
 		commentform.submit(function() {

@@ -32,7 +32,7 @@
 <?php endif; ?>
 </div>
 <?php if (!is_user_logged_in()) { ?>
-<form id="popup-login-form" action="login" method="post">
+<form id="popup-login-form" action="login" method="post" class="post-list-item inside-block">
     <h1><?php _e('Login','etuts'); ?><a class="close-login-form" href=""><i class="fa fa-times" aria-hidden="true"></i></a></h1>
     <p class="status"></p>
     <input id="user_login" type="text" name="user_login" placeholder="<?php _e('Username','etuts'); ?>">

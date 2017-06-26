@@ -9,7 +9,15 @@
 	<header class="entry-header clearfix">
 
 		<?php the_title( '<h1 class="entry-title section-title">', '</h1>' ); ?>
-
+		<?php 
+		$post_modified_date = date('Y-m-d', strtotime(get_the_modified_date('Y-m-d'))) . "\n";
+		$new_site_date = date('Y-m-d', strtotime('1 January 2017')) . "\n";
+		
+		if ($new_site_date > $post_modified_date) { ?>
+			<div class="post-list-item inside-block yellow-box">
+				<p>این مطلب از سایت قدیمی منتقل شده و ممکن است اشکالات زیادی دشته باشد. لطفا در صورت مشاهده ی هر گونه ایراد، گزارش دهید</p>
+			</div>
+		<?php } ?>
 		<!-- <div class="primary-postmetas">
 			<div class="primary-meta-side-right">
 				<span class="meta_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo get_the_modified_date(); ?></span>

@@ -173,11 +173,11 @@ $(document).ready(function() {
 	(function ajaxify_comments() {
 		// Get the comment form
 		var commentform = $('#commentform');
-		// Add a Comment Status message
-		commentform.prepend('<div id="comment-status" class="post-list-item inside-block"></div>');
-		// Defining the Status message element 
-		var statusdiv = $('#comment-status');
 		commentform.submit(function() {
+			// Add a Comment Status message
+			commentform.prepend('<div id="comment-status" class="post-list-item inside-block"></div>');
+			// Defining the Status message element 
+			var statusdiv = $('#comment-status');
 			// Serialize and store form data
 			var formdata = commentform.serialize();
 			//Add a status message

@@ -87,7 +87,7 @@ function after_theme_setup_registers() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'bbpress' );
-	add_theme_support( 'post-formats', array( 'aside' , 'status' ));
+	add_theme_support( 'post-formats', array( 'aside' ));
 	add_theme_support( 'custom-header', array(
 		'flex-width'    => true,
 		'width'         => 980,
@@ -233,7 +233,7 @@ function execute_php($html){
 }
 // ************ edit roles and capablities ********
 // contributors
-if ( current_user_can('contributor') && !current_user_can('upload_files') )
+if ( current_user_can('contributor') )
 	add_action('admin_init', 'allow_contributor_uploads');
 function allow_contributor_uploads() {
 	$contributor = get_role('contributor');
@@ -322,7 +322,6 @@ function wpse_62742_comment_placeholders( $fields )
 		'<input placeholder="سایت شما (دلخواه)" id="url" name="url"',
 		$fields['url']
 	);
-	$fields['comment_notes_after'] = '<div class="message-note">لطفا اگر سوالی خارج از موضوع این مطلب دارید آن را در <a href="'.network_site_url().'ask/" target="_blank" title="سوالتان را از ما بپرسید">فروم</a> مطرح کنید.</div>';
 
 	return $fields;
 }

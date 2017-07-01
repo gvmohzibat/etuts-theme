@@ -376,3 +376,6 @@ function rename_post_formats($translation, $text, $context, $domain) {
 	return $translation;
 }
 add_filter('gettext_with_context', 'rename_post_formats', 10, 4);
+
+// disable automatic paragraphs in WordPress editor
+remove_filter('the_content', 'wpautop');

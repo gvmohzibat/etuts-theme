@@ -13,6 +13,8 @@
         
     <?php get_template_part('page','leftPad'); ?>
 
+    <div class="clearfix"></div>
+
     <?php if (is_page()) { ?>
     <?php get_template_part( 'content', 'comments' ); ?>
     <?php } ?>

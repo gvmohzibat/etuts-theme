@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
 "POT-Creation-Date: 2017-06-13 02:42+0430\n"
-"PO-Revision-Date: 2017-06-13 02:42+0430\n"
+"PO-Revision-Date: 2017-07-01 09:50+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -167,7 +167,7 @@ msgstr "تاکنون <span>%d</span> محصول در فروشگاه منتشر �
 
 #: page-template-contact.php:25
 msgid "Please fill in all required fields!"
-msgstr ""
+msgstr "لطفا تمام فیلدهای ضروری را پر کنید"
 
 #: page-template-contact.php:28
 msgid "Invalid email!"
@@ -175,7 +175,7 @@ msgstr "ایمیل نامعتبر"
 
 #: page-template-contact.php:36
 msgid "Thanks for contacting us."
-msgstr ""
+msgstr "ممنون بابت پیام شما."
 
 #: page-template-contact.php:57
 msgid "Name"
@@ -199,7 +199,7 @@ msgstr "لطفا فیلدها را کامل کنید"
 
 #: page-template-insert-post.php:145
 msgid "What do you want to write?"
-msgstr ""
+msgstr "چه مطلبی می خواهید بنویسید؟"
 
 #: page-template-insert-post.php:151
 msgid "Tutorial article"
@@ -207,11 +207,11 @@ msgstr "مطلب آموزشی"
 
 #: page-template-insert-post.php:161
 msgid "Choose the type of the post you want to write"
-msgstr ""
+msgstr "لطفا نوع آموزشی که می خواهید بنویسید را انتخاب کنید"
 
 #: page-template-insert-post.php:167
 msgid "Standard tutorial"
-msgstr ""
+msgstr "آموزش"
 
 #: page-template-insert-post.php:168
 msgid "Standard"

@@ -162,6 +162,12 @@ ul.menu {
 li.menu-item.pay-attention {
 	animation: blink-opacity 2.4s infinite alternate-reverse;
 }
+li.menu-item.pay-attention.red-text a {
+	color: red !important;
+}
+li.menu-item.pay-attention.blue-text a {
+	color: #1976D2 !important;
+}
 li.menu-item.pay-attention:hover {
 	animation: none;
 }
@@ -1417,11 +1423,11 @@ ol.commentlist ul.children footer.comment-meta, ol.commentlist ul.children .comm
 	margin-bottom: 0;
 }
 ol.commentlist ul.children .reply {
-    float: left;
-    clear: none;
-    position: absolute;
-    bottom: 10px;
-    left: 12px;
+	float: left;
+	clear: none;
+	position: absolute;
+	bottom: 10px;
+	left: 12px;
 }
 ol.commentlist ul.children li.comment article:after {
 	visibility: hidden;

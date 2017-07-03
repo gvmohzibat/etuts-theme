@@ -379,3 +379,8 @@ add_filter('gettext_with_context', 'rename_post_formats', 10, 4);
 
 // disable automatic paragraphs in WordPress editor
 remove_filter('the_content', 'wpautop');
+
+
+function get_user_edit_profile_link($id) {
+	return get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename', $id) . '/edit';
+}

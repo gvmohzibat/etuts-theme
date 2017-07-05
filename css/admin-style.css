@@ -1,6 +1,44 @@
 .has-dfw div.mce-toolbar-grp .mce-toolbar.mce-first {
-    padding-right: 0;
+	padding-right: 0;
 }
 .mce-toolbar .mce-btn-group .mce-btn.mce-wp-dfw, .qt-dfw {
-    right: initial;
+	right: initial;
+}
+
+/* ----------------- DASHBOARD WIDGETS ---------------------- */
+
+#dashboard-widgets-wrap .postbox {
+	box-shadow: 0 8px 15px -8px rgba(0, 0, 0, 0.2), 0 1px 25px rgba(0, 0, 0, 0.1);
+	border: none;
+	border-radius: 4px;
+}
+#dashboard-widgets-wrap .metabox-holder .postbox>h3, #dashboard-widgets-wrap .metabox-holder .stuffbox>h3, #dashboard-widgets-wrap .metabox-holder h2.hndle, #dashboard-widgets-wrap .metabox-holder h3.hndle {
+	padding: 14px 18px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+#dashboard-widgets-wrap.postbox .inside {
+	padding: 0 18px 18px;
+	margin: 18px 0;
+	border-radius: 0 0 4px 4px;
+}
+#dashboard-widgets-wrap .postbox .handlediv {
+	width: 48px;
+	height: 48px;
+}
+#dashboard-widgets-wrap .postbox .hndle, .stuffbox .hndle {
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+	border-radius: 4px 4px 0 0;
+}
+#dashboard-widgets-wrap .postbox.closed .hndle {
+	border-bottom: none;
+}
+#dashboard-widgets-wrap .postbox.closed {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#dashboard-widgets-wrap #new_authors_steps {
+	background: #00796B;
+}
+#dashboard-widgets-wrap #new_authors_steps * {
+	color: #fff;
+	border-color: #Fff;
 }

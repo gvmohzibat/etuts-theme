@@ -169,13 +169,13 @@ function Generate_Featured_Image( $image_url, $post_id  ){
 				</label>
 			</div>
 
-			<div class="post-format-option">
+			<!-- <div class="post-format-option">
 				<input form="new-post-form" id="input_post_format-aside" type="radio" name="wp_post_format" value="aside" <?php echo ($radio_post_format == 'aside') ? 'checked' : '' ?> >
 				<label id="post_format-aside" for="input_post_format-aside">
 					<h4 class="section-title"><?php _e( 'trick', 'etuts' ); ?></h4>
 					<p><?php _e( 'trick', 'etuts' ); ?></p>
 				</label>
-			</div>
+			</div> -->
 
 			<div class="post-format-option">
 				<input form="new-post-form" id="input_post_format-status" type="radio" name="wp_post_format" value="status" <?php echo ($radio_post_format == 'status') ? 'checked' : '' ?> >

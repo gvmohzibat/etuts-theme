@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
-"POT-Creation-Date: 2017-06-13 02:42+0430\n"
-"PO-Revision-Date: 2017-07-01 09:50+0430\n"
+"POT-Creation-Date: 2017-07-07 15:00+0430\n"
+"PO-Revision-Date: 2017-07-07 15:00+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "User's latest posts"
 msgstr "آخرین مطالب کاربر"
 
-#: author.php:37 home.php:86
+#: author.php:37 home.php:87
 msgid "User Experiences"
 msgstr "تجربه های کاربر"
 
@@ -122,15 +122,15 @@ msgstr "استوری ها"
 msgid "Story"
 msgstr "استوری"
 
-#: functions.php:334
+#: functions.php:337
 msgid "Sending user info, please wait..."
 msgstr "لطفا صبر کنید..."
 
-#: functions.php:356
+#: functions.php:359
 msgid "Wrong username or password."
 msgstr "نام کاربری یا رمزعبور شما غلط است."
 
-#: functions.php:358
+#: functions.php:361
 msgid "Login successful, reloading..."
 msgstr "وارد شدید! لود صفحه..."
 
@@ -143,24 +143,28 @@ msgstr "نمایش تمام مطالب در %s"
 msgid "Latest Posts"
 msgstr "آخرین مطالب"
 
-#: home.php:34
+#: home.php:7
+msgid "Add post"
+msgstr "افزودن مطلب"
+
+#: home.php:35
 msgid "Ask your questions in our forums"
 msgstr "سوالات خود را در انجمن های ما بپرسید"
 
-#: home.php:36
+#: home.php:37
 #, php-format
 msgid "<span>%d</span> Solved topics until now!"
 msgstr "تاکنون به <span>%d</span> سوال پاسخ داده شده!"
 
-#: home.php:51
+#: home.php:52
 msgid "Latest topics"
 msgstr "آخرین تاپیکها"
 
-#: home.php:73
+#: home.php:74
 msgid "Latest products of our shop"
 msgstr "آخرین محصولات آموزشی فروشگاه"
 
-#: home.php:75
+#: home.php:76
 #, php-format
 msgid "We have <span>%d</span> products in our shop!"
 msgstr "تاکنون <span>%d</span> محصول در فروشگاه منتشر شده!"
@@ -338,43 +342,43 @@ msgstr "پاسخ سوالات"
 msgid "Website"
 msgstr "وبسایت"
 
-#: sidebar-user.php:19 user-menu.php:14
+#: sidebar-user.php:19 user-menu.php:15
 msgid "Edit profile"
 msgstr "ویرایش پروفایل"
 
-#: user-menu.php:13
+#: user-menu.php:14
 msgid "View profile"
 msgstr "مشاهده ی پروفایل"
 
-#: user-menu.php:21
+#: user-menu.php:23
 msgid "logout"
 msgstr "خروج"
 
-#: user-menu.php:27
+#: user-menu.php:30
 msgid "login / register"
 msgstr "ورود / عضویت"
 
-#: user-menu.php:28 user-menu.php:42
+#: user-menu.php:31 user-menu.php:45
 msgid "register"
 msgstr "عضویت"
 
-#: user-menu.php:36
+#: user-menu.php:39
 msgid "Login"
 msgstr "ورود"
 
-#: user-menu.php:38
+#: user-menu.php:41
 msgid "Username"
 msgstr "نام کاربری"
 
-#: user-menu.php:39
+#: user-menu.php:42
 msgid "Password"
 msgstr "رمز عبور"
 
-#: user-menu.php:40
+#: user-menu.php:43
 msgid "Lost your password?"
 msgstr "رمز عبورتان را فراموش کردید؟"
 
-#: user-menu.php:43
+#: user-menu.php:46
 msgid "login"
 msgstr "ورود"
 

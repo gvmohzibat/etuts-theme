@@ -496,6 +496,22 @@ form#popup-login-form p {
 #user-menu, #user-menu * {
 	transition: all 0.4s;
 }
+.small-padding {
+	padding: 5px 10px;
+}
+.menu-item input[type="submit"], .menu-item button[type="submit"] {
+	padding: 4px 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px #2b7b10;
+	text-shadow: 0 1px 1px #2b7b10;
+}
+.menu-item input[type="submit"]:hover, .menu-item button[type="submit"]:hover {
+	opacity: 1;
+}
+.menu-item input[type="submit"]:active, .menu-item button[type="submit"]:active {
+	box-shadow: 0 0;
+	margin-top: 2px;
+}
 
 /* top menu block */
 
@@ -2148,13 +2164,24 @@ ul#site-special-pages:hover li {
 	padding-right: 100px;
 	padding-left: 100px;
 }
-h1.home-page-title, .home-page-title h1 {
+.home-page-title {
+	margin: 30px 0 55px;
+}
+.home-page-title h1 {
 	font-size: 50px;
 	color: #444;
 	text-shadow: 0px 3px 1px #ccc;
 }
-.home-page-title {
-	margin: 30px 0 55px;
+.page-title-button {
+    font-size: 20px;
+    margin-right: 30px;
+    background: #ffffec;
+    padding: 10px 20px;
+    text-shadow: none;
+    box-shadow: 0 2px 10px #dbdbc7;
+    color: #816e00;
+    position: absolute;
+    top: 15px;
 }
 
 /* Last posts */

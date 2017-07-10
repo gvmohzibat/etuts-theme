@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: etuts Theme\n"
-"POT-Creation-Date: 2017-07-07 15:00+0430\n"
-"PO-Revision-Date: 2017-07-07 15:00+0430\n"
+"POT-Creation-Date: 2017-07-10 16:10+0430\n"
+"PO-Revision-Date: 2017-07-10 16:10+0430\n"
 "Last-Translator: \n"
 "Language-Team: Vahid Mohammadi <email@vmoh.ir>\n"
 "Language: fa_IR\n"
@@ -114,23 +114,23 @@ msgstr "منوی راست"
 msgid "Curruser Menu"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:118
 msgid "Stories"
 msgstr "استوری ها"
 
-#: functions.php:116 page-template-insert-post.php:153
+#: functions.php:119 page-template-insert-post.php:153
 msgid "Story"
 msgstr "استوری"
 
-#: functions.php:337
+#: functions.php:340
 msgid "Sending user info, please wait..."
 msgstr "لطفا صبر کنید..."
 
-#: functions.php:359
+#: functions.php:362
 msgid "Wrong username or password."
 msgstr "نام کاربری یا رمزعبور شما غلط است."
 
-#: functions.php:361
+#: functions.php:364
 msgid "Login successful, reloading..."
 msgstr "وارد شدید! لود صفحه..."
 
@@ -350,35 +350,39 @@ msgstr "ویرایش پروفایل"
 msgid "View profile"
 msgstr "مشاهده ی پروفایل"
 
-#: user-menu.php:23
+#: user-menu.php:26
+msgid "Enter admin dashboard"
+msgstr "ورود به قسمت ادمین"
+
+#: user-menu.php:33
 msgid "logout"
 msgstr "خروج"
 
-#: user-menu.php:30
+#: user-menu.php:39
 msgid "login / register"
 msgstr "ورود / عضویت"
 
-#: user-menu.php:31 user-menu.php:45
+#: user-menu.php:40 user-menu.php:54
 msgid "register"
 msgstr "عضویت"
 
-#: user-menu.php:39
+#: user-menu.php:48
 msgid "Login"
 msgstr "ورود"
 
-#: user-menu.php:41
+#: user-menu.php:50
 msgid "Username"
 msgstr "نام کاربری"
 
-#: user-menu.php:42
+#: user-menu.php:51
 msgid "Password"
 msgstr "رمز عبور"
 
-#: user-menu.php:43
+#: user-menu.php:52
 msgid "Lost your password?"
 msgstr "رمز عبورتان را فراموش کردید؟"
 
-#: user-menu.php:46
+#: user-menu.php:55
 msgid "login"
 msgstr "ورود"
 

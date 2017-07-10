@@ -20,8 +20,17 @@
 		
 		<div class="curruser-custom-links">
 			<ul id="menu-curruser-custom-links-after" class="menu">
-				<li class="menu-item"><a href="<?php echo wp_logout_url(); ?>" title="<?php _e('logout','etuts'); ?>"><?php _e('logout','etuts'); ?></a></li>
+				<?php if(!current_user_can('edit_posts')) { ?>
 				<li class="menu-item small-padding"><?php echo do_shortcode( '[authorship_signup_form show_text="false"]' ); ?></li>
+				<?php } else { ?>
+				<li class="menu-item"><a href="<?php echo get_admin_url(); ?>" title="<?php _e('Enter admin dashboard', 'etuts') ?>"><?php _e('Enter admin dashboard', 'etuts') ?></a></li>
+				<?php } ?>
+			</ul>
+		</div>
+
+		<div class="curruser-custom-links">
+			<ul id="menu-curruser-custom-links-after" class="menu">
+				<li class="menu-item"><a href="<?php echo wp_logout_url(); ?>" title="<?php _e('logout','etuts'); ?>"><?php _e('logout','etuts'); ?></a></li>
 			</ul>
 		</div>
 

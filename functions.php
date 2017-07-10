@@ -86,6 +86,9 @@ function after_theme_setup_registers() {
 	load_theme_textdomain( 'etuts', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' ); // woocommerce
+	add_theme_support( 'wc-product-gallery-lightbox' ); // woocommerce
+	add_theme_support( 'wc-product-gallery-slider' ); // woocommerce
 	add_theme_support( 'bbpress' );
 	add_theme_support( 'post-formats', array( 'aside' ));
 	add_theme_support( 'custom-header', array(

@@ -42,3 +42,25 @@
 	color: #fff;
 	border-color: #Fff;
 }
+#dashboard-widgets-wrap .post-list-item {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+    margin: 15px 0;
+}
+
+#dashboard-widgets-wrap .post-list-item h2 {
+    text-align: center;
+    margin-bottom: 10px !important;
+}
+
+#dashboard-widgets-wrap .post-list-item img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+#dashboard-widgets-wrap .post-list-item p {
+    text-align: justify;
+}

@@ -31,7 +31,9 @@ li.bbp-header div.bbp-topic-content span#subscription-toggle, li.bbp-header div.
 }
 #bbpress-forums div.bbp-forum-author, #bbpress-forums div.bbp-topic-author, #bbpress-forums div.bbp-reply-author {
 	float: right;
-	margin: 0 0 0 30px;
+	padding: 0 0 10px 30px;
+    margin: 0;
+    background: #fff;
 }
 #bbpress-forums li.bbp-header .bbp-search-author, #bbpress-forums li.bbp-footer .bbp-search-author, #bbpress-forums li.bbp-header .bbp-forum-author, #bbpress-forums li.bbp-footer .bbp-forum-author, #bbpress-forums li.bbp-header .bbp-topic-author, #bbpress-forums li.bbp-footer .bbp-topic-author, #bbpress-forums li.bbp-header .bbp-reply-author, #bbpress-forums li.bbp-footer .bbp-reply-author {
 	float: right;

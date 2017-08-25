@@ -141,6 +141,47 @@ span.woocommerce-Price-currencySymbol {
 	float: left;
 }
 
+
+/* user shop account */
+
+.woocommerce-MyAccount-navigation ul li {
+	list-style: none;
+	list-style-type: none;
+	border-left: 2px solid #ccc;
+}
+
+.woocommerce-MyAccount-navigation {
+	background: #eee;
+	padding: 4px 0;
+}
+
+.woocommerce-MyAccount-navigation ul {
+	padding: 0;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active {
+	border-left: 0;
+	box-shadow: 0 4px 5px -4px #ccc, 0 -4px 5px -4px #ccc;
+	z-index: 2;
+	position: relative;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+	display: block;
+	padding: 10px 20px;
+	color: #444;
+}
+
+.woocommerce-MyAccount-navigation ul li:not(.is-active) a:hover {
+	background: #f9f9f9;
+	color: #444;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a {
+	background: #fff;
+	color: #000;
+}
+
 @media only screen and (max-width: 1200px) {
 	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
 		width: 23.2%;

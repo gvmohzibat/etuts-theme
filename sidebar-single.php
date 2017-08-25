@@ -50,6 +50,11 @@
 		<a class="post-author-other-posts" href="<?php echo get_bloginfo('url') . '/author/' . get_the_author_meta('nicename'); ?>" target="_blank"><span><?php _e('Other posts', 'etuts'); ?></span> <i class="fa fa-angle-double-left" aria-hidden="true"></i> </a>
 		<h3 class="post-author-name-info"><a href="<?php echo get_the_author_meta('url'); ?>" target="_blank"><?php echo get_the_author_meta('display_name'); ?></a></h3>
 		<p class="post-author-description"><?php echo nl2br(get_the_author_meta('description')); ?></p>
+		<div class="l-list-bottom-box post-author-social-links">
+			<ul class="fa-ul">
+				<?php echo get_user_contact_methods(get_the_author_meta( 'ID' ), true); ?>
+			</ul>
+		</div>
 	</div>
 	<div class="share-post-buttons">
 		<h5 class="entry-title section-title background-border-title"><span><?php _e('Share this post', 'etuts'); ?></span><span id="show-more-share-post-butttons"><?php _e('More','etuts'); ?>  <i class="fa fa-angle-double-left" aria-hidden="true"></i></span></h5>

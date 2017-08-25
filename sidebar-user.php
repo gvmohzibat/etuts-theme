@@ -15,6 +15,9 @@ $description = $author->description;
 			<li><i class="fa fa-list-alt" aria-hidden="true"></i><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/topics'; ?>"><?php _e('topics','etuts'); ?></a></li>
 			<li><i class="fa fa-reply" aria-hidden="true"></i><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/replies'; ?>"><?php _e('replies','etuts'); ?></a></li>
 			<li><i class="fa fa-globe" aria-hidden="true"></i><a href="<?php echo get_the_author_meta('url'); ?>" target="_blank"><?php _e('Website','etuts'); ?></a></li>
+			
+			<?php echo get_user_contact_methods($author->ID, true); ?>
+
 			<?php if (get_current_user_id() == $id) { ?>
 				<li><i class="fa fa-pencil" aria-hidden="true"></i><a href="<?php echo get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename') . '/edit'; ?>" title="<?php _e('Edit profile','etuts'); ?>"><?php _e('Edit profile','etuts'); ?></a></li>
 			<?php } ?>

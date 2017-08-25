@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Sahel';
+    src: url('../fonts/Sahel.eot');
+    src: url('../fonts/Sahel.eot?#iefix') format('embedded-opentype'), url('../fonts/Sahel.woff') format('woff'), url('../fonts/Sahel.ttf') format('truetype')
+}
+body.rtl, body.rtl .press-this a.wp-switch-editor, .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+    font-family: Sahel, GanjNamehSans, myriad-pro, tahoma, sans-serif;
+}

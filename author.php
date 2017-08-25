@@ -46,15 +46,15 @@ $author = get_user_by( 'id', $id );
 			endif; ?>
 		</div>
 			<?php get_template_part('page','navigation'); ?>
-		</div>
 	</div>
+</div>
 		
 
-	<div id="leftPad">
-		<div>
-			<?php get_sidebar('user'); ?>
-		</div>
+<div id="leftPad">
+	<div>
+		<?php get_sidebar('user'); ?>
 	</div>
+</div>
 
 </section>
 <?php get_footer(); ?>

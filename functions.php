@@ -104,10 +104,15 @@ function theme_enqueue_styles() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome.min', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main-script.js', array( 'jquery' ), false, true );
-	// wp_enqueue_script( 'progressbar', get_template_directory_uri() . '/js/progressbar.js', array( 'jquery' ), false, true );
 	wp_enqueue_style('woocommerce-general-custom', get_template_directory_uri() . '/css/woocommerce.css', array('woocommerce-general'));
+
+	// prism code sample files
+	wp_register_script( 'prism', get_template_directory_uri() . '/tinymce-plugins/codesample/prism.js' );
+    wp_enqueue_style( 'prism', get_template_directory_uri() . '/tinymce-plugins/codesample/prism.css' );
+    wp_enqueue_script( 'prism' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
 
 // register story post type
 add_action( 'init', 'create_post_type' );
@@ -160,6 +165,11 @@ add_action('admin_head', 'my_admin_custom_style');
 function my_admin_custom_style() {
 	echo '<link rel="stylesheet" type="text/css" href="'.get_stylesheet_directory_uri().'/css/admin-style.css">';
 }
+//Registers an editor stylesheet for the editors.
+function wpdocs_theme_add_editor_styles_v() {
+    add_editor_style( 'css/editor-style.css' );
+}
+add_action( 'admin_init', 'wpdocs_theme_add_editor_styles_v' );
 
 // show featured image in rss 
 add_filter('the_excerpt_rss', 'featuredtoRSS');
@@ -195,31 +205,13 @@ function delete_post_media( $post_id ) {
 }
 
 // adding file types for upload
-add_filter('upload_mimes', 'custom_upload_mimes');
+add_filter('upload_mimes', 'custom_upload_mimes', 999, 1);
 function custom_upload_mimes ( $existing_mimes=array() ) {
 	$existing_mimes['zip'] = 'application/zip';
+	$existing_mimes['gz'] = 'application/x-gzip';
 	return $existing_mimes;
 }
 
-// Etuts Function for excerpt with custom character size
-function the_excerpt_max_charlength($charlength) {
-	$excerpt = get_the_excerpt();
-	$charlength++;
-
-	if ( mb_strlen( $excerpt ) > $charlength ) {
-		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
-		$exwords = explode( ' ', $subex );
-		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-		if ( $excut < 0 ) {
-			echo mb_substr( $subex, 0, $excut );
-		} else {
-			echo $subex;
-		}
-		echo '[...]';
-	} else {
-		echo $excerpt;
-	}
-}
 
 // Enable shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
@@ -236,60 +228,38 @@ function execute_php($html){
 }
 // ************ edit roles and capablities ********
 // contributors
-if ( current_user_can('contributor') )
-	add_action('admin_init', 'allow_contributor_uploads');
+add_action('admin_init', 'allow_contributor_uploads', 999);
 function allow_contributor_uploads() {
 	$contributor = get_role('contributor');
+	$editor = get_role('editor');
 	
 	$contributor->add_cap('upload_files');
 	$contributor->add_cap('edit_published_posts');
+
+	//******* editors
+	// posts
+    $editor->remove_cap('delete_others_posts');
+    $editor->remove_cap('delete_published_posts');
+    $editor->remove_cap('edit_private_posts');
+    $editor->remove_cap('delete_private_posts');
+	// pages
+	$editor->remove_cap('edit_others_pages');
+	$editor->remove_cap('edit_published_pages');
+	$editor->remove_cap('edit_pages');
+	$editor->remove_cap('delete_pages');
+	$editor->remove_cap('delete_others_pages');
+	$editor->remove_cap('publish_pages');
+	$editor->remove_cap('delete_published_pages');
+    $editor->remove_cap('delete_others_posts');
+    $editor->remove_cap('delete_published_posts');
+    $editor->remove_cap('delete_private_posts');
+    $editor->remove_cap('edit_private_posts');
+    $editor->remove_cap('delete_private_pages');
+    $editor->remove_cap('edit_private_pages');
+    // comments
+    $editor->remove_cap('delete_comment');
 }
 // ************ END edit roles and capablities ********
-// Etuts function to get the icon of the category by term_id
-function get_category_icon($term_id) {
-	$available_icons = array('design', 'desktop', 'mobile', 'code', 'game', 'web', 'elec');
-	if (in_array($term_id, $available_icons)) {
-		if ( $term_id == 'design' )
-			$fontawesome_icon_code = 'paint-brush';
-		elseif ( $term_id == 'desktop' )
-			$fontawesome_icon_code = 'laptop';
-		elseif ( $term_id == 'mobile' )
-			$fontawesome_icon_code = 'mobile';
-		elseif ( $term_id == 'code' )
-			$fontawesome_icon_code = 'code';
-		elseif ( $term_id == 'game' )
-			$fontawesome_icon_code = 'gamepad';
-		elseif ( $term_id == 'web' )
-			$fontawesome_icon_code = 'globe';
-		elseif ( $term_id == 'elec' ) {
-			$fontawesome_icon_code = 'microchip';
-		}
-		return '<i class="fa fa-' . $fontawesome_icon_code . '" aria-hidden="true"></i>';
-	}
-	return '';
-}
-
-// pagination function used in navigation.php
-function pagination_bar($echo_out = True) {
-	global $wp_query;
- 
-	$total_pages = $wp_query->max_num_pages;
-	if ($total_pages > 1){
-		$current_page = max(1, get_query_var('paged'));
- 
-		if ($echo_out) {
-			echo paginate_links(array(
-				'base' => get_pagenum_link(1) . '%_%',
-				'format' => '/page/%#%',
-				'current' => $current_page,
-				'total' => $total_pages,
-				'mid_size' => 4,
-			));
-		}
-		return True;
-	}
-	return False;
-}
 
 // fix pagination in archive pages
 add_action('init','archive_pages_fix_pagination_function');
@@ -380,6 +350,14 @@ function rename_post_formats($translation, $text, $context, $domain) {
 }
 add_filter('gettext_with_context', 'rename_post_formats', 10, 4);
 
-function get_user_edit_profile_link($id) {
-	return get_bloginfo('url') . '/forums/users/' . get_the_author_meta('nicename', $id) . '/edit';
+// Let's stop WordPress re-ordering my categories/taxonomies when I select them    
+function stop_showing_check_ontops_category_meta_box($args) {
+    $args['checked_ontop'] = false;
+    return $args;
 }
+
+// Let's initiate it by hooking into the Terms Checklist arguments with our function above
+add_filter('wp_terms_checklist_args','stop_showing_check_ontops_category_meta_box');
+
+// includes
+include 'includes/helper-functions.php';

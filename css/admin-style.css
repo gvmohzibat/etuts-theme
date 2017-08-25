@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Sahel';
+    src: url('../fonts/Sahel.eot');
+    src: url('../fonts/Sahel.eot?#iefix') format('embedded-opentype'), url('../fonts/Sahel.woff') format('woff'), url('../fonts/Sahel.ttf') format('truetype')
+}
+body.rtl, body.rtl .press-this a.wp-switch-editor, .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6, .rtl #wpadminbar *{
+    font-family: Sahel, GanjNamehSans, myriad-pro, tahoma, sans-serif;
+}
 .has-dfw div.mce-toolbar-grp .mce-toolbar.mce-first {
 	padding-right: 0;
 }
@@ -63,4 +71,58 @@
 
 #dashboard-widgets-wrap .post-list-item p {
     text-align: justify;
+}
+#dashboard-widgets-wrap .text-green {
+    color: #4CAF50;
+}
+#dashboard-widgets-wrap .text-blue {
+    color: #1976D2;
+}
+#dashboard-widgets-wrap .inside .table-view-widget span.right-icon {
+    float: right;
+    margin: 0 6px 0 15px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+    margin-left: 12px;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget .top-info {
+    padding: 0;
+    font-size: 23px;
+    height: initial;
+    line-height: initial;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget {
+    width: 100%;
+}
+
+#dashboard-widgets-wrap #author_information .inside {
+    padding: 0;
+    margin: 0;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget td {
+    padding: 10px;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget .bellow-desc {
+    color: #777;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget td {
+    border-bottom: 1px solid #eee;
+}
+
+#dashboard-widgets-wrap .inside .table-view-widget td:hover {
+    background: #f9f9f9;
+}
+#dashboard-widgets-wrap h3 {
+    font-size: 16px;
+    line-height: 1.7em;
 }

@@ -54,17 +54,75 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		
+		<div class="related-posts clearfix">
+			<?php
+			// Default arguments
+			$args = array(
+				'posts_per_page' => 3, // How many items to display
+				'post__not_in'   => array( get_the_ID() ), // Exclude current post
+				'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
+				'post_type' => get_post_type(),
+			);
+
+			// Check for current post category and add tax_query to the query arguments
+			$cats = wp_get_post_terms( get_the_ID(), 'category' ); 
+			$cats_ids = array();
+			foreach( $cats as $wpex_related_cat ) {
+				$cats_ids[] = $wpex_related_cat->term_id; 
+			}
+			if ( ! empty( $cats_ids ) ) {
+				$args['category__in'] = $cats_ids;
+			}
+
+			// Query posts
+			$wpex_query = new wp_query( $args );
+
+			if ($wpex_query->post_count != 0) { ?>
+			<h3 class="background-border-title section-title"><span><?php _e('Related posts','etuts'); ?></span></h3>
+			<?php }
+
+			// Loop through posts
+			foreach( $wpex_query->posts as $post ) : setup_postdata( $post ); ?>
+				
+				<a class="post-list-item related-post-item" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>">
+					<?php
+						if(has_post_thumbnail())
+							the_post_thumbnail( 'thumbnail' );
+					?>
+					<h4 class="related-post-item-title"><?php the_title(); ?></h4>
+				</a>
+
+			<?php endforeach;
+			wp_reset_postdata();
+			?>
+		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 </div>
 
-<?php 
-$bot_id = get_post_meta( get_the_ID(), 'bot_id', true );
+<?php
+$post_type = get_post_type();
+if ($post_type == 'aside') {
+	?>
+	<?php 
+	// Bot id box
+	$bot_id = get_post_meta( get_the_ID(), 'bot_id', true );
 
-if ( ! empty( $bot_id ) ) { ?>
-    <div id="bot-id-link-section" class="post-list-item clearfix">
-    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
-    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
-    </div>
+	if ( ! empty( $bot_id ) ) { ?>
+	    <div id="bot-id-link-section" class="post-list-item clearfix">
+	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
+	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
+	    </div>
+	<?php } ?>
+
+	<?php 
+	// Site url box
+	$bot_id = get_post_meta( get_the_ID(), 'introduce_site_url', true );
+
+	if ( ! empty( $bot_id ) ) { ?>
+	    <div id="bot-id-link-section" class="post-list-item clearfix">
+	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
+	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
+	    </div>
+	<?php } ?>
 <?php } ?>

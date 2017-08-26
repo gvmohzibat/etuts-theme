@@ -2,8 +2,9 @@
 <div id="footer">
 	<?php get_sidebar('footer-widget'); ?>
 	<div id="extra-footer" class="clearfix">
-		<p id="copyright">&copy; 2016 Hadi Safari &amp; Vahid Mohammadi</p>
+		<p id="copyright">&copy; <a href="http://hadisafari.ir/" title="سایت شخصی هادی صفری">Hadi Safari</a> &amp; <a href="http://vahid-mohammadi.ir" title="سایت شخصی وحید محمدی">Vahid Mohammadi</a></p>
 		<ul id="footer-links">
+			<li><a href="http://etuts.ir/terms/" title="قوانین"><i class="fa fa-check" aria-hidden="true"></i> <span style="direction: ltr; display: inline-block;">قوانین</span></a></li>
 			<li><a href="<?php echo get_site_url(); ?>/contact" title="تماس با ما"><i class="fa fa-phone" aria-hidden="true"></i> تماس با ما</a></li>
 			<li><a href="http://t.me/etuts" title="کانال تلگرام"><i class="fa fa-bullhorn" aria-hidden="true"></i> <span style="direction: ltr; display: inline-block;">@etuts</span></a></li>
 			<li><a href="http://t.me/etutsbot" title="ربات تلگرام"><i class="fa fa-paper-plane" aria-hidden="true"></i> <span style="direction: ltr; display: inline-block;">@etutsbot</span></a></li>

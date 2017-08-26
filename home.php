@@ -1,3 +1,4 @@
+<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
 <?php global $theme; get_header(); ?>
 
 <section id="main" class="clearfix home-page-main">
@@ -13,6 +14,8 @@
             <?php get_template_part('page','navigation'); ?>
         </div>
     <?php endif; ?>
+
+<?php if (is_plugin_active( 'bbpress/bbpress.php' )) { ?>
 
     <div class="home-page-intro home-page-section clearfix" id="home-page-forums">
         <i class="fa fa-question home-page-intro-icon" aria-hidden="true"></i>
@@ -53,6 +56,9 @@
         <?php echo do_shortcode('[bbp-topic-index]'); ?>
     </div>
 
+<?php } ?>
+<?php if (is_plugin_active( 'bbpress/bbpress.php' )) { ?>
+
     <?php 
     function woocommerce_product_count_home() {
         $args = array( 'post_type' => 'product', 'post_status' => 'publish', 'posts_per_page' => -1 );
@@ -92,6 +98,8 @@
             <?php get_template_part('page','navigation'); ?>
         </div>
     <?php endif; ?>
+
+<?php } ?>
 
 </section>
 <?php get_footer(); ?>

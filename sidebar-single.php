@@ -56,7 +56,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="share-post-buttons">
+	<div class="share-post-buttons hover-foldable">
 		<h5 class="entry-title section-title background-border-title"><span><?php _e('Share this post', 'etuts'); ?></span><span id="show-more-share-post-butttons"><?php _e('More','etuts'); ?>  <i class="fa fa-angle-double-left" aria-hidden="true"></i></span></h5>
 		<ul class="clearfix">
 			<li><a title="<?php _e('Download PDF','etuts'); ?>" href="javascript:void(0);" onclick="window.print()"><i class="fa fa-file-pdf-o fa-fw" aria-hidden="" style="color: #ff0000;"></i> <?php _e('Download PDF','etuts'); ?></a></li>
@@ -78,50 +78,6 @@
 	<h3 class="entry-title section-title background-border-title"><span><?php _e('contents', 'etuts'); ?></span></h3>
 	<div></div>
 </div>
-
-<div class="sidebar-item-no-bg related-posts clearfix">
-	<?php
-	// Default arguments
-	$args = array(
-		'posts_per_page' => 3, // How many items to display
-		'post__not_in'   => array( get_the_ID() ), // Exclude current post
-		'no_found_rows'  => true, // We don't ned pagination so this speeds up the query
-		'post_type' => get_post_type(),
-	);
-
-	// Check for current post category and add tax_query to the query arguments
-	$cats = wp_get_post_terms( get_the_ID(), 'category' ); 
-	$cats_ids = array();
-	foreach( $cats as $wpex_related_cat ) {
-		$cats_ids[] = $wpex_related_cat->term_id; 
-	}
-	if ( ! empty( $cats_ids ) ) {
-		$args['category__in'] = $cats_ids;
-	}
-
-	// Query posts
-	$wpex_query = new wp_query( $args );
-
-	if ($wpex_query->post_count != 0) { ?>
-	<h3 class="background-border-title section-title"><span><?php _e('Related posts','etuts'); ?></span></h3>
-	<?php }
-
-	// Loop through posts
-	foreach( $wpex_query->posts as $post ) : setup_postdata( $post ); ?>
-		
-		<a class="post-list-item related-post-item" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>">
-			<?php
-				if(has_post_thumbnail())
-					the_post_thumbnail( 'thumbnail' );
-			?>
-			<h4 class="related-post-item-title"><?php the_title(); ?></h4>
-		</a>
-
-	<?php endforeach;
-	wp_reset_postdata();
-	?>
-</div>
-
 
 <?php if ( is_active_sidebar( 'sidebar_single' ) ) : ?>
 	<div id="single-sidebar">

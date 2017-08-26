@@ -57,7 +57,7 @@
     </div>
 
 <?php } ?>
-<?php if (is_plugin_active( 'bbpress/bbpress.php' )) { ?>
+<?php if (is_plugin_active( 'woocommerce/woocommerce.php' )) { ?>
 
     <?php 
     function woocommerce_product_count_home() {

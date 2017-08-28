@@ -1,0 +1,177 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: $main_font_family;
+}
+
+a {
+	text-decoration: none;
+	color: $color112;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+p {
+	margin-top: 0;
+}
+
+pre, code {
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	background: #eee;
+	padding: 5px 10px;
+}
+
+input:disabled, textarea:disabled {
+	color: #aaa;
+}
+
+img, iframe, embed {
+	max-width: 100%;
+}
+
+input, textarea, keygen, select, button {
+	font: inherit;
+	border: 2px solid #ddd;
+	background: #fff;
+	padding: 10px;
+	outline: none;
+}
+
+input:focus, textarea:focus, keygen:focus, select:focus, button:focus {
+	background: #fff;
+	border-color: $main_color;
+	outline: none;
+}
+
+input[type="submit"], button[type="submit"] {
+	border: 2px solid $main_color;
+	margin: 0 auto;
+	background: $main_color;
+	color: #fff;
+	padding: 10px 40px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	opacity: 0.9;
+}
+
+img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
+	height: auto;
+}
+
+.clearfix::after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+body {
+	background: $body_background_color;
+	position: relative;
+	direction: rtl;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+h4 {
+	font-size: 22px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+article {
+	line-height: 1.9;
+}
+
+// Fontawesome list icons
+ul.fa-ul li>i.fa {
+	margin-left: 10px;
+}
+
+// Wordpress images
+.entry-content img, .comment-content img, .widget img {
+	max-width: 100%;
+}
+
+// Wordpress aligns
+.aligncenter, div.aligncenter, img.alignnone {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft, div.alignleft {
+	float: left;
+	margin-right: 20px;
+}
+
+.alignright, div.alignright {
+	float: right;
+	margin-left: 20px;
+}
+
+// Wordpress menus 
+ul.menu {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	ul.sub-menu {
+		display: none;
+		list-style: none;
+	}
+}
+
+.menu-item-has-children:hover ul.sub-menu {
+	display: block;
+}
+
+// Wordpress Widgets
+li.widget {
+	&, li, ul {
+		list-style: none;
+	}
+	li, ul {
+		padding: 0;
+		margin: 0;
+	}
+}

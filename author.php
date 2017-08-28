@@ -32,21 +32,22 @@ $author = get_user_by( 'id', $id );
 		'author' => $id,
 	]);
 	?>
+	<?php if (have_posts()) : ?>
 	<div id="lastStories" class="user-page-section">
 		<div id="last-stories-container" class="clearfix">
 			<h1 class="section-title entry-title home-page-title"><?php _e('User Experiences','etuts'); ?></h1>
-			<?php if (have_posts()) : ?>
+			
 		
 			<?php while (have_posts()) : the_post();
 				get_template_part('content', 'story-homepage');
 			endwhile; ?>
-
-			<?php else :
-				get_template_part('content', 'noresults');
-			endif; ?>
 		</div>
 			<?php get_template_part('page','navigation'); ?>
 	</div>
+	<?php else :
+		// get_template_part('content', 'noresults');
+	?>
+	<?php endif; ?>
 </div>
 		
 

@@ -1,5 +1,5 @@
 <a class="post-tumb-link" href="<?php echo get_the_permalink(); ?>">
-	<div <?php post_class('home-latest-posts post-list-item clearfix'); ?> id="post-<?php echo get_the_ID(); ?>">
+	<div <?php post_class('home-post-list-item home-latest-posts post-list-item clearfix'); ?> id="post-<?php echo get_the_ID(); ?>">
 
 <?php
 $post_format = get_post_format() ? : 'standard';

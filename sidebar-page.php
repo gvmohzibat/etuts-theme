@@ -4,7 +4,7 @@
     </div>
 <?php } ?>
 <?php if ( is_active_sidebar( 'sidebar_page' ) ) : ?>
-	<ul id="sidebar">
+	<ul id="big-page-sidebar">
 			<?php dynamic_sidebar( 'sidebar_page' ); ?>
 	</ul>
 <?php endif; ?>

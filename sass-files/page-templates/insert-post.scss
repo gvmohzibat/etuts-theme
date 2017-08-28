@@ -1,0 +1,102 @@
+// insert post page 
+
+.draft-posts-list {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+#new-post-content, #new-post-title {
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	display: block;
+	width: 100%;
+	background: #f9f9f9;
+	color: #000;
+}
+
+#new-post-title {
+	position: relative;
+	padding: 0 20px;
+	text-shadow: 3px 3px $color7;
+	margin: 0 0 9px;
+	line-height: 50px;
+	font-size: 25px;
+	font-weight: bold;
+	box-sizing: border-box;
+	width: calc(100% - 120px);
+}
+
+#new-post-content {}
+
+#new-post-submit, #new-post-save-draft {
+	float: right;
+	width: 45%;
+	margin: 0 2.5%;
+}
+
+#new-post-save-draft {
+	background: #888;
+	border-color: #888;
+}
+
+#post-type-tabs {
+	padding: 0;
+	text-align: center;
+	input {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
+	label {
+		padding: 20px;
+		display: inline-block;
+		float: right;
+		width: 50%;
+		border-bottom: 3px solid #bbb;
+		cursor: pointer;
+		margin: 0;
+		font-size: 20px;
+		font-weight: bold;
+		&:not(.post-type-tab-active):hover {
+			background: #f9f9f9;
+			border-bottom-color: #aaa;
+		}
+	}
+	.post-type-tab-active {
+		background: #d0ecc7;
+		border-bottom-color: $main_color;
+		color: $dark_main_color;
+	}
+}
+
+#post-format-radio {
+	.post-format-option {
+		width: 33%;
+		float: right;
+		padding: 15px 20px;
+		border-left: 1px dashed #ccc;
+		&:nth-child(3n+3) {
+			border-left: none;
+		}
+		&:hover {
+			background: #f9f9f9;
+		}
+		input {
+			float: right;
+			margin-top: 10px;
+		}
+		label {
+			cursor: pointer;
+			h4 {
+				margin: 0 21px 0 0;
+				padding: 0 10px 0 0;
+				text-align: right;
+			}
+			p {
+				color: #444;
+				margin: 0 30px;
+			}
+		}
+	}
+}

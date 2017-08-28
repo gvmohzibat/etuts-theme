@@ -74,7 +74,7 @@
 	</div>
 </div>
 
-<div id="table-of-contents" class="sidebar-item-no-bg table-of-contents">
+<div id="table-of-contents" class="post-list-item sidebar-item-no-bg table-of-contents">
 	<h3 class="entry-title section-title background-border-title"><span><?php _e('contents', 'etuts'); ?></span></h3>
 	<div></div>
 </div>

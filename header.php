@@ -38,14 +38,14 @@
 
 <body <?php body_class(); ?>>
     <div id="topMenu">
-    	<div id="rightMenuToggle"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
+        <div id="rightMenuToggle"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
         <a href="<?php echo get_bloginfo('url'); ?>" title="<?php echo get_bloginfo('name'); ?>">
             <div id="top-logo">
                 <span><img src="<?php echo get_bloginfo('stylesheet_directory'); ?>/images/logo40.png" alt="<?php echo get_bloginfo('name'); ?>"></span>
                 <h1 id="site-logo-name"><?php echo get_bloginfo('name'); ?></h1>
             </div>
         </a>
-        <?php wp_nav_menu( array( 'menu' => 'primary-menu' ) ); ?>
+        <div id="the-top-primary-menu"><?php wp_nav_menu( array( 'menu' => 'primary-menu' ) ); ?></div>
         
         <?php get_template_part('user','menu'); ?>
         
@@ -69,23 +69,23 @@
         <div id="list-categories">
             <ul>
             <?php
-				$categories = get_categories(array(
+                $categories = get_categories(array(
                     'orderby' => 'name',
                     'parent' => 0
                 ));
-				 
-				foreach( $categories as $category ) {
-				    $category_link = sprintf( 
-				        '<a href="%1$s" title="%2$s">%4$s %3$s</a>',
-				        esc_url( get_category_link( $category->term_id ) ),
-				        esc_attr( sprintf( __( 'View all posts in %s', 'etuts' ), $category->name ) ),
-				        esc_html( $category->name ),
+                 
+                foreach( $categories as $category ) {
+                    $category_link = sprintf( 
+                        '<a href="%1$s" title="%2$s">%4$s %3$s</a>',
+                        esc_url( get_category_link( $category->term_id ) ),
+                        esc_attr( sprintf( __( 'View all posts in %s', 'etuts' ), $category->name ) ),
+                        esc_html( $category->name ),
                         get_category_icon( $category->slug )
-				    );
-				     
-				    echo '<li>' . sprintf( esc_html('%s'), $category_link ) . '</li> ';
-				}
-        	?>
+                    );
+                     
+                    echo '<li>' . sprintf( esc_html('%s'), $category_link ) . '</li> ';
+                }
+            ?>
             </ul>
         </div>
     </header>

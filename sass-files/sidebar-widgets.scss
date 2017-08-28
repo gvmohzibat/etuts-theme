@@ -1,0 +1,183 @@
+// The big fixed sidebar on left side of the page 
+#big-page-sidebar {
+	padding: 0;
+	margin: 0;
+	.widget {
+		padding: 20px 30px;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+		&:nth-child(odd) {
+			background: rgba(0, 0, 0, 0.02);
+		}
+	}
+}
+
+// rightpad and leftpad 
+#rightPad, #leftPad {
+	float: right;
+	position: relative;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+#rightPad {
+	width: 66%;
+	margin-left: 1%;
+	.home-latest-posts {
+		width: 47%;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+}
+
+#leftPad {
+	width: 33%;
+	transition: all 0.5s cubic-bezier(0, 0, 0.15, 1.01);
+}
+
+// Wordpress sidebars and widgets 
+@mixin widget_coloring($color) {
+	&:hover h3.widget-title.widget-title, & a:hover {
+		border-color: $color;
+		color: $color;
+	}
+}
+
+.widget {
+	a {
+		color: #555;
+		&:hover {
+			opacity: 1 !important;
+		}
+	}
+	&:nth-child(5n) {
+		@include widget_coloring(#c617d4);
+	}
+	&:nth-child(5n+1) {
+		@include widget_coloring(#ff3a3a);
+	}
+	&:nth-child(5n+2) {
+		@include widget_coloring(#ff9900);
+	}
+	&:nth-child(5n+3) {
+		@include widget_coloring($main_color);
+	}
+	&:nth-child(5n+4) {
+		@include widget_coloring(#1c9bf1);
+	}
+}
+
+.widget-title {
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+	box-shadow: 0 8px 5px -5px rgba(0, 0, 0, 0.04);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+	transition: all .3s;
+	&.footer-widget-title {
+		border-bottom-color: rgba(255, 255, 255, 0.06);
+	}
+}
+
+.sidebar-item-no-bg {
+	padding: 0;
+	background: transparent;
+	box-shadow: none;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+// Related posts widget
+.related-posts {
+	text-align: center;
+	.related-post-item {
+		width: 150px;
+		margin: 5px 2px;
+		padding: 8px;
+		display: inline-table;
+		transition: all .3s;
+		min-height: 250px;
+		text-align: center;
+		overflow: hidden;
+		&:hover {
+			opacity: 1;
+			border-color: $main_color;
+		}
+		img {
+			border-radius: 3px;
+		}
+		.related-post-item-title {
+			margin: 0;
+			font-size: 15px;
+			color: #555;
+			padding: 5px;
+			height: 75px;
+			line-height: 25px;
+		}
+	}
+}
+
+// Recent posts with thumbnails widget
+ul.recent-posts-thumb-widget {
+	li {
+		padding: 5px 6px;
+		background: #f9f9f9;
+		color: #aaa;
+		&:last-child {
+			border-bottom: 1px solid #eee;
+		}
+		&:nth-child(even) {
+			background: #eee;
+			border: 1px solid #ddd;
+			border-left: none;
+			border-right: none;
+		}
+		&:first-child {
+			border-top: 1px solid #eee;
+		}
+		img {
+			float: right;
+			margin-left: 15px;
+		}
+		h3 {
+			margin: 0;
+			font-size: 17px;
+		}
+		p {
+			color: #777;
+			margin: 0;
+		}
+	}
+}
+
+// Recent comments widget 
+ul#recentcomments {
+	li.recentcomments {
+		color: #aaa;
+		span, span a {
+			color: #777;
+		}
+		>:not(.comment-author-link) {
+			font-weight: bold;
+		}
+	}
+}
+
+// Recent posts widget
+.widget_recent_entries .post-date {
+	color: #777;
+}
+
+// bbpress recent topics widget in footer 
+li[id*="bbp_topics_widget"].footer-widget ul li, li[id*="bbp_replies_widget"].footer-widget ul li {
+	padding: 0;
+	background: none;
+	border: none;
+	div {
+		color: #777;
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+// Primary sidebar 
+@import "sidebar-widgets/custom-widgets.scss";
+@import "sidebar-widgets/single-post-sidebar.scss";

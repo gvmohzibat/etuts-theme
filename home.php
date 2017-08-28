@@ -90,7 +90,7 @@
     <?php if (have_posts()) : ?>
         <div id="lastStories" class="home-page-section">
             <div id="last-stories-container" class="clearfix">
-                <h1 class="section-title entry-title home-page-title"><?php _e('User Experiences','etuts'); ?></h1>
+                <h1 class="section-title entry-title home-page-title"><?php _e('Users Experiences','etuts'); ?></h1>
                 <?php while (have_posts()) : the_post();
                     get_template_part('content', 'story-homepage');
                 endwhile; ?>

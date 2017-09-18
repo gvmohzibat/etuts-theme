@@ -904,6 +904,18 @@ nav.pagination-bar {
     .compact-form input[type="submit"]:nth-last-child(1):hover input[type="submit"] {
       opacity: 0.3; }
 
+.woocommerce a {
+  color: #9e4e8e;
+  text-decoration: none; }
+.woocommerce ul.products .star-rating {
+  margin: 0 auto; }
+.woocommerce ul.products li.product .price {
+  color: #7f6868; }
+.woocommerce ul.products li.product:last-child, .woocommerce-page ul.products li.product:last-child {
+  margin-left: 0; }
+.woocommerce .products ul, .woocommerce ul.products {
+  padding: 0 10%; }
+
 .entry-header {
   margin-bottom: 40px;
   margin-top: 20px; }

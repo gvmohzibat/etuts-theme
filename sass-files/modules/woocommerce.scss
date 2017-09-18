@@ -1,8 +1,9 @@
 .woocommerce {
 	a {
 		color: $c3rfe;
+		text-decoration: none;
 	}
-	.products {
+	ul.products {
 		.star-rating {
 			margin: 0 auto;
 		}
@@ -10,13 +11,10 @@
 			color: $c67;
 		}
 	}
-}
-
-// yith multi vendors plugin
-.by-vendor-name {
-	display: none;
-	opacity: 0;
-	visibility: hidden;
-	height: 0;
-	overflow: hidden;
+	ul.products li.product:last-child, &-page ul.products li.product:last-child {
+		margin-left: 0;
+	}
+	.products ul, ul.products {
+		padding: 0 10%;
+	}
 }

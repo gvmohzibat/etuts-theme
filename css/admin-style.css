@@ -147,6 +147,6 @@ body.rtl, body.rtl .press-this a.wp-switch-editor, .rtl h1, .rtl h2, .rtl h3, .r
 
 /* woocommerce add_note textarea box */
 
-textarea#add_order_note {
+.add_note #add_order_note {
     min-height: 300px;
 }

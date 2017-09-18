@@ -12,7 +12,7 @@ get_header(); ?>
 <div id="rightPad">
 		
     <?php while ( have_posts() ) : the_post(); ?>
-	<?php get_template_part( 'content', 'page' ); ?>
+	<?php get_template_part( 'includes/contents/content', 'page' ); ?>
     <?php endwhile; ?>
 	
 	<div id="contact-form" class="post-list-item chain-connect chain-connect-before">

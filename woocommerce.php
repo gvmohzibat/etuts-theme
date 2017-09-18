@@ -9,7 +9,7 @@
         
     <div id="leftPad">
         <div>
-            <?php get_sidebar('shop'); ?>
+            <?php get_template_part('includes/sidebars/sidebar', 'shop'); ?>
         </div>
     </div>
 

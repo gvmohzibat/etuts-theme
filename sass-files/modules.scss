@@ -196,3 +196,28 @@ nav.pagination-bar {
 		text-align: center;
 	}
 }
+
+// compact form
+.compact-form {
+	position: relative;
+	input[type="submit"] {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		padding: 5px 15px;
+		opacity: 1;
+		transition: all .3s ease;
+		z-index: 5;
+		&:hover {
+			opacity: 1;
+			opacity: 1 !important;
+		}
+		&:nth-last-child(1):hover {
+			input[type="submit"] {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
+@import "modules/woocommerce.scss";

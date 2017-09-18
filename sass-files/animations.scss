@@ -6,3 +6,8 @@
 		opacity: 0;
 	}
 }
+
+@keyframes left_menu_toggle_show {
+	0% { transform: perspective(10em) rotateY(30deg) scaleX(1); }
+	100% { opacity: 1 }
+}

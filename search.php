@@ -11,7 +11,7 @@
         <?php if (have_posts()) : ?>
 	        <h1 class="section-title entry-title home-page-title"><?php echo $total_results . __(' Search results for ','etuts') . get_search_query(); ?></h1>
             <?php while (have_posts()) : the_post();
-                get_template_part('content', 'single-homepage');
+                get_template_part('includes/contents/content', 'single-homepage');
             endwhile; ?>
         <?php else : ?>
             <h1 class="section-title entry-title home-page-title"><?php _e('No search results','etuts'); ?></h1>

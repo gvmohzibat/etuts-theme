@@ -14,11 +14,11 @@ $author = get_user_by( 'id', $id );
 			<?php if (have_posts()) : ?>
 	
 			<?php while (have_posts()) : the_post();
-				get_template_part('content', 'single-homepage');
+				get_template_part('includes/contents/content', 'single-homepage');
 			endwhile; ?>
 			
 			<?php else :
-				get_template_part('content', 'noresults');
+				get_template_part('includes/contents/content', 'noresults');
 			endif; ?>
 		</div>
 		<?php get_template_part('page','navigation'); ?>
@@ -39,13 +39,13 @@ $author = get_user_by( 'id', $id );
 			
 		
 			<?php while (have_posts()) : the_post();
-				get_template_part('content', 'story-homepage');
+				get_template_part('includes/contents/content', 'story-homepage');
 			endwhile; ?>
 		</div>
 			<?php get_template_part('page','navigation'); ?>
 	</div>
 	<?php else :
-		// get_template_part('content', 'noresults');
+		// get_template_part('includes/contents/content', 'noresults');
 	?>
 	<?php endif; ?>
 </div>
@@ -53,7 +53,7 @@ $author = get_user_by( 'id', $id );
 
 <div id="leftPad">
 	<div>
-		<?php get_sidebar('user'); ?>
+		<?php get_template_part('includes/sidebars/sidebar', 'user'); ?>
 	</div>
 </div>
 

@@ -5,7 +5,6 @@
  * Allow users to update their profiles from Frontend.
  *
  */
-		wp_remote_get( 'http://vmoh.ir/tbots/phptelegrambottest/phptelegrambottest/webhook.php' );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -137,7 +136,7 @@ function Generate_Featured_Image( $image_url, $post_id  ){
 
 
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'content', 'page' ); ?>
+		<?php get_template_part( 'includes/contents/content', 'page' ); ?>
 	<?php endwhile; ?>
 
 

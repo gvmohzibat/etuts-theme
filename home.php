@@ -8,7 +8,7 @@
                 <div class="section-title entry-title home-page-title"><h1><?php _e('Latest Posts','etuts'); ?><a href="<?php echo get_bloginfo('url').'/new-post'; ?>" class="page-title-button"><i class="fa fa-plus" aria-hidden="true"></i> <?php _e( 'Add post', 'etuts' ); ?></a></h1>
                 </div>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('content', 'single-homepage');
+                    get_template_part('includes/contents/content', 'single-homepage');
                 endwhile; ?>
             </div>
             <?php get_template_part('page','navigation'); ?>
@@ -92,7 +92,7 @@
             <div id="last-stories-container" class="clearfix">
                 <h1 class="section-title entry-title home-page-title"><?php _e('Users Experiences','etuts'); ?></h1>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('content', 'story-homepage');
+                    get_template_part('includes/contents/content', 'story-homepage');
                 endwhile; ?>
             </div>
             <?php get_template_part('page','navigation'); ?>

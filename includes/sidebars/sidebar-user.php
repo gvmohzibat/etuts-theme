@@ -28,7 +28,7 @@ $description = $author->description;
 
 <?php if ( is_active_sidebar( 'sidebar_user' ) ) : ?>
 	<div id="user-sidebar">
-		<ul id="sidebar">
+		<ul class="sidebar">
 			<?php dynamic_sidebar( 'sidebar_user' ); ?>
 		</ul>
 	</div>

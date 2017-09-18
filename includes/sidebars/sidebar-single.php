@@ -81,7 +81,7 @@
 
 <?php if ( is_active_sidebar( 'sidebar_single' ) ) : ?>
 	<div id="single-sidebar">
-		<ul id="sidebar">
+		<ul class="sidebar">
 			<?php dynamic_sidebar( 'sidebar_single' ); ?>
 		</ul>
 	</div>

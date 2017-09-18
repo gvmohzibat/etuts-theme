@@ -337,6 +337,10 @@ function ajax_login(){
 	die();
 }
 
+// Disable register new user email notifications
+remove_action('register_new_user', 'wp_send_new_user_notifications');
+remove_action('edit_user_created_user', 'wp_send_new_user_notifications', 10, 2);
+
 // Rename post formats
 function rename_post_formats($translation, $text, $context, $domain) {
 	$names = array(
@@ -361,3 +365,4 @@ add_filter('wp_terms_checklist_args','stop_showing_check_ontops_category_meta_bo
 
 // includes
 include 'includes/helper-functions.php';
+include 'includes/theme-settings.php';

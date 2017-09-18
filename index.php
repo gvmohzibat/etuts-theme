@@ -6,13 +6,13 @@
     		<div id="last-posts-container" class="clearfix">
 	            <h1 class="section-title entry-title home-page-title"><?php _e('Latest Posts','etuts'); ?></h1>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('content', 'single-homepage');
+                    get_template_part('includes/contents/content', 'single-homepage');
                 endwhile; ?>
             </div>
             <?php pagination_bar(); ?>
         </div>
     <?php else :
-        get_template_part('content', 'noresults');
+        get_template_part('includes/contents/content', 'noresults');
     endif; ?>
 </section>
 <?php get_footer(); ?>

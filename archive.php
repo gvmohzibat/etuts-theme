@@ -6,13 +6,13 @@
             <div id="last-posts-container" class="clearfix">
                 <?php the_archive_title('<h1 class="section-title entry-title home-page-title">','</h1>'); ?>
                 <?php while (have_posts()) : the_post();
-                    get_template_part('content', 'homepage');
+                    get_template_part('includes/contents/content', 'homepage');
                 endwhile; ?>
             </div>
             <?php get_template_part('page','navigation'); ?>
         </div>
     <?php else :
-        get_template_part('content', 'noresults');
+        get_template_part('includes/contents/content', 'noresults');
     endif; ?>
 
 </section>

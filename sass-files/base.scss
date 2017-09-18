@@ -56,6 +56,11 @@ input, textarea, keygen, select, button {
 	outline: none;
 }
 
+textarea {
+	display: block;
+	width: 100%;
+}
+
 input:focus, textarea:focus, keygen:focus, select:focus, button:focus {
 	background: #fff;
 	border-color: $main_color;

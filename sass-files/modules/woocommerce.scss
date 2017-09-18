@@ -1,0 +1,22 @@
+.woocommerce {
+	a {
+		color: $c3rfe;
+	}
+	.products {
+		.star-rating {
+			margin: 0 auto;
+		}
+		li.product .price {
+			color: $c67;
+		}
+	}
+}
+
+// yith multi vendors plugin
+.by-vendor-name {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+}

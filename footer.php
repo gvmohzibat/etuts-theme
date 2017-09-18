@@ -1,6 +1,6 @@
-<?php get_sidebar('overlay-bar'); ?>
+<?php get_template_part('includes/sidebars/sidebar', 'overlay-bar'); ?>
 <div id="footer">
-	<?php get_sidebar('footer-widget'); ?>
+	<?php get_template_part('includes/sidebars/sidebar', 'footer-widget'); ?>
 	<div id="extra-footer" class="clearfix">
 		<p id="copyright">&copy; <a href="http://hadisafari.ir/" title="سایت شخصی هادی صفری">Hadi Safari</a> &amp; <a href="http://vahid-mohammadi.ir" title="سایت شخصی وحید محمدی">Vahid Mohammadi</a></p>
 		<ul id="footer-links">

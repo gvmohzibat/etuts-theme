@@ -2,8 +2,87 @@
 	2016 Hadi Safari
 	hadi[at]hadisafari.ir
 
+	and
+	Vahid Mohammadi
+
 	etuts.ir
 */
+function leftPadPrep() {
+	if (!window.matchMedia("(max-width: 992px)").matches && $("#leftPad").length) {
+		var x, flag = false;
+		if (($(window).scrollTop() + $(window).height()) > $("#leftPad").offset().top + $("#leftPad").outerHeight(true) + 40) {
+			x = ($(window).scrollTop() + $(window).height()) - ($("#main").offset().top + $("#leftPad").outerHeight() + 40);
+			flag = true;
+		}
+		if ($(window).scrollTop() + $("#topMenu").outerHeight() < $("#leftPad").offset().top) {
+			x = $(window).scrollTop() + $("#topMenu").outerHeight() - $("#main").offset().top - 40;
+			flag = true;
+		}
+		if (x + $("#leftPad").outerHeight() > $("#rightPad").outerHeight()) {
+			x = $("#rightPad").outerHeight() - $("#leftPad").outerHeight();
+		}
+		x = x > 0 ? x : 0;
+		if (flag)
+			$("#leftPad").css("top", x);
+	}
+}
+
+function leftPadCmtPrep() {
+	if (!window.matchMedia("(max-width: 992px)").matches && $("#respond-topic-tabs").length) {
+		var x, flag = false;
+		if (($(window).scrollTop() + $(window).height()) > $("#respond-topic-tabs").offset().top + $("#respond-topic-tabs").outerHeight(true) + 10) {
+			x = ($(window).scrollTop() + $(window).height()) - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight(true) + 10);
+			flag = true;
+		}
+		if ($(window).scrollTop() + $("#topMenu").outerHeight() + 40 < $("#respond-topic-tabs").offset().top) {
+			x = $(window).scrollTop() + $("#topMenu").outerHeight() + 40 - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true));
+			flag = true;
+		}
+		if ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + x + $("#respond-topic-tabs").outerHeight() > $("#comments-section").outerHeight(false))
+			x = $("#comments-section").outerHeight(false) - ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight());
+		x = x > 0 ? x : 0;
+		if (flag)
+			$("#respond-topic-tabs").css("top", x);
+	}
+}
+
+
+function ajaxify_form($theform, error_text, success_text) {
+	$theform.submit(function() {
+		// Add a Comment Status message
+		var statusdiv = $('#comment-status');
+		if (!statusdiv.length) {
+			$theform.prepend('<div id="comment-status" class="post-list-item inside-block"></div>');
+			statusdiv = $('#comment-status');
+		}
+		// Defining the Status message element 
+		// Serialize and store form data
+		var formdata = $theform.serialize();
+		//Add a status message
+		statusdiv.html('<p class="ajax-placeholder">در حال ارسال...</p>');
+		//Extract action URL from $theform
+		var formurl = $theform.attr('action');
+		//Post Form with data
+		$.ajax({
+			type: 'post',
+			url: formurl,
+			data: formdata,
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				statusdiv.html('<p class="ajax-error">'+(errorThrown) ? errorThrown : error_text+'</p>');
+			},
+			success: function(data, textStatus) {
+				console.log(data)
+				// if (data == "success")
+				statusdiv.html('<p class="ajax-success">'+success_text+'</p>');
+				// else
+				// 	statusdiv.html('<p class="ajax-error" >Please wait a while before posting your next comment</p>');
+				$theform.find('textarea').val('');
+			}
+		});
+		return false;
+	});
+};
+
 
 $(document).ready(function() {
 	if (window.location.hash.indexOf("comment") > -1)
@@ -51,45 +130,6 @@ $(document).ready(function() {
 		});
 	})();
 
-	function leftPadPrep() {
-		if (!window.matchMedia("(max-width: 992px)").matches && $("#leftPad").length) {
-			var x, flag = false;
-			if (($(window).scrollTop() + $(window).height()) > $("#leftPad").offset().top + $("#leftPad").outerHeight(true) + 40) {
-				x = ($(window).scrollTop() + $(window).height()) - ($("#main").offset().top + $("#leftPad").outerHeight() + 40);
-				flag = true;
-			}
-			if ($(window).scrollTop() + $("#topMenu").outerHeight() < $("#leftPad").offset().top) {
-				x = $(window).scrollTop() + $("#topMenu").outerHeight() - $("#main").offset().top - 40;
-				flag = true;
-			}
-			if (x + $("#leftPad").outerHeight() > $("#rightPad").outerHeight()) {
-				x = $("#rightPad").outerHeight() - $("#leftPad").outerHeight();
-			}
-			x = x > 0 ? x : 0;
-			if (flag)
-				$("#leftPad").css("top", x);
-			console.log($("#rightPad").outerHeight() + '\n' + $("#leftPad").outerHeight() + '\n' + x);
-		}
-	}
-
-	function leftPadCmtPrep() {
-		if (!window.matchMedia("(max-width: 992px)").matches && $("#respond-topic-tabs").length) {
-			var x, flag = false;
-			if (($(window).scrollTop() + $(window).height()) > $("#respond-topic-tabs").offset().top + $("#respond-topic-tabs").outerHeight(true) + 10) {
-				x = ($(window).scrollTop() + $(window).height()) - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight(true) + 10);
-				flag = true;
-			}
-			if ($(window).scrollTop() + $("#topMenu").outerHeight() + 40 < $("#respond-topic-tabs").offset().top) {
-				x = $(window).scrollTop() + $("#topMenu").outerHeight() + 40 - ($("#comments-section").offset().top + $(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true));
-				flag = true;
-			}
-			if ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + x + $("#respond-topic-tabs").outerHeight() > $("#comments-section").outerHeight(false))
-				x = $("#comments-section").outerHeight(false) - ($(".comment-section-title").outerHeight(true) + $("#comments").outerHeight(true) + $("#respond-topic-tabs").outerHeight());
-			x = x > 0 ? x : 0;
-			if (flag)
-				$("#respond-topic-tabs").css("top", x);
-		}
-	}
 	leftPadPrep();
 	leftPadCmtPrep();
 	$(window).scroll(function() {
@@ -131,18 +171,7 @@ $(document).ready(function() {
 				}
 
 				cur_level = $(this).data("h_level");
-				// if (last_level == cur_level)
-				// 	cnt_tbl += "</li>";
-				// while (last_level < cur_level) {
-				// 	cnt_tbl += "<ul>";
-				// 	if (last_level < cur_level - 1)
-				// 		cnt_tbl += "<li>";
-				// 	last_level++;
-				// }
-				// while (last_level > cur_level) {
-				// 	cnt_tbl += "</li></ul>";
-				// 	last_level--;
-				// }
+
 				if (last_level == cur_level)
 					cnt_tbl += "</li>";
 				if (last_level < cur_level) {
@@ -168,41 +197,11 @@ $(document).ready(function() {
 		})
 	})();
 
-	
-	// ajaxify comments submit button
-	(function ajaxify_comments() {
-		// Get the comment form
-		var commentform = $('#commentform');
-		commentform.submit(function() {
-			// Add a Comment Status message
-			commentform.prepend('<div id="comment-status" class="post-list-item inside-block"></div>');
-			// Defining the Status message element 
-			var statusdiv = $('#comment-status');
-			// Serialize and store form data
-			var formdata = commentform.serialize();
-			//Add a status message
-			statusdiv.html('<p class="ajax-placeholder">در حال ارسال کامنت شما...</p>');
-			//Extract action URL from commentform
-			var formurl = commentform.attr('action');
-			//Post Form with data
-			$.ajax({
-				type: 'post',
-				url: formurl,
-				data: formdata,
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-					statusdiv.html('<p class="ajax-error" >خیلی سریع کامنت می فرستید!</p>');
-				},
-				success: function(data, textStatus) {
-					// if (data == "success")
-					statusdiv.html('<p class="ajax-success" >خیلی ممنون! کامنت شما ارسال شد.</p>');
-					// else
-					// 	statusdiv.html('<p class="ajax-error" >Please wait a while before posting your next comment</p>');
-					commentform.find('textarea[name=comment]').val('');
-				}
-			});
-			return false;
-		});
-	})();
+
+	// ajaxify quick report widget
+	ajaxify_form($('#quick-report-form'), 'خطا! متاسفانه پیام تان ارسال نشد', 'بسیار سپاسگذاریم از پیام تان.');
+	// add comment form
+	ajaxify_form($('#commentform'), 'خیلی سریع کامنت می فرستید!', 'خیلی ممنون! کامنت شما ارسال شد.');
 
 	// post-type tabs selecting
 	$('#post-type-tabs label').click(function() {
@@ -220,101 +219,3 @@ $(document).ready(function() {
 		}
 	});
 });
-var addComment = {
-	moveForm: function(commId, parentId, respondId, postId) {
-		var div, element, style, cssHidden,
-			t = this,
-			comm = t.I(commId),
-			respond = t.I(respondId),
-			cancel = t.I('cancel-comment-reply-link'),
-			parent = t.I('comment_parent'),
-			post = t.I('comment_post_ID'),
-			commentForm = respond.getElementsByTagName('form')[0];
-
-		if (!comm || !respond || !cancel || !parent || !commentForm) {
-			return;
-		}
-
-		t.respondId = respondId;
-		postId = postId || false;
-
-		if (!t.I('wp-temp-form-div')) {
-			div = document.createElement('div');
-			div.id = 'wp-temp-form-div';
-			div.style.display = 'none';
-			respond.parentNode.insertBefore(div, respond);
-		}
-
-		// comm.parentNode.insertBefore( respond, comm.nextSibling );
-		if (post && postId) {
-			post.value = postId;
-		}
-		parent.value = parentId;
-		cancel.style.display = '';
-
-		cancel.onclick = function() {
-			var t = addComment,
-				temp = t.I('wp-temp-form-div'),
-				respond = t.I(t.respondId);
-
-			if (!temp || !respond) {
-				return;
-			}
-
-			t.I('comment_parent').value = '0';
-			temp.parentNode.insertBefore(respond, temp);
-			temp.parentNode.removeChild(temp);
-			this.style.display = 'none';
-			this.onclick = null;
-			return false;
-		};
-
-		/*
-		 * Set initial focus to the first form focusable element.
-		 * Try/catch used just to avoid errors in IE 7- which return visibility
-		 * 'inherit' when the visibility value is inherited from an ancestor.
-		 */
-		try {
-			for (var i = 0; i < commentForm.elements.length; i++) {
-				element = commentForm.elements[i];
-				cssHidden = false;
-
-				// Modern browsers.
-				if ('getComputedStyle' in window) {
-					style = window.getComputedStyle(element);
-					// IE 8.
-				} else if (document.documentElement.currentStyle) {
-					style = element.currentStyle;
-				}
-
-				/*
-				 * For display none, do the same thing jQuery does. For visibility,
-				 * check the element computed style since browsers are already doing
-				 * the job for us. In fact, the visibility computed style is the actual
-				 * computed value and already takes into account the element ancestors.
-				 */
-				if ((element.offsetWidth <= 0 && element.offsetHeight <= 0) || style.visibility === 'hidden') {
-					cssHidden = true;
-				}
-
-				// Skip form elements that are hidden or disabled.
-				if ('hidden' === element.type || element.disabled || cssHidden) {
-					continue;
-				}
-
-				element.focus();
-				// Stop after the first focusable element.
-				break;
-			}
-
-		} catch (er) {}
-
-		t.I("comment").focus();
-
-		return false;
-	},
-
-	I: function(id) {
-		return document.getElementById(id);
-	}
-};

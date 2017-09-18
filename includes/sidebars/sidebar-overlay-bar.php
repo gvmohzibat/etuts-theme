@@ -2,7 +2,7 @@
 	<div id="leftMenu">
 		<div id="leftMenuToggle">&lt;</div>
 		<div class="left-sidebar-container">
-			<ul id="sidebar">
+			<ul id="big-page-sidebar" class="sidebar">
 				<?php dynamic_sidebar( 'sidebar_primary' ); ?>
 			</ul>
 		</div>

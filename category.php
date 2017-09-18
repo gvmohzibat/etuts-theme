@@ -16,13 +16,13 @@
                 </div>
 
                 <?php while (have_posts()) : the_post();
-                    get_template_part('content', 'single-homepage');
+                    get_template_part('includes/contents/content', 'single-homepage');
                 endwhile; ?>
             </div>
             <?php get_template_part('page','navigation'); ?>
         </div>
     <?php else :
-        get_template_part('content', 'noresults');
+        get_template_part('includes/contents/content', 'noresults');
     endif; 
     
     ?>

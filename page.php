@@ -5,9 +5,9 @@
 
     <div id="rightPad">
         <?php if ( is_bbpress() ) : ?>
-            <?php get_template_part( 'content', 'bbpress' ); ?>
+            <?php get_template_part( 'includes/contents/content', 'bbpress' ); ?>
         <?php else : ?>
-            <?php get_template_part( 'content', 'page' ); ?>
+            <?php get_template_part( 'includes/contents/content', 'page' ); ?>
         <?php endif; ?>
     </div>
         
@@ -16,7 +16,7 @@
     <div class="clearfix"></div>
 
     <?php if (is_page()) { ?>
-    <?php get_template_part( 'content', 'comments' ); ?>
+    <?php get_template_part( 'includes/contents/content', 'comments' ); ?>
     <?php } ?>
 
     <?php endwhile; ?>

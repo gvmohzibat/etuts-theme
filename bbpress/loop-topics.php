@@ -22,7 +22,9 @@
 		<?php endwhile; ?>
 
 	</li>
+<?php bbp_get_template_part( 'pagination', 'topics' ); ?>
 
 </ul><!-- #bbp-forum-<?php bbp_forum_id(); ?> -->
 
 <?php do_action( 'bbp_template_after_topics_loop' ); ?>
+

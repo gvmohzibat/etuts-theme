@@ -1258,3 +1258,7 @@ body.my-account #bbpress-forums {
 	float: right;
 	width: 75%;
 }
+
+.closed {
+	color: #689f38;
+}

@@ -55,12 +55,13 @@ body.rtl, body.rtl .press-this a.wp-switch-editor, .rtl h1, .rtl h2, .rtl h3, .r
 }
 
 #dashboard-widgets-wrap #new_authors_steps {
-    background: #00796B;
+    background: #E0F2F1;
+    border: 2px solid #00897B;
 }
 
-#dashboard-widgets-wrap #new_authors_steps * {
-    color: #fff;
-    border-color: #Fff;
+#dashboard-widgets-wrap #terms_rules {
+    border: 2px solid #FF5722;
+    background: #FBE9E7;
 }
 
 #dashboard-widgets-wrap .post-list-item {

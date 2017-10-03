@@ -16,8 +16,10 @@
 	<?php do_action( 'bbp_theme_after_topic_started_by' ); ?>
 
 	<li class="bbp-topic-title">
-		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
-		<h3><a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?></a></h3>
+		<h3>
+			<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?></a>
+			<?php do_action( 'bbp_theme_before_topic_title' ); ?>
+		</h3>
 
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
 

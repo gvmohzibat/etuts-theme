@@ -232,7 +232,9 @@ add_action('admin_init', 'allow_contributor_uploads', 999);
 function allow_contributor_uploads() {
 	$contributor = get_role('contributor');
 	$editor = get_role('editor');
+	$vendor = get_role('vendor');
 	
+	//******* contributor
 	$contributor->add_cap('upload_files');
 	$contributor->add_cap('edit_published_posts');
 
@@ -258,6 +260,9 @@ function allow_contributor_uploads() {
     $editor->remove_cap('edit_private_pages');
     // comments
     $editor->remove_cap('delete_comment');
+    
+    //******* vendor
+    $vendor->add_cap('read');
 }
 // ************ END edit roles and capablities ********
 

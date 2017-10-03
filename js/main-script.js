@@ -68,7 +68,8 @@ function ajaxify_form($theform, error_text, success_text) {
 			url: formurl,
 			data: formdata,
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				statusdiv.html('<p class="ajax-error">'+(errorThrown) ? errorThrown : error_text+'</p>');
+				$errorMessage = XMLHttpRequest.responseJSON;
+				statusdiv.html('<p class="ajax-error">'+($errorMessage.message) ? $errorMessage.message : (errorThrown) ? errorThrown : error_text+'</p>');
 			},
 			success: function(data, textStatus) {
 				console.log(data)

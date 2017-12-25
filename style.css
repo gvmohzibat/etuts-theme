@@ -181,43 +181,54 @@ li.widget li, li.widget ul {
     opacity: 1; }
   #topMenu #the-top-primary-menu {
     float: right; }
-  #topMenu #the-top-primary-menu > div > ul a, #topMenu .login-register-links a {
+    #topMenu #the-top-primary-menu > div > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      #topMenu #the-top-primary-menu > div > ul > li {
+        float: right;
+        margin: 0 2px; }
+      #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention {
+        animation: blink-opacity 2.4s infinite alternate-reverse; }
+        #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention.red-text a {
+          color: #f00; }
+        #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention.blue-text a {
+          color: #1976D2; }
+        #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention:hover {
+          animation: none; }
+  #topMenu #the-top-primary-menu > div > ul a,
+  #topMenu .login-register-links a {
     color: #fff;
     font-weight: bold;
     text-shadow: 0 1px 1px #1f3e00, 0 0 20px #356c00, 0 0 40px #000; }
-  #topMenu #the-top-primary-menu > div > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    #topMenu #the-top-primary-menu > div > ul > li {
-      float: right;
-      margin: 0 2px; }
-    #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention {
-      animation: blink-opacity 2.4s infinite alternate-reverse; }
-      #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention.red-text a {
-        color: #f00; }
-      #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention.blue-text a {
-        color: #1976D2; }
-      #topMenu #the-top-primary-menu > div > ul li.menu-item.pay-attention:hover {
-        animation: none; }
   #topMenu > #site-logo-name {
     font-size: 1em; }
-  #topMenu #the-top-primary-menu > div > ul > li > a:hover, #topMenu .login-register-links a:hover {
+  #topMenu #the-top-primary-menu > div > ul > li > a:hover,
+  #topMenu .login-register-links a:hover {
     color: #fff;
     border-radius: 3px 3px 0 0;
     box-shadow: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
-  #topMenu.block #the-top-primary-menu > div > ul > li > a, #topMenu.block #rightMenuToggle, #topMenu #the-top-primary-menu > div > ul > li > a:before, #topMenu #rightMenuToggle:before, #topMenu .login-register-links a:before, #topMenu.block .login-register-links a {
+  #topMenu.block #the-top-primary-menu > div > ul > li > a, #topMenu.block #rightMenuToggle,
+  #topMenu #the-top-primary-menu > div > ul > li > a:before,
+  #topMenu #rightMenuToggle:before,
+  #topMenu .login-register-links a:before, #topMenu.block .login-register-links a {
     transition: none; }
 
-#topMenu #the-top-primary-menu, #user-menu.login-register-links {
+#topMenu #the-top-primary-menu,
+#user-menu.login-register-links {
   margin: 8px 0; }
 
-#topMenu #the-top-primary-menu > div > ul > li > a, #rightMenuToggle, #topMenu > #site-logo-name, #topMenu .login-register-links a {
+#topMenu #the-top-primary-menu > div > ul > li > a,
+#rightMenuToggle,
+#topMenu > #site-logo-name,
+#topMenu .login-register-links a {
   display: inline-block;
   padding: 6px 16px; }
 
-#topMenu #the-top-primary-menu > div > ul > li > a:before, #rightMenuToggle:before, #topMenu .login-register-links a:before {
+#topMenu #the-top-primary-menu > div > ul > li > a:before,
+#rightMenuToggle:before,
+#topMenu .login-register-links a:before {
   position: absolute;
   content: "";
   background: #fff;
@@ -230,13 +241,25 @@ li.widget li, li.widget ul {
   transform-origin: left;
   opacity: 0; }
 
-#topMenu #the-top-primary-menu > div > ul > li > a, #topMenu .login-register-links a, #rightMenuToggle {
+#topMenu #the-top-primary-menu > div > ul > li > a,
+#topMenu .login-register-links a,
+#rightMenuToggle {
   position: relative; }
 
-#topMenu, #topMenu #the-top-primary-menu > div > ul > li > a, #rightMenuToggle, #topMenu.block #the-top-primary-menu > div > ul > li > a:hover, #topMenu.block #rightMenuToggle:hover, #topMenu #the-top-primary-menu > div > ul > li > a:hover:before, #topMenu #rightMenuToggle:hover:before, #topMenu .login-register-links a, #topMenu.block .login-register-links a:hover, #topMenu .login-register-links a:hover:before {
-  transition: all 1s, background 0.5s, padding 1s, color 0.3s cubic-bezier(1, 0.68, 0.16, 0.9), opacity 0.5s, transform 0.5s; }
+#topMenu,
+#topMenu #the-top-primary-menu > div > ul > li > a,
+#rightMenuToggle,
+#topMenu.block #the-top-primary-menu > div > ul > li > a:hover,
+#topMenu.block #rightMenuToggle:hover,
+#topMenu #the-top-primary-menu > div > ul > li > a:hover:before,
+#topMenu #rightMenuToggle:hover:before,
+#topMenu .login-register-links a,
+#topMenu.block .login-register-links a:hover,
+#topMenu .login-register-links a:hover:before {
+  transition: all 0.4s, background 0.3s, color 0.3s cubic-bezier(1, 0.68, 0.16, 0.9), opacity 0.3s, transform 0.3s; }
 
-#top-logo, #rightMenuToggle {
+#top-logo,
+#rightMenuToggle {
   opacity: 0;
   transition: all 0.3s;
   display: none; }
@@ -286,7 +309,7 @@ li.widget li, li.widget ul {
 
 form#popup-login-form {
   display: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: fixed;
   top: 80px;
   max-height: 90vh;
@@ -324,7 +347,8 @@ form#popup-login-form {
     animation-duration: 1.7s;
     animation-delay: 0s;
     animation-timing-function: cubic-bezier(0.3, 0, 0.48, 1.28); }
-  form#popup-login-form input#user_login, form#popup-login-form input#user_pass {
+  form#popup-login-form input#user_login,
+  form#popup-login-form input#user_pass {
     background: transparent;
     background: none;
     border: none;
@@ -333,10 +357,11 @@ form#popup-login-form {
     margin: 0 0 20px;
     direction: ltr;
     color: #555;
-    transition: all .4s;
+    transition: all 0.4s;
     display: block;
     width: 100%; }
-    form#popup-login-form input#user_login :focus, form#popup-login-form input#user_pass :focus {
+    form#popup-login-form input#user_login :focus,
+    form#popup-login-form input#user_pass :focus {
       color: #2f8811;
       border-color: #2f8811; }
   form#popup-login-form.show-login-form label {
@@ -356,20 +381,22 @@ form#popup-login-form {
     line-height: 40px;
     height: 50px;
     padding: 2px 10px;
-    transition: color .4s;
+    transition: color 0.4s;
     margin: 10px 1%; }
   form#popup-login-form p {
     margin-bottom: 0; }
 
 @-webkit-keyframes start {
-  0%, 20% {
+  0%,
+  20% {
     transform: perspective(500px) rotateX(90deg);
     transform-origin: top;
     max-height: 50px;
     overflow: hidden;
     padding: 0;
     opacity: 0.4; }
-  48%, 52% {
+  48%,
+  52% {
     transform: perspective(160px) rotateX(0deg);
     opacity: 1;
     max-height: 110px;
@@ -399,7 +426,8 @@ form#popup-login-form {
     color: #fff;
     font-weight: bold;
     text-shadow: 0 1px 1px #1f3e00, 0 0 20px #356c00, 0 0 40px #000; }
-  #user-menu img.avatar, #user-menu #curruser-display-name {
+  #user-menu img.avatar,
+  #user-menu #curruser-display-name {
     float: left; }
   #user-menu img.avatar {
     border-radius: 100px;
@@ -440,7 +468,8 @@ form#popup-login-form {
       color: #48AD26;
       text-shadow: 0 0 0.1px #4f821d; }
 
-#curruser-menu ul.menu li.menu-item a .menu-curruser-menu-container, .curruser-custom-links {
+#curruser-menu ul.menu li.menu-item a .menu-curruser-menu-container,
+.curruser-custom-links {
   margin-bottom: 5px;
   padding-bottom: 5px;
   border-bottom: 1px solid #e9e9e9; }
@@ -456,20 +485,24 @@ form#popup-login-form {
   transform: scaleY(1);
   opacity: 1; }
 
-#user-menu, #user-menu * {
+#user-menu,
+#user-menu * {
   transition: all 0.4s; }
 
 .small-padding {
   padding: 5px 10px; }
 
-.menu-item input[type="submit"], .menu-item button[type="submit"] {
+.menu-item input[type="submit"],
+.menu-item button[type="submit"] {
   padding: 4px 10px;
   border-radius: 4px;
   box-shadow: 0 2px #2b7b10;
   text-shadow: 0 1px 1px #2b7b10; }
-  .menu-item input[type="submit"]:hover, .menu-item button[type="submit"]:hover {
+  .menu-item input[type="submit"]:hover,
+  .menu-item button[type="submit"]:hover {
     opacity: 1; }
-  .menu-item input[type="submit"]:active, .menu-item button[type="submit"]:active {
+  .menu-item input[type="submit"]:active,
+  .menu-item button[type="submit"]:active {
     box-shadow: 0 0;
     margin-top: 2px; }
 
@@ -480,26 +513,33 @@ form#popup-login-form {
   box-shadow: 0 3px #eee, 0 -1px 15px #000; }
   #topMenu.block #the-top-primary-menu > div > ul > li {
     margin: 0; }
-  #topMenu.block #the-top-primary-menu > div > ul > li > a, #topMenu.block #rightMenuToggle, #topMenu.block > #site-logo-name, #topMenu.block .login-register-links a {
+  #topMenu.block #the-top-primary-menu > div > ul > li > a,
+  #topMenu.block #rightMenuToggle,
+  #topMenu.block > #site-logo-name,
+  #topMenu.block .login-register-links a {
     padding: 17px 15px;
     border-radius: 0;
     max-height: 60px;
     box-shadow: none;
     border-radius: 0; }
-  #topMenu.block #the-top-primary-menu > div > ul > li > a:before, #topMenu.block #rightMenuToggle:before, #topMenu.block .login-register-links a:before {
+  #topMenu.block #the-top-primary-menu > div > ul > li > a:before,
+  #topMenu.block #rightMenuToggle:before,
+  #topMenu.block .login-register-links a:before {
     bottom: -3px;
     background: #3F9921;
     height: 3px;
     transform-origin: top;
     transform: scale3d(1.1, 0, 1); }
-  #topMenu.block #the-top-primary-menu, #topMenu.block #user-menu.login-register-links {
+  #topMenu.block #the-top-primary-menu,
+  #topMenu.block #user-menu.login-register-links {
     margin: 0; }
   #topMenu.block #user-menu #curruser-info {
     padding: 15px 0; }
   #topMenu.block #user-menu #curruser-display-name {
     color: #000;
     text-shadow: none; }
-  #topMenu.block #the-top-primary-menu > div > ul a, #topMenu.block .login-register-links a {
+  #topMenu.block #the-top-primary-menu > div > ul a,
+  #topMenu.block .login-register-links a {
     color: #000;
     text-shadow: none; }
   #topMenu.block #top-logo {
@@ -508,17 +548,28 @@ form#popup-login-form {
   #topMenu.block #user-menu {
     margin-left: 60px; }
 
-#topMenu.block #top-logo, #rightMenuToggle.show-right-menu-toggle {
+#topMenu.block #top-logo,
+#rightMenuToggle.show-right-menu-toggle {
   opacity: 1;
   display: initial; }
 
-#topMenu.block #the-top-primary-menu > div > ul > li > a:hover, .block #rightMenuToggle:hover, #topMenu.block #the-top-primary-menu > div > ul > li.active > a, .block #rightMenuToggle.active, #topMenu.block .login-register-links a:hover, #topMenu.block .login-register-links a:active {
+#topMenu.block #the-top-primary-menu > div > ul > li > a:hover,
+.block #rightMenuToggle:hover,
+#topMenu.block #the-top-primary-menu > div > ul > li.active > a,
+.block #rightMenuToggle.active,
+#topMenu.block .login-register-links a:hover,
+#topMenu.block .login-register-links a:active {
   background: #48AD26;
   color: #fff !important;
   border-radius: 0;
   opacity: 1; }
 
-#topMenu #the-top-primary-menu > div > ul > li > a:hover:before, #topMenu.block #the-top-primary-menu > div > ul > li > a:hover:before, #topMenu.block #rightMenuToggle:hover:before, #topMenu.block #rightMenuToggle.active:before, #topMenu .login-register-links a:hover:before, #topMenu.block .login-register-links a:hover:before {
+#topMenu #the-top-primary-menu > div > ul > li > a:hover:before,
+#topMenu.block #the-top-primary-menu > div > ul > li > a:hover:before,
+#topMenu.block #rightMenuToggle:hover:before,
+#topMenu.block #rightMenuToggle.active:before,
+#topMenu .login-register-links a:hover:before,
+#topMenu.block .login-register-links a:hover:before {
   transform: scale3d(1, 1, 1);
   opacity: 1; }
 
@@ -1543,9 +1594,10 @@ a.post-tumb-link {
   margin: 0; }
   .sidebar .widget {
     padding: 20px 30px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.04); }
-    .sidebar .widget:nth-child(odd) {
-      background: rgba(0, 0, 0, 0.02); }
+    border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+    /* &:nth-child(odd) {
+    	background: rgba(0, 0, 0, 0.02);
+    } */ }
 
 #rightPad, #leftPad {
   float: right;

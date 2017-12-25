@@ -58,6 +58,33 @@
 </article><!-- #post-## -->
 </div>
 
+<?php
+$post_type = get_post_type();
+if ($post_type == 'aside') {
+	?>
+	<?php 
+	// Bot id box
+	$bot_id = get_post_meta( get_the_ID(), 'bot_id', true );
+
+	if ( ! empty( $bot_id ) ) { ?>
+	    <div id="bot-id-link-section" class="post-list-item clearfix">
+	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
+	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
+	    </div>
+	<?php } ?>
+
+	<?php 
+	// Site url box
+	$bot_id = get_post_meta( get_the_ID(), 'introduce_site_url', true );
+
+	if ( ! empty( $bot_id ) ) { ?>
+	    <div id="bot-id-link-section" class="post-list-item clearfix">
+	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
+	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
+	    </div>
+	<?php } ?>
+<?php } ?>
+
 <div class="post-list-item sidebar-item-no-bg related-posts clearfix">
 	<?php
 	// Default arguments
@@ -101,29 +128,3 @@
 	?>
 </div>
 
-<?php
-$post_type = get_post_type();
-if ($post_type == 'aside') {
-	?>
-	<?php 
-	// Bot id box
-	$bot_id = get_post_meta( get_the_ID(), 'bot_id', true );
-
-	if ( ! empty( $bot_id ) ) { ?>
-	    <div id="bot-id-link-section" class="post-list-item clearfix">
-	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
-	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
-	    </div>
-	<?php } ?>
-
-	<?php 
-	// Site url box
-	$bot_id = get_post_meta( get_the_ID(), 'introduce_site_url', true );
-
-	if ( ! empty( $bot_id ) ) { ?>
-	    <div id="bot-id-link-section" class="post-list-item clearfix">
-	    	<h4>برای ورود به ربات روی لینک روبرو کلیک کنید</h4>
-	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
-	    </div>
-	<?php } ?>
-<?php } ?>

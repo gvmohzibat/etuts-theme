@@ -59,8 +59,8 @@
 </div>
 
 <?php
-$post_type = get_post_type();
-if ($post_type == 'aside') {
+// $post_type = get_post_type();
+// if ($post_type == 'aside') {
 	?>
 	<?php 
 	// Bot id box
@@ -83,7 +83,8 @@ if ($post_type == 'aside') {
 	    	<a class="tbot-link-button" target="_blankgit" href="http://t.me/<?php echo $bot_id; ?>">ربات <?php echo '@' . $bot_id; ?></a>
 	    </div>
 	<?php } ?>
-<?php } ?>
+<?php //}
+?>
 
 <div class="post-list-item sidebar-item-no-bg related-posts clearfix">
 	<?php

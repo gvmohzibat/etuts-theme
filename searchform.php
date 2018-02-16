@@ -18,6 +18,6 @@
 	}
 	?>
 	</select>
-    <!-- <input class="screen-reader-text" type="submit" id="search-submit" value="<?php echo esc_attr( 'Search', 'etuts' ); ?>" /> -->
-    <button type="submit" id="search-submit" class="screen-reader-text"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <!-- <input type="submit" id="search-submit" value="<?php echo esc_attr( 'Search', 'etuts' ); ?>" /> -->
+    <button type="submit" id="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 </form>

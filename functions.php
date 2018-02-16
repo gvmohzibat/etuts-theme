@@ -284,8 +284,8 @@ function allow_contributor_uploads()
         $editor->remove_cap('edit_private_pages');
         // comments
         $editor->remove_cap('delete_comment');
-	}
-	
+    }
+
     //******* vendor
     if ($vendor) {
         $vendor->add_cap('read');
@@ -309,7 +309,7 @@ function archive_pages_fix_pagination_function()
 add_filter('comment_form_default_fields', 'wpse_62742_comment_placeholders');
 function wpse_62742_comment_placeholders($fields)
 {
-    if ($fields['comment']) {
+    if (array_key_exists('comment', $fields)) {
         $fields['comment'] = str_replace(
             '<textarea id="comment" name="comment" cols="45" rows="8"',
             '<textarea id="comment" name="comment" cols="45" rows="5" placeholder="نظر شما در مورد این مطلب"',

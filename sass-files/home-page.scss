@@ -1,10 +1,10 @@
-// Home Page 
+// Home Page
 #main.home-page-main {
 	padding-right: 0;
 	padding-left: 0;
 }
 
-// Last posts 
+// Last posts
 #lastPosts {
 	text-align: center;
 }
@@ -16,18 +16,20 @@
 	margin: 10px 0.8%;
 	position: relative;
 	.title {
-		font-size: 24px;
+		font-size: 21px;
 		margin: 0 0 15px;
 		text-align: center;
 	}
-	>img.size-homepage-thumb {
-		margin: 5px 0 15px 24px;
+	> img.size-homepage-thumb {
+		margin: 0 10px 0 23px;
 		float: right;
+		max-width: 40%;
 	}
 	.postmeta-primary {
 		color: $color4;
 		padding: 0px;
 		text-align: center;
+		font-size: 14px;
 		span {
 			display: inline-block;
 			margin: 0 0 0 6px;
@@ -40,15 +42,28 @@
 }
 
 .home-latest-posts {
-	padding: 30px 32px 25px;
+	$padding: 25px;
+	padding: $padding;
 	display: inline-table;
+	min-height: 180px + ($padding * 2);
+	.content-container {
+		overflow: hidden;
+	}
+	.title,
+	.postmeta-primary,
 	.excerpt {
-		margin: 0 0 10px;
+		transition: all 0.1s;
+	}
+	.excerpt {
+		margin: 0;
 		text-align: justify;
+		font-size: 14px;
+		height: 0;
+		opacity: 0;
 	}
-	.postmeta-primary {
+	/* .postmeta-primary {
 		clear: both;
-	}
+	} */
 	i.post-format-icon.fa {
 		position: absolute;
 		top: 25px;
@@ -67,17 +82,29 @@
 		transition: all 0.3s;
 		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 	}
-	&:hover i.post-format-icon.fa {
-		border-color: transparent;
-		&.standard {
-			background: $main_color;
-			color: #fff;
-			box-shadow: 0 0px 18px rgba(0, 0, 0, 0.15);
+	&:hover {
+		.title,
+		.postmeta-primary {
+			opacity: 0;
+			height: 0;
+			margin: 0;
 		}
-		&.aside {
-			background: $c34354;
-			color: #fff;
-			box-shadow: 0 0px 18px rgba(0, 0, 0, 0.15);
+		.excerpt {
+			opacity: 1;
+			height: initial;
+		}
+		i.post-format-icon.fa {
+			border-color: transparent;
+			&.standard {
+				background: $main_color;
+				color: #fff;
+				box-shadow: 0 0px 18px rgba(0, 0, 0, 0.15);
+			}
+			&.aside {
+				background: $c34354;
+				color: #fff;
+				box-shadow: 0 0px 18px rgba(0, 0, 0, 0.15);
+			}
 		}
 	}
 }
@@ -90,14 +117,14 @@ a.post-tumb-link {
 	}
 }
 
-
 /* home latest stories */
 
 .home-latest-stories {
 	border-radius: 100px;
 	padding: 16px;
 	height: 138px;
-	.content-excerpt, .avatar-container {
+	.content-excerpt,
+	.avatar-container {
 		height: 90px;
 	}
 	.avatar-container {
@@ -111,7 +138,8 @@ a.post-tumb-link {
 		}
 	}
 	.content-excerpt {
-		.postmeta-primary, .title {
+		.postmeta-primary,
+		.title {
 			text-align: right;
 		}
 		.title {
@@ -141,7 +169,7 @@ a.post-tumb-link {
 }
 
 .page-title-button {
-	font-size: 20px;
+	font-size: 16px;
 	margin-right: 30px;
 	background: $d2121;
 	padding: 10px 20px;
@@ -150,6 +178,7 @@ a.post-tumb-link {
 	color: $c9;
 	position: absolute;
 	top: 15px;
+	white-space: nowrap;
 }
 
 .home-page-intro {
@@ -166,14 +195,14 @@ a.post-tumb-link {
 		position: absolute;
 		font-size: 380px;
 		opacity: 0.05;
-		transition: all .4s ease-in-out;
-		&:nth-of-type(10n+9) {
+		transition: all 0.4s ease-in-out;
+		&:nth-of-type(10n + 9) {
 			transform: rotate(20deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 15px #000;
 			right: 20%;
 		}
-		&:nth-of-type(10n+1) {
+		&:nth-of-type(10n + 1) {
 			transform: rotate(-30deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 5px #000;
@@ -181,7 +210,7 @@ a.post-tumb-link {
 			left: 20%;
 			font-size: 60px;
 		}
-		&:nth-of-type(10n+2) {
+		&:nth-of-type(10n + 2) {
 			transform: rotate(-10deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 8px #000;
@@ -190,7 +219,7 @@ a.post-tumb-link {
 			bottom: 10%;
 			font-size: 120px;
 		}
-		&:nth-of-type(10n+3) {
+		&:nth-of-type(10n + 3) {
 			transform: rotate(30deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 5px #000;
@@ -198,7 +227,7 @@ a.post-tumb-link {
 			bottom: 10%;
 			font-size: 80px;
 		}
-		&:nth-of-type(10n+4) {
+		&:nth-of-type(10n + 4) {
 			transform: rotate(-30deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 5px #000;
@@ -207,7 +236,7 @@ a.post-tumb-link {
 			top: 20%;
 			font-size: 160px;
 		}
-		&:nth-of-type(10n+5) {
+		&:nth-of-type(10n + 5) {
 			transform: rotate(7deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 5px #000;
@@ -215,7 +244,7 @@ a.post-tumb-link {
 			bottom: 10%;
 			font-size: 200px;
 		}
-		&:nth-child(10n+6) {
+		&:nth-child(10n + 6) {
 			transform: rotate(15deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 15px #000;
@@ -224,7 +253,7 @@ a.post-tumb-link {
 			top: 40%;
 			font-size: 210px;
 		}
-		&:nth-child(10n+7) {
+		&:nth-child(10n + 7) {
 			transform: rotate(-30deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 5px #000;
@@ -232,7 +261,7 @@ a.post-tumb-link {
 			top: 10%;
 			font-size: 60px;
 		}
-		&:nth-child(10n+8) {
+		&:nth-child(10n + 8) {
 			transform: rotate(32deg) scale(1);
 			color: transparent;
 			text-shadow: 0 0 13px #000;
@@ -245,7 +274,8 @@ a.post-tumb-link {
 	&:hover i.fa.home-page-intro-icon {
 		opacity: 0.02;
 	}
-	h1.home-page-intro-title, p.home-page-intro-par {
+	h1.home-page-intro-title,
+	p.home-page-intro-par {
 		text-align: center;
 	}
 	p.home-page-intro-par {
@@ -263,10 +293,11 @@ a.post-tumb-link {
 	position: relative;
 }
 
-// home page intro forums 
+// home page intro forums
 #home-page-forums {
 	background: $d12;
-	background: linear-gradient(45deg, $d22 0%, $d32 100%), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAaElEQVQoU12PUQ2AQAxD32SADZCBDmwQbKADGWADZBwpbMvCfW1Z+9ozYABOvrcAG3D73swHiSZg9b0DLsBCIOdeSA3oRZJAx3CKdMgZJA3CZSYw1k6pjMx/pxBkZvnN20kCHStprp0eilwX06rvVloAAAAASUVORK5CYII=);
+	background: linear-gradient(45deg, $d22 0%, $d32 100%),
+		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAaElEQVQoU12PUQ2AQAxD32SADZCBDmwQbKADGWADZBwpbMvCfW1Z+9ozyabovrcag3d73swhiszg9b0dlsbciodesa3orzjax3ckdmgzja3czsyw1k6pjmx/pxBkZvnN20kCHStprp0eilwX06rvVloAAAAASUVORK5CYII=);
 	#bbpress-forums {
 		margin: 0;
 		padding: 20px 60px;
@@ -277,7 +308,8 @@ a.post-tumb-link {
 			opacity: 1;
 		}
 	}
-	h1.home-page-intro-title, p.home-page-intro-par {
+	h1.home-page-intro-title,
+	p.home-page-intro-par {
 		color: #fff;
 	}
 	p.home-page-intro-par {
@@ -291,7 +323,7 @@ a.post-tumb-link {
 	}
 }
 
-// Last Topics 
+// Last Topics
 #lastTopics #bbpress-forums {
 	li.bbp-body ul.topic {
 		width: 49%;
@@ -303,16 +335,17 @@ a.post-tumb-link {
 		visibility: hidden;
 		display: block;
 		font-size: 0;
-		content: " ";
+		content: ' ';
 		clear: both;
 		height: 0;
 	}
 }
 
-// home-page-shop 
+// home-page-shop
 #home-page-shop {
 	background: $d3;
-	.home-page-intro-title, .home-page-intro-par {
+	.home-page-intro-title,
+	.home-page-intro-par {
 		color: #fff;
 	}
 	.home-page-intro-par {
@@ -338,7 +371,8 @@ a.post-tumb-link {
 					&.loading:after {
 						top: 1em;
 					}
-					&:hover, &.added {
+					&:hover,
+					&.added {
 						background: #a46497;
 					}
 				}

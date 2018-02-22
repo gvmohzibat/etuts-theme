@@ -1936,7 +1936,7 @@ a.vmoh-banners {
   border-radius: 0;
   position: relative;
   margin: 10px 10px 20px;
-  transition: all .7s; }
+  transition: all .4s; }
   #post-meta-info:hover {
     margin-bottom: 30px; }
     #post-meta-info:hover > div.hover-foldable {
@@ -1945,8 +1945,7 @@ a.vmoh-banners {
       opacity: 1;
       transform: perspective(800px) rotateX(0deg);
       transition: all .6s ease-in-out;
-      position: relative;
-      transition-delay: .2s; }
+      position: relative; }
   #post-meta-info > div {
     border-top: 2px solid #eee;
     background: #f7f7f7;
@@ -1964,7 +1963,7 @@ a.vmoh-banners {
       overflow: hidden;
       transition: all .4s ease-in-out;
       transform: perspective(800px) rotateX(90deg);
-      transition-delay: .4s; }
+      transition-delay: 0s; }
   #post-meta-info .post-featured-image img {
     display: block;
     margin: 0 auto 20px;
@@ -2048,7 +2047,8 @@ a.vmoh-banners {
     .share-post-buttons ul li:last-child:nth-child(odd) {
       width: 98%; }
 .share-post-buttons .background-border-title span {
-  background: #f7f7f7; }
+  background: #f7f7f7;
+  box-shadow: 10px 0 #f7f7f7, -10px 0 #f7f7f7; }
 .share-post-buttons #show-more-share-post-butttons {
   float: left;
   font-weight: normal;

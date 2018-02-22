@@ -1,10 +1,11 @@
 // post meta info 
+$post_meta_info_background: #f7f7f7;
 #post-meta-info {
 	padding: 0;
 	border-radius: 0;
 	position: relative;
 	margin: 10px 10px 20px;
-	transition: all .7s;
+	transition: all .4s;
 	&:hover {
 		margin-bottom: 30px;
 		>div {
@@ -15,13 +16,13 @@
 				transform: perspective(800px) rotateX(0deg);
 				transition: all .6s ease-in-out;
 				position: relative;
-				transition-delay: .2s;
+				// transition-delay: .2s;
 			}
 		}
 	}
 	>div {
 		border-top: 2px solid #eee;
-		background: #f7f7f7;
+		background: $post_meta_info_background;
 		padding: 25px;
 		&:first-child {
 			border-top: 0;
@@ -38,7 +39,7 @@
 			overflow: hidden;
 			transition: all .4s ease-in-out;
 			transform: perspective(800px) rotateX(90deg);
-			transition-delay: .4s;
+			transition-delay: 0s;
 		}
 	}
 	.post-featured-image {
@@ -158,7 +159,8 @@
 		}
 	}
 	.background-border-title span {
-		background: #f7f7f7;
+		background: $post_meta_info_background;
+		box-shadow: 10px 0 $post_meta_info_background, -10px 0 $post_meta_info_background;
 	}
 	#show-more-share-post-butttons {
 		float: left;

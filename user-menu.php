@@ -71,7 +71,7 @@
 
 	<!-- ajax popup login form -->
 	<form id="popup-login-form" action="login" method="post">
-	    <h1><?php _e('Login','etuts'); ?><a class="close-login-form" href=""><i class="fa fa-times" aria-hidden="true"></i></a></h1>
+	    <h1><?php _e('Login','etuts'); ?><span id="close-login-form" class="close-login-form" style="cursor: pointer;"><i class="fa fa-times" aria-hidden="true"></i></span></h1>
 	    <p class="status post-list-item inside-block"></p>
 	    <input id="user_login" type="text" name="user_login" placeholder="<?php _e('Username','etuts'); ?>">
 	    <input id="user_pass" type="password" name="user_pass" placeholder="<?php _e('Password','etuts'); ?>">

@@ -229,40 +229,47 @@ function execute_php($html){
 // ************ edit roles and capablities ********
 // contributors
 add_action('admin_init', 'allow_contributor_uploads', 999);
-function allow_contributor_uploads() {
-	$contributor = get_role('contributor');
-	$editor = get_role('editor');
-	$vendor = get_role('vendor');
-	
-	//******* contributor
-	$contributor->add_cap('upload_files');
-	$contributor->add_cap('edit_published_posts');
+function allow_contributor_uploads()
+{
+    $contributor = get_role('contributor');
+    $editor = get_role('editor');
+    $vendor = get_role('vendor');
 
-	//******* editors
-	// posts
-    $editor->remove_cap('delete_others_posts');
-    $editor->remove_cap('delete_published_posts');
-    $editor->remove_cap('edit_private_posts');
-    $editor->remove_cap('delete_private_posts');
-	// pages
-	$editor->remove_cap('edit_others_pages');
-	$editor->remove_cap('edit_published_pages');
-	$editor->remove_cap('edit_pages');
-	$editor->remove_cap('delete_pages');
-	$editor->remove_cap('delete_others_pages');
-	$editor->remove_cap('publish_pages');
-	$editor->remove_cap('delete_published_pages');
-    $editor->remove_cap('delete_others_posts');
-    $editor->remove_cap('delete_published_posts');
-    $editor->remove_cap('delete_private_posts');
-    $editor->remove_cap('edit_private_posts');
-    $editor->remove_cap('delete_private_pages');
-    $editor->remove_cap('edit_private_pages');
-    // comments
-    $editor->remove_cap('delete_comment');
-    
+    //******* contributor
+    if ($contributor) {
+        $contributor->add_cap('upload_files');
+        $contributor->add_cap('edit_published_posts');
+    }
+
+    //******* editors
+    if ($editor) {
+        // posts
+        $editor->remove_cap('delete_others_posts');
+        $editor->remove_cap('delete_published_posts');
+        $editor->remove_cap('edit_private_posts');
+        $editor->remove_cap('delete_private_posts');
+        // pages
+        $editor->remove_cap('edit_others_pages');
+        $editor->remove_cap('edit_published_pages');
+        $editor->remove_cap('edit_pages');
+        $editor->remove_cap('delete_pages');
+        $editor->remove_cap('delete_others_pages');
+        $editor->remove_cap('publish_pages');
+        $editor->remove_cap('delete_published_pages');
+        $editor->remove_cap('delete_others_posts');
+        $editor->remove_cap('delete_published_posts');
+        $editor->remove_cap('delete_private_posts');
+        $editor->remove_cap('edit_private_posts');
+        $editor->remove_cap('delete_private_pages');
+        $editor->remove_cap('edit_private_pages');
+        // comments
+        $editor->remove_cap('delete_comment');
+    }
+
     //******* vendor
-    $vendor->add_cap('read');
+    if ($vendor) {
+        $vendor->add_cap('read');
+    }
 }
 // ************ END edit roles and capablities ********
 
@@ -280,26 +287,29 @@ function archive_pages_fix_pagination_function() {
 add_filter( 'comment_form_default_fields', 'wpse_62742_comment_placeholders' );
 function wpse_62742_comment_placeholders( $fields )
 {
-	$fields['comment'] = str_replace(
-		'<textarea id="comment" name="comment" cols="45" rows="8"',
-		'<textarea id="comment" name="comment" cols="45" rows="5" placeholder="نظر شما در مورد این مطلب"',
-		$fields['comment']
-	);
-	$fields['author'] = str_replace(
-		'<input',
-		'<input placeholder="نام (دلخواه)"',
-		$fields['author']
-	);
-	$fields['email'] = str_replace(
-		'<input id="email" name="email"',
-		'<input placeholder="ایمیل (دلخواه)(برای مطلع شدن از پاسخ)"  id="email" name="email"',
-		$fields['email']
-	);
-	$fields['url'] = str_replace(
-		'<input id="url" name="url"',
-		'<input placeholder="سایت شما (دلخواه)" id="url" name="url"',
-		$fields['url']
-	);
+    if (array_key_exists('comment', $fields)) {
+        $fields['comment'] = str_replace(
+            '<textarea id="comment" name="comment" cols="45" rows="8"',
+            '<textarea id="comment" name="comment" cols="45" rows="5" placeholder="نظر شما در مورد این مطلب"',
+            $fields['comment']
+        );
+    }
+
+    $fields['author'] = str_replace(
+        '<input',
+        '<input placeholder="نام (دلخواه)"',
+        $fields['author']
+    );
+    $fields['email'] = str_replace(
+        '<input id="email" name="email"',
+        '<input placeholder="ایمیل (دلخواه)(برای مطلع شدن از پاسخ)"  id="email" name="email"',
+        $fields['email']
+    );
+    $fields['url'] = str_replace(
+        '<input id="url" name="url"',
+        '<input placeholder="سایت شما (دلخواه)" id="url" name="url"',
+        $fields['url']
+    );
 
 	return $fields;
 }

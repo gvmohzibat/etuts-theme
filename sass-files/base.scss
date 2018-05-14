@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -22,7 +23,8 @@ p {
 	margin-top: 0;
 }
 
-pre, code {
+pre,
+code {
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -40,15 +42,22 @@ pre, code {
 	padding: 5px 10px;
 }
 
-input:disabled, textarea:disabled {
+input:disabled,
+textarea:disabled {
 	color: #aaa;
 }
 
-img, iframe, embed {
+img,
+iframe,
+embed {
 	max-width: 100%;
 }
 
-input, textarea, keygen, select, button {
+input,
+textarea,
+keygen,
+select,
+button {
 	font: inherit;
 	border: 2px solid #ddd;
 	background: #fff;
@@ -61,13 +70,18 @@ textarea {
 	width: 100%;
 }
 
-input:focus, textarea:focus, keygen:focus, select:focus, button:focus {
+input:focus,
+textarea:focus,
+keygen:focus,
+select:focus,
+button:focus {
 	background: #fff;
 	border-color: $main_color;
 	outline: none;
 }
 
-input[type="submit"], button[type="submit"] {
+input[type='submit'],
+button[type='submit'] {
 	border: 2px solid $main_color;
 	margin: 0 auto;
 	background: $main_color;
@@ -76,11 +90,13 @@ input[type="submit"], button[type="submit"] {
 	cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type='submit']:hover {
 	opacity: 0.9;
 }
 
-img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
+img[class*='align'],
+img[class*='wp-image-'],
+img[class*='attachment-'] {
 	height: auto;
 }
 
@@ -88,7 +104,7 @@ img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
 	visibility: hidden;
 	display: block;
 	font-size: 0;
-	content: " ";
+	content: ' ';
 	clear: both;
 	height: 0;
 }
@@ -98,6 +114,13 @@ body {
 	position: relative;
 	direction: rtl;
 	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: bold;
+	line-height: initial;
 }
 
 h1 {
@@ -129,33 +152,39 @@ article {
 }
 
 // Fontawesome list icons
-ul.fa-ul li>i.fa {
+ul.fa-ul li > i.fa {
 	margin-left: 10px;
 }
 
 // Wordpress images
-.entry-content img, .comment-content img, .widget img {
+.entry-content img,
+.comment-content img,
+.widget img {
 	max-width: 100%;
 }
 
 // Wordpress aligns
-.aligncenter, div.aligncenter, img.alignnone {
+.aligncenter,
+div.aligncenter,
+img.alignnone {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.alignleft, div.alignleft {
+.alignleft,
+div.alignleft {
 	float: left;
 	margin-right: 20px;
 }
 
-.alignright, div.alignright {
+.alignright,
+div.alignright {
 	float: right;
 	margin-left: 20px;
 }
 
-// Wordpress menus 
+// Wordpress menus
 ul.menu {
 	padding: 0;
 	margin: 0;
@@ -172,10 +201,13 @@ ul.menu {
 
 // Wordpress Widgets
 li.widget {
-	&, li, ul {
+	&,
+	li,
+	ul {
 		list-style: none;
 	}
-	li, ul {
+	li,
+	ul {
 		padding: 0;
 		margin: 0;
 	}

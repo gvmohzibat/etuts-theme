@@ -572,6 +572,7 @@ td.bbp-topic-admin-links, td.bbp-topic-counts {
 	margin-left: 5px;
 	text-decoration: none;
 }
+.bbp-pagination-links a:hover, .bbp-pagination-links span.current {}
 .bbp-pagination-links span.dots {
 	display: block;
 	float: left;

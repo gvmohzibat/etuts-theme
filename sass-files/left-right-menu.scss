@@ -31,7 +31,8 @@
 	}
 }
 
-#leftMenu, #rightMenu {
+#leftMenu,
+#rightMenu {
 	position: fixed;
 	padding: 20px 30px;
 	top: 70px;
@@ -50,7 +51,8 @@
 				display: block;
 				border-bottom: 1px solid #c7c7c7;
 			}
-			&.active>a, &:hover>a {
+			&.active>a,
+			&:hover>a {
 				color: #000;
 				background: #c7c7c7;
 			}
@@ -94,9 +96,17 @@
 		left: 0;
 		bottom: 0;
 	}
+	.sidebar {
+		.widget {
+			&:nth-child(odd) {
+				background: rgba(0, 0, 0, 0.02);
+			}
+		}
+	}
 }
 
-#leftMenu.active .left-sidebar-container, #rightMenu.active {
+#leftMenu.active .left-sidebar-container,
+#rightMenu.active {
 	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.3);
 	display: inline-block;
 }

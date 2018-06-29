@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /*
 Theme Name: etuts
 Theme URI: http://demo.vmoh.ir/etuts
@@ -13,9 +12,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-
 // COLORS:
-
 $display_error: #ff3232;
 $bot_color: #47adf0;
 $bot_color_2: #2e8ac7;
@@ -70,34 +67,33 @@ $body_background_color: #f3f3ec;
 $pay_attention_red_color: #f00;
 $pay_attention_blue_color: #1976D2;
 $really_dark_main_color: #1f3e00;
-$main_font_family: Sahel, GanjNamehSans, myriad-pro, tahoma, sans-serif;
+$main_font_family: Sahel,
+GanjNamehSans,
+myriad-pro,
+tahoma,
+sans-serif;
 @font-face {
 	font-family: 'Sahel';
 	src: url('fonts/Sahel.eot');
 	src: url('fonts/Sahel.eot?#iefix') format('embedded-opentype'), url('fonts/Sahel.woff') format('woff'), url('fonts/Sahel.ttf') format('truetype')
 }
 
-@import "sass-files/base.scss";
-@import "sass-files/animations.scss";
-
-@import "sass-files/header.scss";
+@import "sass/base.scss";
+@import "sass/animations.scss";
+@import "sass/header.scss";
 // Main 
 #main {
 	padding: 40px 100px;
 	min-height: 230px;
 }
 
-@import "sass-files/left-right-menu.scss";
-@import "sass-files/modules.scss";
-
-@import "sass-files/posts.scss";
-@import "sass-files/comments.scss";
-@import "sass-files/page-templates.scss";
-
-@import "sass-files/home-page.scss";
-@import "sass-files/sidebar-widgets.scss";
-@import "sass-files/footer.scss";
-
-@import "sass-files/four-o-four.scss";
-
-@import "sass-files/responsiveness.scss";
+@import "sass/left-right-menu.scss";
+@import "sass/modules.scss";
+@import "sass/posts.scss";
+@import "sass/comments.scss";
+@import "sass/page-templates.scss";
+@import "sass/home-page.scss";
+@import "sass/sidebar-widgets.scss";
+@import "sass/footer.scss";
+@import "sass/four-o-four.scss";
+@import "sass/responsiveness.scss";

@@ -1,4 +1,4 @@
-<?php get_template_part('includes/sidebars/sidebar', 'overlay-bar'); ?>
+<?php // get_template_part('includes/sidebars/sidebar', 'overlay-bar'); ?>
 <div id="footer">
 	<?php get_template_part('includes/sidebars/sidebar', 'footer-widget'); ?>
 	<div id="extra-footer" class="clearfix">

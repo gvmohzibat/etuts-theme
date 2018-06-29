@@ -15,7 +15,7 @@ switch ($post_format) {
         break;
 }
 ?>
-		<i class="post-format-icon <?php echo $post_format; ?> fa <?php echo $icon; ?> fa-fw" aria-hidden="true"></i>
+		<!-- <i class="post-format-icon <?php echo $post_format; ?> fa <?php echo $icon; ?> fa-fw" aria-hidden="true"></i> -->
 		<?php
 if (has_post_thumbnail()) {
     the_post_thumbnail('homepage-thumb');

@@ -1381,17 +1381,17 @@ form#commentform input, form#commentform textarea {
 
 .home-post-list-item {
   display: inline-block;
-  width: 30%;
-  margin: 10px 0.8%;
+  width: 30.9%;
+  margin: 10px 0.4%;
   position: relative; }
   .home-post-list-item .title {
     font-size: 21px;
     margin: 0 0 15px;
     text-align: center; }
   .home-post-list-item > img.size-homepage-thumb {
-    margin: 0 10px 0 23px;
+    margin: 0 0 0 23px;
     float: right;
-    max-width: 40%; }
+    max-width: 30%; }
   .home-post-list-item .postmeta-primary {
     color: #c39d7a;
     padding: 0px;
@@ -1407,7 +1407,7 @@ form#commentform input, form#commentform textarea {
 .home-latest-posts {
   padding: 25px;
   display: inline-table;
-  min-height: 230px;
+  min-height: 193px;
   /* .postmeta-primary {
   	clear: both;
   } */ }

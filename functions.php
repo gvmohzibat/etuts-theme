@@ -381,3 +381,10 @@ add_filter('wp_terms_checklist_args','stop_showing_check_ontops_category_meta_bo
 // includes
 include 'includes/helper-functions.php';
 include 'includes/theme-settings.php';
+
+// Set default values for the upload media box
+function custom_default_image_size_and_align() {
+	update_option('image_default_align', 'center' );
+	update_option('image_default_size', 'large' );
+}
+add_action('after_setup_theme', 'custom_default_image_size_and_align');
